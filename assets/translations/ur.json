@@ -1,0 +1,118 @@
+{
+    "app_name": "آل فائلز کنورٹر اے آئی",
+    "app_version": "3.0.0",
+    
+    "menu_file": "فائل",
+    "menu_file_open": "فائلیں کھولیں",
+    "menu_file_open_folder": "فولڈر کھولیں",
+    "menu_file_exit": "باہر نکلیں",
+    
+    "menu_view": "منظر",
+    "menu_view_theme": "تھیم تبدیل کریں",
+    "menu_view_dashboard": "ڈیش بورڈ",
+    "menu_view_ai": "اے آئی اسسٹنٹ",
+    "menu_view_history": "تاریخ",
+    "menu_view_settings": "ترتیبات",
+    
+    "menu_help": "مدد",
+    "menu_help_about": "تعارف",
+    
+    "sidebar_dashboard": "ڈیش بورڈ",
+    "sidebar_ai": "اے آئی اسسٹنٹ",
+    "sidebar_history": "تاریخ",
+    "sidebar_settings": "ترتیبات",
+    
+    "dashboard_title": "ڈیش بورڈ",
+    "dashboard_stats_files": "تیار فائلیں",
+    "dashboard_stats_conversions": "آج کی تبدیلیاں",
+    "dashboard_stats_queue": "قطار",
+    "dashboard_stats_success": "کامیابی کی شرح",
+    
+    "dashboard_drop_zone": "اپنی فائلیں یہاں گھسیٹیں یا براؤز کریں",
+    "dashboard_drop_zone_sub": "1000+ فارمیٹس سپورٹ کرتا ہے",
+    
+    "dashboard_file_list": "فائل لسٹ",
+    "dashboard_file_name": "فائل کا نام",
+    "dashboard_file_category": "زمرہ",
+    "dashboard_file_size": "سائز",
+    "dashboard_file_status": "حالت",
+    
+    "dashboard_convert_to": "تبدیل کریں:",
+    "dashboard_convert": "تبدیل کریں",
+    "dashboard_auto": "خودکار",
+    "dashboard_clear": "صاف کریں",
+    
+    "dashboard_categories": "تعاون یافتہ زمرہ جات",
+    
+    "ai_title": "اے آئی اسسٹنٹ",
+    "ai_quick_convert": "پی ڈی ایف میں تبدیل کریں",
+    "ai_quick_font": "فونٹ تبدیل کریں",
+    "ai_quick_resize": "دستاویز کا سائز تبدیل کریں",
+    "ai_quick_extract": "متن نکالیں",
+    "ai_input_placeholder": "اے آئی اسسٹنٹ سے پوچھیں...",
+    "ai_send": "بھیجیں",
+    
+    "history_title": "تبدیلی کی تاریخ",
+    "history_file": "فائل",
+    "history_output": "آؤٹ پٹ",
+    "history_format": "فارمیٹ",
+    "history_status": "حالت",
+    "history_time": "وقت",
+    "history_clear": "سب صاف کریں",
+    "history_stats": "اعداد و شمار",
+    "history_total": "کل",
+    "history_success": "کامیاب",
+    "history_failed": "ناکام",
+    "history_rate": "شرح",
+    
+    "settings_title": "ترتیبات",
+    "settings_general": "عمومی",
+    "settings_conversion": "تبدیلی",
+    "settings_ai": "اے آئی",
+    "settings_voice": "آواز",
+    
+    "settings_theme": "تھیم:",
+    "settings_language": "زبان:",
+    "settings_output_folder": "آؤٹ پٹ فولڈر:",
+    "settings_browse": "براؤز کریں",
+    "settings_default_format": "ڈیفالٹ آؤٹ پٹ فارمیٹ:",
+    "settings_quality": "کوالٹی:",
+    "settings_keep_original": "اصل فائلیں رکھیں",
+    "settings_auto_convert": "خودکار تبدیلی فعال کریں",
+    
+    "settings_ai_provider": "فراہم کنندہ:",
+    "settings_ai_api_key": "اے پی آئی کی:",
+    "settings_voice_enabled": "آواز کنٹرول فعال کریں",
+    "settings_voice_sensitivity": "حساسیت:",
+    "settings_voice_language": "زبان:",
+    
+    "settings_save": "ترتیبات محفوظ کریں",
+    "settings_saved": "ترتیبات کامیابی سے محفوظ ہو گئیں!",
+    "settings_error": "ترتیبات محفوظ کرنے میں ناکامی",
+    
+    "voice_help": "آواز کے احکامات",
+    "voice_command_convert": "پی ڈی ایف میں تبدیل کریں",
+    "voice_command_scan": "دستاویز اسکین کریں",
+    "voice_command_clear": "فائلیں صاف کریں",
+    "voice_command_status": "حالت",
+    "voice_command_help": "مدد",
+    
+    "about_title": "تعارف",
+    "about_version": "ورژن",
+    "about_author": "مصنف",
+    "about_year": "سال",
+    "about_website": "ویب سائٹ",
+    
+    "error_no_files": "کوئی فائل نہیں",
+    "error_no_files_msg": "براہ کرم تبدیلی کے لیے فائلیں شامل کریں!",
+    "error_busy": "مصروف",
+    "error_busy_msg": "تبدیلی پہلے سے جاری ہے!",
+    
+    "success_conversion": "تبدیلی مکمل",
+    "success_conversion_msg": "{0}/{1} فائلیں کامیابی سے تبدیل ہو گئیں!",
+    
+    "confirm_clear": "فائلیں صاف کریں",
+    "confirm_clear_msg": "فہرست سے تمام فائلیں ہٹائیں؟",
+    "confirm_clear_history": "تاریخ صاف کریں",
+    "confirm_clear_history_msg": "تمام تاریخ کے اندراجات حذف کریں؟"
+}

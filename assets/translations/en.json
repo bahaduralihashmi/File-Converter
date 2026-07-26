@@ -1,0 +1,118 @@
+{
+    "app_name": "All Files Converter AI",
+    "app_version": "3.0.0",
+    
+    "menu_file": "File",
+    "menu_file_open": "Open Files",
+    "menu_file_open_folder": "Open Folder",
+    "menu_file_exit": "Exit",
+    
+    "menu_view": "View",
+    "menu_view_theme": "Toggle Theme",
+    "menu_view_dashboard": "Dashboard",
+    "menu_view_ai": "AI Assistant",
+    "menu_view_history": "History",
+    "menu_view_settings": "Settings",
+    
+    "menu_help": "Help",
+    "menu_help_about": "About",
+    
+    "sidebar_dashboard": "Dashboard",
+    "sidebar_ai": "AI Assistant",
+    "sidebar_history": "History",
+    "sidebar_settings": "Settings",
+    
+    "dashboard_title": "Dashboard",
+    "dashboard_stats_files": "Files Ready",
+    "dashboard_stats_conversions": "Today's Conversions",
+    "dashboard_stats_queue": "Queue",
+    "dashboard_stats_success": "Success Rate",
+    
+    "dashboard_drop_zone": "Drag & drop your files here or click to browse",
+    "dashboard_drop_zone_sub": "Supports 1000+ formats",
+    
+    "dashboard_file_list": "File List",
+    "dashboard_file_name": "File Name",
+    "dashboard_file_category": "Category",
+    "dashboard_file_size": "Size",
+    "dashboard_file_status": "Status",
+    
+    "dashboard_convert_to": "Convert to:",
+    "dashboard_convert": "Convert",
+    "dashboard_auto": "Auto",
+    "dashboard_clear": "Clear",
+    
+    "dashboard_categories": "Supported Categories",
+    
+    "ai_title": "AI Assistant",
+    "ai_quick_convert": "Convert to PDF",
+    "ai_quick_font": "Change Font",
+    "ai_quick_resize": "Resize Document",
+    "ai_quick_extract": "Extract Text",
+    "ai_input_placeholder": "Ask the AI assistant...",
+    "ai_send": "Send",
+    
+    "history_title": "Conversion History",
+    "history_file": "File",
+    "history_output": "Output",
+    "history_format": "Format",
+    "history_status": "Status",
+    "history_time": "Time",
+    "history_clear": "Clear All",
+    "history_stats": "Statistics",
+    "history_total": "Total",
+    "history_success": "Success",
+    "history_failed": "Failed",
+    "history_rate": "Rate",
+    
+    "settings_title": "Settings",
+    "settings_general": "General",
+    "settings_conversion": "Conversion",
+    "settings_ai": "AI",
+    "settings_voice": "Voice",
+    
+    "settings_theme": "Theme:",
+    "settings_language": "Language:",
+    "settings_output_folder": "Output Folder:",
+    "settings_browse": "Browse",
+    "settings_default_format": "Default Output Format:",
+    "settings_quality": "Quality:",
+    "settings_keep_original": "Keep original files",
+    "settings_auto_convert": "Enable auto-conversion",
+    
+    "settings_ai_provider": "Provider:",
+    "settings_ai_api_key": "API Key:",
+    "settings_voice_enabled": "Enable voice control",
+    "settings_voice_sensitivity": "Sensitivity:",
+    "settings_voice_language": "Language:",
+    
+    "settings_save": "Save Settings",
+    "settings_saved": "Settings saved successfully!",
+    "settings_error": "Failed to save settings",
+    
+    "voice_help": "Voice Commands Help",
+    "voice_command_convert": "Convert to PDF",
+    "voice_command_scan": "Scan document",
+    "voice_command_clear": "Clear files",
+    "voice_command_status": "Status",
+    "voice_command_help": "Help",
+    
+    "about_title": "About",
+    "about_version": "Version",
+    "about_author": "Author",
+    "about_year": "Year",
+    "about_website": "Website",
+    
+    "error_no_files": "No Files",
+    "error_no_files_msg": "Please add files to convert!",
+    "error_busy": "Busy",
+    "error_busy_msg": "Conversion already in progress!",
+    
+    "success_conversion": "Conversion Complete",
+    "success_conversion_msg": "Converted {0}/{1} files successfully!",
+    
+    "confirm_clear": "Clear Files",
+    "confirm_clear_msg": "Remove all files from the list?",
+    "confirm_clear_history": "Clear History",
+    "confirm_clear_history_msg": "Delete all history entries?"
+}

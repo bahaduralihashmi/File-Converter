@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Files Converter AI - Premium Edition</title>
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>All Files Converter AI · Premium</title>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    
+
     <style>
-        /* ============================================================
-           CSS VARIABLES
-           ============================================================ */
+        /* ----- RESET & VARIABLES ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
             --primary: #6C63FF;
             --primary-dark: #5A52D5;
@@ -24,171 +28,169 @@
             --bg-dark: #0A0A1A;
             --bg-card: rgba(255, 255, 255, 0.04);
             --text-primary: #FFFFFF;
-            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-secondary: rgba(255, 255, 255, 0.72);
             --text-muted: rgba(255, 255, 255, 0.4);
             --border-glass: rgba(255, 255, 255, 0.08);
             --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
             --radius: 16px;
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+
         html {
             scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background: var(--bg-dark);
             color: var(--text-primary);
-            overflow-x: hidden;
             line-height: 1.6;
+            overflow-x: hidden;
         }
-        
-        /* ============================================================
-           SCROLLBAR
-           ============================================================ */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--bg-dark); }
-        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
-        
-        /* ============================================================
-           ANIMATED BACKGROUND
-           ============================================================ */
+
+        /* ----- SCROLLBAR ----- */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 6px;
+        }
+
+        /* ----- ANIMATED BACKGROUND (refined) ----- */
         .bg-animation {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             z-index: 0;
-            overflow: hidden;
             pointer-events: none;
+            overflow: hidden;
         }
-        
+
         .bg-animation .orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.3;
-            animation: orbFloat 20s ease-in-out infinite;
+            filter: blur(90px);
+            opacity: 0.22;
+            animation: orbFloat 24s ease-in-out infinite alternate;
         }
-        
+
         .bg-animation .orb:nth-child(1) {
-            width: 600px;
-            height: 600px;
+            width: 650px;
+            height: 650px;
             background: var(--primary);
-            top: -200px;
-            right: -200px;
-            animation-delay: 0s;
+            top: -15%;
+            right: -10%;
+            animation-delay: -2s;
         }
-        
+
         .bg-animation .orb:nth-child(2) {
             width: 500px;
             height: 500px;
             background: var(--secondary);
-            bottom: -150px;
-            left: -150px;
-            animation-delay: -7s;
+            bottom: -15%;
+            left: -10%;
+            animation-delay: -10s;
         }
-        
+
         .bg-animation .orb:nth-child(3) {
-            width: 400px;
-            height: 400px;
+            width: 380px;
+            height: 380px;
             background: var(--accent);
-            top: 50%;
-            left: 50%;
+            top: 45%;
+            left: 45%;
             transform: translate(-50%, -50%);
-            animation-delay: -14s;
+            animation-delay: -18s;
         }
-        
+
         @keyframes orbFloat {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -30px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.9); }
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            100% {
+                transform: translate(40px, -30px) scale(1.12);
+            }
         }
-        
-        /* ============================================================
-           GLASSMORPHISM UTILITY
-           ============================================================ */
+
+        /* ----- GLASS & CONTAINER ----- */
         .glass {
             background: var(--bg-card);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
             border: 1px solid var(--border-glass);
             border-radius: var(--radius);
             box-shadow: var(--shadow-glass);
         }
-        
+
         .container {
-            max-width: 1200px;
+            max-width: 1240px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 28px;
             position: relative;
             z-index: 1;
         }
-        
-        /* ============================================================
-           NAVIGATION - FIXED
-           ============================================================ */
+
+        /* ----- FIXED NAVIGATION (more refined) ----- */
         .nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 16px 0;
-            background: rgba(10, 10, 26, 0.8);
-            backdrop-filter: blur(20px);
+            padding: 14px 0;
+            background: rgba(10, 10, 26, 0.72);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
             border-bottom: 1px solid var(--border-glass);
             transition: var(--transition);
         }
-        
+
         .nav.scrolled {
-            background: rgba(10, 10, 26, 0.95);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(10, 10, 26, 0.92);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
         }
-        
+
         .nav .container {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-        
+
         .nav .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             font-size: 20px;
             font-weight: 800;
             color: white;
             text-decoration: none;
             cursor: pointer;
+            letter-spacing: -0.3px;
         }
-        
+
         .nav .logo-icon {
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             background: var(--gradient-1);
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 17px;
             color: white;
+            flex-shrink: 0;
         }
-        
+
         .nav .nav-links {
             display: flex;
             align-items: center;
-            gap: 32px;
+            gap: 28px;
             list-style: none;
         }
-        
+
         .nav .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
@@ -197,50 +199,49 @@
             transition: var(--transition);
             position: relative;
             cursor: pointer;
+            padding: 4px 0;
         }
-        
+
         .nav .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: -2px;
             left: 0;
             width: 0;
             height: 2px;
             background: var(--gradient-1);
             transition: var(--transition);
+            border-radius: 4px;
         }
-        
-        .nav .nav-links a:hover {
-            color: white;
-        }
-        .nav .nav-links a:hover::after {
-            width: 100%;
-        }
-        
+
+        .nav .nav-links a:hover,
         .nav .nav-links a.active {
             color: white;
         }
+        .nav .nav-links a:hover::after,
         .nav .nav-links a.active::after {
             width: 100%;
         }
-        
+
         .nav .nav-cta {
-            padding: 10px 24px;
+            padding: 8px 22px;
             background: var(--gradient-1);
             border-radius: 50px;
             color: white !important;
             font-weight: 600;
             font-size: 13px !important;
             transition: var(--transition);
+            box-shadow: 0 4px 16px rgba(108, 99, 255, 0.25);
         }
+
         .nav .nav-cta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(108, 99, 255, 0.4);
+            box-shadow: 0 8px 28px rgba(108, 99, 255, 0.4);
         }
         .nav .nav-cta::after {
             display: none !important;
         }
-        
+
         .nav-toggle {
             display: none;
             background: none;
@@ -248,22 +249,21 @@
             color: white;
             font-size: 24px;
             cursor: pointer;
+            padding: 4px 6px;
         }
-        
-        /* ============================================================
-           PAGE INDICATOR
-           ============================================================ */
+
+        /* ----- PAGE INDICATOR (desktop only) ----- */
         .page-indicator {
             position: fixed;
-            right: 24px;
+            right: 22px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 999;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
-        
+
         .page-indicator .dot {
             width: 10px;
             height: 10px;
@@ -273,21 +273,19 @@
             cursor: pointer;
             border: 2px solid transparent;
         }
-        
+
         .page-indicator .dot.active {
             background: var(--primary);
-            border-color: rgba(108, 99, 255, 0.4);
-            box-shadow: 0 0 20px rgba(108, 99, 255, 0.3);
-            transform: scale(1.3);
+            border-color: rgba(108, 99, 255, 0.3);
+            box-shadow: 0 0 20px rgba(108, 99, 255, 0.25);
+            transform: scale(1.35);
         }
-        
+
         .page-indicator .dot:hover {
             background: var(--primary);
         }
-        
-        /* ============================================================
-           SECTIONS - PAGES
-           ============================================================ */
+
+        /* ----- PAGES (sections) ----- */
         .page {
             min-height: 100vh;
             display: flex;
@@ -295,62 +293,71 @@
             padding: 100px 0 60px;
             position: relative;
         }
-        
+
         .page:last-child {
             min-height: auto;
-            padding-bottom: 80px;
+            padding-bottom: 70px;
         }
-        
-        /* ============================================================
-           HERO PAGE
-           ============================================================ */
-        .hero-page .hero-badge {
-            display: inline-block;
-            padding: 6px 16px;
-            background: rgba(108, 99, 255, 0.15);
+
+        /* ----- HERO ----- */
+        .hero-page .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            background: rgba(108, 99, 255, 0.14);
             border-radius: 50px;
             font-size: 12px;
             font-weight: 600;
             color: var(--primary);
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
             text-transform: uppercase;
-            border: 1px solid rgba(108, 99, 255, 0.2);
+            border: 1px solid rgba(108, 99, 255, 0.15);
         }
-        
+
         .hero-page h1 {
-            font-size: clamp(48px, 6vw, 80px);
+            font-size: clamp(40px, 5.8vw, 76px);
             font-weight: 900;
             line-height: 1.05;
-            margin-top: 20px;
+            margin-top: 18px;
+            letter-spacing: -1px;
         }
-        
+
         .hero-page h1 .gradient-text {
             background: var(--gradient-1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .hero-page p {
-            font-size: 18px;
+            font-size: 17px;
             color: var(--text-secondary);
             max-width: 520px;
-            margin-top: 20px;
+            margin-top: 18px;
             line-height: 1.8;
         }
-        
+
         .hero-page .hero-actions {
             display: flex;
             flex-wrap: wrap;
-            gap: 16px;
-            margin-top: 32px;
+            gap: 14px;
+            margin-top: 30px;
         }
-        
+
         .btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
-            padding: 14px 32px;
+            padding: 13px 32px;
             border-radius: 50px;
             font-weight: 600;
             font-size: 15px;
@@ -359,84 +366,87 @@
             border: none;
             text-decoration: none;
             font-family: 'Inter', sans-serif;
+            line-height: 1.4;
         }
-        
+
         .btn-primary {
             background: var(--gradient-1);
             color: white;
-            box-shadow: 0 8px 30px rgba(108, 99, 255, 0.35);
+            box-shadow: 0 8px 28px rgba(108, 99, 255, 0.3);
         }
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(108, 99, 255, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 14px 40px rgba(108, 99, 255, 0.45);
         }
-        
+
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.05);
             color: white;
             border: 1px solid var(--border-glass);
         }
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.12);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
-        
+
         .btn-download {
             background: var(--gradient-2);
             color: white;
-            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.35);
+            box-shadow: 0 8px 28px rgba(255, 107, 107, 0.3);
         }
         .btn-download:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(255, 107, 107, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 14px 40px rgba(255, 107, 107, 0.45);
         }
-        
-        .hero-page .hero-stats {
+
+        .hero-stats {
             display: flex;
             gap: 48px;
-            margin-top: 48px;
-            padding-top: 32px;
+            margin-top: 44px;
+            padding-top: 30px;
             border-top: 1px solid var(--border-glass);
         }
-        
-        .hero-page .hero-stats .stat h3 {
+
+        .hero-stats .stat h3 {
             font-size: 28px;
             font-weight: 800;
             background: var(--gradient-1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
-        .hero-page .hero-stats .stat p {
+
+        .hero-stats .stat p {
             font-size: 13px;
             color: var(--text-muted);
             margin-top: 2px;
         }
-        
-        /* Hero Mockup */
+
+        /* ----- MOCKUP (refined) ----- */
         .hero-mockup {
             background: var(--bg-card);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
             border: 1px solid var(--border-glass);
             border-radius: var(--radius);
-            padding: 24px;
+            padding: 22px 24px 24px;
             box-shadow: var(--shadow-glass);
             transition: var(--transition);
         }
-        
+
         .hero-mockup:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
         }
-        
+
         .mockup-header {
             display: flex;
             align-items: center;
             gap: 12px;
-            padding-bottom: 16px;
+            padding-bottom: 14px;
             border-bottom: 1px solid var(--border-glass);
         }
-        
+
         .mockup-dots {
             display: flex;
             gap: 6px;
@@ -447,68 +457,107 @@
             border-radius: 50%;
             display: block;
         }
-        .mockup-dots span:nth-child(1) { background: #FF5F56; }
-        .mockup-dots span:nth-child(2) { background: #FFBD2E; }
-        .mockup-dots span:nth-child(3) { background: #27C93F; }
-        
+        .mockup-dots span:nth-child(1) {
+            background: #FF5F56;
+        }
+        .mockup-dots span:nth-child(2) {
+            background: #FFBD2E;
+        }
+        .mockup-dots span:nth-child(3) {
+            background: #27C93F;
+        }
+
         .mockup-title {
             font-size: 13px;
             color: var(--text-secondary);
             font-weight: 500;
+            letter-spacing: 0.2px;
         }
-        
+
         .mockup-body {
-            padding-top: 16px;
+            padding-top: 14px;
         }
-        
+
         .mockup-row {
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 10px 14px;
-            background: rgba(255, 255, 255, 0.03);
+            padding: 9px 14px;
+            background: rgba(255, 255, 255, 0.02);
             border-radius: 8px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             transition: var(--transition);
         }
-        
+
         .mockup-row:hover {
             background: rgba(255, 255, 255, 0.06);
         }
-        
+
         .mockup-row .icon {
             width: 32px;
             height: 32px;
-            border-radius: 6px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 14px;
             flex-shrink: 0;
         }
-        .mockup-row .icon.purple { background: rgba(108, 99, 255, 0.2); color: var(--primary); }
-        .mockup-row .icon.green { background: rgba(56, 161, 105, 0.2); color: #38A169; }
-        .mockup-row .icon.orange { background: rgba(214, 158, 46, 0.2); color: #D69E2E; }
-        .mockup-row .icon.red { background: rgba(225, 62, 62, 0.2); color: #E53E3E; }
-        
-        .mockup-row .info { flex: 1; }
-        .mockup-row .info .name { font-size: 13px; font-weight: 500; }
-        .mockup-row .info .size { font-size: 11px; color: var(--text-muted); }
-        
+        .mockup-row .icon.purple {
+            background: rgba(108, 99, 255, 0.2);
+            color: var(--primary);
+        }
+        .mockup-row .icon.green {
+            background: rgba(56, 161, 105, 0.2);
+            color: #38A169;
+        }
+        .mockup-row .icon.orange {
+            background: rgba(214, 158, 46, 0.2);
+            color: #D69E2E;
+        }
+        .mockup-row .icon.red {
+            background: rgba(225, 62, 62, 0.2);
+            color: #E53E3E;
+        }
+
+        .mockup-row .info {
+            flex: 1;
+        }
+        .mockup-row .info .name {
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .mockup-row .info .size {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
         .mockup-row .status {
             font-size: 11px;
             font-weight: 500;
             padding: 2px 12px;
             border-radius: 50px;
         }
-        .mockup-row .status.done { background: rgba(56, 161, 105, 0.15); color: #38A169; }
-        .mockup-row .status.converting { background: rgba(214, 158, 46, 0.15); color: #D69E2E; }
-        .mockup-row .status.queued { background: rgba(108, 99, 255, 0.15); color: var(--primary); }
-        .mockup-row .status.error { background: rgba(225, 62, 62, 0.15); color: #E53E3E; }
-        
+        .mockup-row .status.done {
+            background: rgba(56, 161, 105, 0.15);
+            color: #38A169;
+        }
+        .mockup-row .status.converting {
+            background: rgba(214, 158, 46, 0.15);
+            color: #D69E2E;
+        }
+        .mockup-row .status.queued {
+            background: rgba(108, 99, 255, 0.15);
+            color: var(--primary);
+        }
+        .mockup-row .status.error {
+            background: rgba(225, 62, 62, 0.15);
+            color: #E53E3E;
+        }
+
         .mockup-btn {
             width: 100%;
-            padding: 12px;
+            padding: 11px;
             text-align: center;
             background: var(--gradient-1);
             color: white;
@@ -517,232 +566,227 @@
             font-weight: 600;
             font-size: 14px;
             cursor: pointer;
-            margin-top: 8px;
+            margin-top: 10px;
             transition: var(--transition);
+            box-shadow: 0 4px 16px rgba(108, 99, 255, 0.2);
         }
         .mockup-btn:hover {
-            opacity: 0.9;
+            opacity: 0.92;
             transform: scale(1.01);
         }
-        
-        /* ============================================================
-           FEATURES PAGE
-           ============================================================ */
+
+        /* ----- SECTION HEADERS ----- */
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-header .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 18px;
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(108, 99, 255, 0.12);
+        }
+
+        .section-header h2 {
+            font-size: clamp(30px, 3.8vw, 46px);
+            font-weight: 800;
+            margin-top: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header h2 span {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 10px auto 0;
+        }
+
+        /* ----- FEATURES ----- */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
             gap: 24px;
-            margin-top: 48px;
+            margin-top: 10px;
         }
-        
+
         .feature-card {
             background: var(--bg-card);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border: 1px solid var(--border-glass);
             border-radius: var(--radius);
-            padding: 32px 28px;
+            padding: 30px 26px;
             transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
         }
-        
+
+        .feature-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .feature-card:hover {
             transform: translateY(-6px);
-            border-color: rgba(108, 99, 255, 0.3);
+            border-color: rgba(108, 99, 255, 0.25);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
-        
+
         .feature-card .icon {
             width: 48px;
             height: 48px;
-            border-radius: 12px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 22px;
             margin-bottom: 16px;
         }
-        .feature-card .icon.purple { background: rgba(108, 99, 255, 0.15); color: var(--primary); }
-        .feature-card .icon.blue { background: rgba(58, 123, 213, 0.15); color: #3A7BD5; }
-        .feature-card .icon.green { background: rgba(56, 161, 105, 0.15); color: #38A169; }
-        .feature-card .icon.orange { background: rgba(214, 158, 46, 0.15); color: #D69E2E; }
-        .feature-card .icon.red { background: rgba(225, 62, 62, 0.15); color: #E53E3E; }
-        .feature-card .icon.teal { background: rgba(49, 151, 149, 0.15); color: #319795; }
-        
+        .feature-card .icon.purple {
+            background: rgba(108, 99, 255, 0.15);
+            color: var(--primary);
+        }
+        .feature-card .icon.blue {
+            background: rgba(58, 123, 213, 0.15);
+            color: #3A7BD5;
+        }
+        .feature-card .icon.green {
+            background: rgba(56, 161, 105, 0.15);
+            color: #38A169;
+        }
+        .feature-card .icon.orange {
+            background: rgba(214, 158, 46, 0.15);
+            color: #D69E2E;
+        }
+        .feature-card .icon.red {
+            background: rgba(225, 62, 62, 0.15);
+            color: #E53E3E;
+        }
+        .feature-card .icon.teal {
+            background: rgba(49, 151, 149, 0.15);
+            color: #319795;
+        }
+
         .feature-card h3 {
             font-size: 18px;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
-        
+
         .feature-card p {
             font-size: 14px;
             color: var(--text-secondary);
             line-height: 1.7;
         }
-        
-        /* ============================================================
-           FORMATS PAGE - DYNAMIC MOTION
-           ============================================================ */
+
+        /* ----- FORMATS (grid with motion) ----- */
         .formats-wrapper {
-            margin-top: 48px;
+            margin-top: 20px;
             position: relative;
-            overflow: hidden;
         }
-        
+
         .formats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
             gap: 14px;
         }
-        
-        .format-item {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-glass);
-            border-radius: 12px;
-            padding: 18px 12px;
-            text-align: center;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--text-secondary);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: default;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        /* Animated gradient border on hover */
-        .format-item::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: var(--gradient-1);
-            border-radius: 14px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        
-        .format-item:hover::before {
-            opacity: 1;
-        }
-        
-        .format-item:hover {
-            transform: translateY(-6px) scale(1.02);
-            border-color: transparent;
-            color: white;
-            box-shadow: 0 12px 40px rgba(108, 99, 255, 0.25);
-        }
-        
-        .format-item .emoji {
-            font-size: 28px;
-            display: block;
-            margin-bottom: 6px;
-            transition: transform 0.5s ease;
-        }
-        
-        .format-item:hover .emoji {
-            transform: scale(1.2) rotate(-5deg);
-        }
-        
-        /* Scroll-triggered animation */
-        .format-item {
-            opacity: 0;
-            transform: translateY(40px) scale(0.9);
-        }
-        
-        .format-item.visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-        
-        .format-item:nth-child(1) { transition-delay: 0.02s; }
-        .format-item:nth-child(2) { transition-delay: 0.04s; }
-        .format-item:nth-child(3) { transition-delay: 0.06s; }
-        .format-item:nth-child(4) { transition-delay: 0.08s; }
-        .format-item:nth-child(5) { transition-delay: 0.10s; }
-        .format-item:nth-child(6) { transition-delay: 0.12s; }
-        .format-item:nth-child(7) { transition-delay: 0.14s; }
-        .format-item:nth-child(8) { transition-delay: 0.16s; }
-        .format-item:nth-child(9) { transition-delay: 0.18s; }
-        .format-item:nth-child(10) { transition-delay: 0.20s; }
-        .format-item:nth-child(11) { transition-delay: 0.22s; }
-        .format-item:nth-child(12) { transition-delay: 0.24s; }
-        .format-item:nth-child(13) { transition-delay: 0.26s; }
-        .format-item:nth-child(14) { transition-delay: 0.28s; }
-        .format-item:nth-child(15) { transition-delay: 0.30s; }
-        .format-item:nth-child(16) { transition-delay: 0.32s; }
-        .format-item:nth-child(17) { transition-delay: 0.34s; }
-        .format-item:nth-child(18) { transition-delay: 0.36s; }
-        .format-item:nth-child(19) { transition-delay: 0.38s; }
-        .format-item:nth-child(20) { transition-delay: 0.40s; }
-        .format-item:nth-child(21) { transition-delay: 0.42s; }
-        .format-item:nth-child(22) { transition-delay: 0.44s; }
-        .format-item:nth-child(23) { transition-delay: 0.46s; }
-        .format-item:nth-child(24) { transition-delay: 0.48s; }
-        .format-item:nth-child(25) { transition-delay: 0.50s; }
-        .format-item:nth-child(26) { transition-delay: 0.52s; }
-        .format-item:nth-child(27) { transition-delay: 0.54s; }
-        .format-item:nth-child(28) { transition-delay: 0.56s; }
-        .format-item:nth-child(29) { transition-delay: 0.58s; }
-        .format-item:nth-child(30) { transition-delay: 0.60s; }
-        .format-item:nth-child(31) { transition-delay: 0.62s; }
-        .format-item:nth-child(32) { transition-delay: 0.64s; }
-        .format-item:nth-child(33) { transition-delay: 0.66s; }
-        .format-item:nth-child(34) { transition-delay: 0.68s; }
-        .format-item:nth-child(35) { transition-delay: 0.70s; }
-        .format-item:nth-child(36) { transition-delay: 0.72s; }
-        .format-item:nth-child(37) { transition-delay: 0.74s; }
-        .format-item:nth-child(38) { transition-delay: 0.76s; }
-        .format-item:nth-child(39) { transition-delay: 0.78s; }
-        .format-item:nth-child(40) { transition-delay: 0.80s; }
-        .format-item:nth-child(41) { transition-delay: 0.82s; }
-        .format-item:nth-child(42) { transition-delay: 0.84s; }
-        .format-item:nth-child(43) { transition-delay: 0.86s; }
-        .format-item:nth-child(44) { transition-delay: 0.88s; }
-        .format-item:nth-child(45) { transition-delay: 0.90s; }
-        .format-item:nth-child(46) { transition-delay: 0.92s; }
-        .format-item:nth-child(47) { transition-delay: 0.94s; }
-        .format-item:nth-child(48) { transition-delay: 0.96s; }
-        .format-item:nth-child(49) { transition-delay: 0.98s; }
-        .format-item:nth-child(50) { transition-delay: 1.00s; }
-        .format-item:nth-child(51) { transition-delay: 1.02s; }
-        .format-item:nth-child(52) { transition-delay: 1.04s; }
-        .format-item:nth-child(53) { transition-delay: 1.06s; }
-        .format-item:nth-child(54) { transition-delay: 1.08s; }
-        .format-item:nth-child(55) { transition-delay: 1.10s; }
-        .format-item:nth-child(56) { transition-delay: 1.12s; }
-        .format-item:nth-child(57) { transition-delay: 1.14s; }
-        .format-item:nth-child(58) { transition-delay: 1.16s; }
-        .format-item:nth-child(59) { transition-delay: 1.18s; }
-        .format-item:nth-child(60) { transition-delay: 1.20s; }
-        
-        /* Category labels */
+
         .format-category {
             grid-column: 1 / -1;
             font-size: 14px;
             font-weight: 700;
             color: var(--text-primary);
-            padding: 16px 0 8px;
+            padding: 16px 0 6px;
             border-bottom: 1px solid var(--border-glass);
-            margin-bottom: 8px;
+            margin-bottom: 4px;
+            letter-spacing: 0.3px;
         }
-        
-        /* ============================================================
-           TEAM PAGE
-           ============================================================ */
+
+        .format-item {
+            background: var(--bg-card);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            padding: 18px 10px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px) scale(0.96);
+        }
+
+        .format-item.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .format-item::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: var(--gradient-1);
+            border-radius: 14px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .format-item:hover::before {
+            opacity: 1;
+        }
+
+        .format-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: transparent;
+            color: white;
+            box-shadow: 0 12px 40px rgba(108, 99, 255, 0.2);
+        }
+
+        .format-item .emoji {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 6px;
+            transition: transform 0.4s ease;
+        }
+
+        .format-item:hover .emoji {
+            transform: scale(1.15) rotate(-4deg);
+        }
+
+        /* ----- TEAM ----- */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            margin-top: 48px;
+            margin-top: 20px;
         }
-        
+
         .team-card {
             background: var(--bg-card);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border: 1px solid var(--border-glass);
             border-radius: var(--radius);
             padding: 32px 24px;
@@ -751,23 +795,23 @@
             opacity: 0;
             transform: translateY(30px);
         }
-        
+
         .team-card.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         .team-card:hover {
             transform: translateY(-6px);
-            border-color: rgba(108, 99, 255, 0.3);
+            border-color: rgba(108, 99, 255, 0.25);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
-        
+
         .team-card .avatar {
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            margin: 0 auto 16px;
+            margin: 0 auto 14px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -775,35 +819,40 @@
             font-weight: 700;
             color: white;
         }
-        
-        .team-card .avatar.sheza { background: var(--gradient-1); }
-        .team-card .avatar.fatima { background: var(--gradient-2); }
-        .team-card .avatar.aiman { background: var(--gradient-3); }
-        
+        .team-card .avatar.sheza {
+            background: var(--gradient-1);
+        }
+        .team-card .avatar.fatima {
+            background: var(--gradient-2);
+        }
+        .team-card .avatar.aiman {
+            background: var(--gradient-3);
+        }
+
         .team-card h4 {
             font-size: 18px;
             font-weight: 700;
         }
-        
+
         .team-card .role {
             font-size: 13px;
             color: var(--text-secondary);
-            margin-top: 4px;
+            margin-top: 2px;
         }
-        
+
         .team-card .university {
             font-size: 12px;
             color: var(--text-muted);
-            margin-top: 8px;
+            margin-top: 6px;
         }
-        
+
         .team-card .social-links {
             display: flex;
             justify-content: center;
             gap: 12px;
             margin-top: 16px;
         }
-        
+
         .team-card .social-links a {
             width: 36px;
             height: 36px;
@@ -811,156 +860,133 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.03);
             color: var(--text-secondary);
             transition: var(--transition);
             border: 1px solid var(--border-glass);
             text-decoration: none;
+            font-size: 15px;
         }
-        
+
         .team-card .social-links a:hover {
             background: var(--primary);
             color: white;
             border-color: var(--primary);
+            transform: translateY(-2px);
         }
-        
-        /* ============================================================
-           DOWNLOAD PAGE
-           ============================================================ */
+
+        /* ----- DOWNLOAD PAGE ----- */
         .download-page {
             text-align: center;
         }
-        
-        .download-page .download-badges {
+
+        .download-page .btn-download {
+            font-size: 18px;
+            padding: 16px 44px;
+            margin-top: 8px;
+        }
+
+        .download-badges {
             display: flex;
             justify-content: center;
-            gap: 16px;
             flex-wrap: wrap;
+            gap: 14px;
             margin-top: 32px;
         }
-        
-        .download-page .download-badges .badge {
-            padding: 10px 24px;
+
+        .download-badges .badge {
+            padding: 8px 22px;
             background: var(--bg-card);
             border: 1px solid var(--border-glass);
             border-radius: 50px;
-            font-size: 14px;
-            display: flex;
+            font-size: 13px;
+            display: inline-flex;
             align-items: center;
-            gap: 10px;
-            backdrop-filter: blur(10px);
+            gap: 8px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
-        
-        .download-page .version-info {
-            margin-top: 40px;
+
+        .version-info {
+            margin-top: 36px;
             color: var(--text-muted);
             font-size: 14px;
         }
-        
-        /* ============================================================
-           FOOTER
-           ============================================================ */
+
+        .version-info p {
+            margin-top: 2px;
+        }
+
+        /* ----- FOOTER ----- */
         .footer {
-            padding: 40px 0;
+            padding: 40px 0 30px;
             border-top: 1px solid var(--border-glass);
             text-align: center;
             color: var(--text-muted);
             font-size: 14px;
-            margin-top: 40px;
+            margin-top: 20px;
         }
-        
+
         .footer a {
             color: var(--text-secondary);
             text-decoration: none;
             transition: var(--transition);
+            cursor: pointer;
         }
         .footer a:hover {
             color: white;
         }
-        
+
         .footer .footer-links {
             display: flex;
             justify-content: center;
-            gap: 24px;
+            gap: 28px;
             flex-wrap: wrap;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
-        
-        /* ============================================================
-           SECTION HEADERS
-           ============================================================ */
-        .section-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-        
-        .section-header .badge {
-            display: inline-block;
-            padding: 4px 16px;
-            background: rgba(108, 99, 255, 0.12);
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border: 1px solid rgba(108, 99, 255, 0.15);
-        }
-        
-        .section-header h2 {
-            font-size: clamp(32px, 4vw, 48px);
-            font-weight: 800;
-            margin-top: 12px;
-        }
-        
-        .section-header h2 span {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .section-header p {
-            font-size: 18px;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 12px auto 0;
-        }
-        
+
         /* ============================================================
            RESPONSIVE
            ============================================================ */
+        @media (max-width: 1024px) {
+            .hero-page .container {
+                gap: 40px;
+            }
+            .hero-page h1 {
+                font-size: clamp(34px, 5vw, 56px);
+            }
+        }
+
         @media (max-width: 992px) {
             .hero-page .container {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-            
+
             .hero-page p {
-                margin: 20px auto 0;
+                margin: 18px auto 0;
             }
-            
             .hero-page .hero-actions {
                 justify-content: center;
             }
-            
             .hero-page .hero-stats {
                 justify-content: center;
             }
-            
+
             .hero-mockup {
-                max-width: 500px;
+                max-width: 520px;
                 margin: 0 auto;
             }
-            
+
             .page-indicator {
                 display: none;
             }
-            
+
             .formats-grid {
-                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
             }
         }
-        
+
         @media (max-width: 768px) {
             .nav .nav-links {
                 display: none;
@@ -968,118 +994,113 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: rgba(10, 10, 26, 0.98);
-                padding: 24px;
+                background: rgba(10, 10, 26, 0.96);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                padding: 24px 28px;
                 flex-direction: column;
-                gap: 16px;
+                gap: 14px;
                 border-bottom: 1px solid var(--border-glass);
             }
-            
+
             .nav .nav-links.open {
                 display: flex;
             }
-            
+
             .nav-toggle {
                 display: block;
             }
-            
+
             .hero-page .hero-stats {
                 flex-direction: column;
-                gap: 16px;
+                gap: 14px;
                 align-items: center;
             }
-            
+
             .features-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .formats-grid {
-                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
                 gap: 10px;
             }
-            
             .format-item {
-                padding: 12px 8px;
-                font-size: 11px;
+                padding: 14px 6px;
+                font-size: 12px;
             }
-            
             .format-item .emoji {
-                font-size: 22px;
+                font-size: 24px;
             }
-            
+
             .team-grid {
                 grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
             }
-            
+
             .page {
                 padding: 80px 0 40px;
             }
+
+            .download-page .btn-download {
+                width: 100%;
+                max-width: 360px;
+                font-size: 16px;
+                padding: 14px 24px;
+            }
         }
-        
+
         @media (max-width: 480px) {
             .hero-page h1 {
-                font-size: 32px;
+                font-size: 30px;
             }
-            
             .hero-page .hero-actions .btn {
                 width: 100%;
                 justify-content: center;
             }
-            
             .formats-grid {
-                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(74px, 1fr));
                 gap: 8px;
             }
-            
             .format-item {
-                padding: 10px 6px;
-                font-size: 10px;
+                padding: 12px 4px;
+                font-size: 11px;
             }
-            
             .format-item .emoji {
-                font-size: 18px;
+                font-size: 20px;
+            }
+            .container {
+                padding: 0 16px;
+            }
+            .hero-mockup {
+                padding: 16px;
             }
         }
-        
-        /* ============================================================
-           GRID LAYOUT FOR HERO
-           ============================================================ */
-        .hero-page .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+
+        /* Utility for scroll animations */
+        .hidden-init {
+            opacity: 0;
+            transform: translateY(30px);
         }
-        
-        /* ============================================================
-           SCROLL ANIMATION HELPERS
-           ============================================================ */
-        .hidden {
-            opacity: 0 !important;
-            transform: translateY(30px) !important;
-        }
-        
-        .visible {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
+        .visible-init {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 
 <body>
-    
-    <!-- ============================================================
-    ANIMATED BACKGROUND
-    ============================================================ -->
+
+    <!-- BACKGROUND -->
     <div class="bg-animation">
         <div class="orb"></div>
         <div class="orb"></div>
         <div class="orb"></div>
     </div>
-    
-    <!-- ============================================================
-    PAGE INDICATOR
-    ============================================================ -->
+
+    <!-- PAGE INDICATOR (desktop) -->
     <nav class="page-indicator" id="pageIndicator">
         <a class="dot active" data-page="home" title="Home"></a>
         <a class="dot" data-page="features" title="Features"></a>
@@ -1087,17 +1108,15 @@
         <a class="dot" data-page="team" title="Team"></a>
         <a class="dot" data-page="download" title="Download"></a>
     </nav>
-    
-    <!-- ============================================================
-    NAVIGATION - FIXED
-    ============================================================ -->
+
+    <!-- NAVIGATION -->
     <nav class="nav" id="nav">
         <div class="container">
             <a class="logo" data-page="home">
                 <span class="logo-icon"><i class="fas fa-arrows-spin"></i></span>
-                <span>All Files Converter AI</span>
+                <span>Converter AI</span>
             </a>
-            
+
             <ul class="nav-links" id="navLinks">
                 <li><a class="active" data-page="home">Home</a></li>
                 <li><a data-page="features">Features</a></li>
@@ -1105,16 +1124,14 @@
                 <li><a data-page="team">Team</a></li>
                 <li><a data-page="download" class="nav-cta">Download</a></li>
             </ul>
-            
+
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </nav>
-    
-    <!-- ============================================================
-    PAGE 1: HOME / HERO
-    ============================================================ -->
+
+    <!-- ===== PAGE 1: HERO ===== -->
     <section class="page hero-page" id="home">
         <div class="container">
             <div class="hero-content">
@@ -1124,11 +1141,10 @@
                     <span class="gradient-text">Anywhere.</span>
                 </h1>
                 <p>
-                    All Files Converter AI is a powerful, AI-driven file conversion tool 
-                    supporting <strong>1000+ formats</strong>. Built with ❤️ by students of 
-                    <strong style="color:white;">Riphah International University</strong>.
+                    All Files Converter AI is a powerful, AI-driven tool supporting <strong>1000+ formats</strong>.
+                    Built with ❤️ by students of <strong style="color:white;">Riphah International University</strong>.
                 </p>
-                
+
                 <div class="hero-actions">
                     <a class="btn btn-download" data-page="download">
                         <i class="fas fa-download"></i> Download Now
@@ -1137,7 +1153,7 @@
                         <i class="fas fa-arrow-right"></i> Explore Features
                     </a>
                 </div>
-                
+
                 <div class="hero-stats">
                     <div class="stat">
                         <h3>104+</h3>
@@ -1153,7 +1169,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="hero-mockup">
                 <div class="mockup-header">
                     <div class="mockup-dots">
@@ -1201,10 +1217,8 @@
             </div>
         </div>
     </section>
-    
-    <!-- ============================================================
-    PAGE 2: FEATURES
-    ============================================================ -->
+
+    <!-- ===== PAGE 2: FEATURES ===== -->
     <section class="page" id="features">
         <div class="container">
             <div class="section-header">
@@ -1212,38 +1226,33 @@
                 <h2>Why Choose <span>All Files Converter AI</span></h2>
                 <p>Designed with modern UX principles, our tool makes file conversion effortless for everyone.</p>
             </div>
-            
-            <div class="features-grid">
+
+            <div class="features-grid" id="featuresGrid">
                 <div class="feature-card">
                     <div class="icon purple"><i class="fas fa-file-export"></i></div>
                     <h3>1000+ Formats</h3>
                     <p>Convert between documents, images, audio, video, archives, e-books, and spreadsheets with ease.</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="icon blue"><i class="fas fa-robot"></i></div>
                     <h3>AI Assistant</h3>
                     <p>Get intelligent help with conversions. The built-in AI assistant guides you through every step.</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="icon green"><i class="fas fa-microphone"></i></div>
                     <h3>Voice Commands</h3>
                     <p>Hands-free operation with speech recognition. Just speak to convert your files.</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="icon orange"><i class="fas fa-camera"></i></div>
                     <h3>Camera Scanner</h3>
                     <p>Scan documents directly from your webcam. Perfect for digitizing physical papers.</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="icon red"><i class="fas fa-palette"></i></div>
                     <h3>7 Professional Themes</h3>
                     <p>Customize your experience with dark mode, professional blue, elegant plum, and more.</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="icon teal"><i class="fas fa-layer-group"></i></div>
                     <h3>Batch Processing</h3>
@@ -1252,10 +1261,8 @@
             </div>
         </div>
     </section>
-    
-    <!-- ============================================================
-    PAGE 3: FORMATS - DYNAMIC MOTION
-    ============================================================ -->
+
+    <!-- ===== PAGE 3: FORMATS ===== -->
     <section class="page" id="formats">
         <div class="container">
             <div class="section-header">
@@ -1263,7 +1270,7 @@
                 <h2>Supported <span>File Formats</span></h2>
                 <p>Over 104 formats across 7 categories. All your conversion needs in one place.</p>
             </div>
-            
+
             <div class="formats-wrapper">
                 <div class="formats-grid" id="formatsGrid">
                     <!-- Documents -->
@@ -1283,7 +1290,6 @@
                     <div class="format-item"><span class="emoji">📄</span>JSON</div>
                     <div class="format-item"><span class="emoji">📄</span>RTF</div>
                     <div class="format-item"><span class="emoji">📄</span>ODT</div>
-                    
                     <!-- Images -->
                     <div class="format-category">🖼 Images</div>
                     <div class="format-item"><span class="emoji">🖼</span>JPG</div>
@@ -1296,7 +1302,6 @@
                     <div class="format-item"><span class="emoji">🖼</span>SVG</div>
                     <div class="format-item"><span class="emoji">🖼</span>HEIC</div>
                     <div class="format-item"><span class="emoji">🖼</span>AVIF</div>
-                    
                     <!-- Audio -->
                     <div class="format-category">🎵 Audio</div>
                     <div class="format-item"><span class="emoji">🎵</span>MP3</div>
@@ -1308,7 +1313,6 @@
                     <div class="format-item"><span class="emoji">🎵</span>WMA</div>
                     <div class="format-item"><span class="emoji">🎵</span>OPUS</div>
                     <div class="format-item"><span class="emoji">🎵</span>AIFF</div>
-                    
                     <!-- Video -->
                     <div class="format-category">🎬 Video</div>
                     <div class="format-item"><span class="emoji">🎬</span>MP4</div>
@@ -1321,7 +1325,6 @@
                     <div class="format-item"><span class="emoji">🎬</span>3GP</div>
                     <div class="format-item"><span class="emoji">🎬</span>MPG</div>
                     <div class="format-item"><span class="emoji">🎬</span>M2TS</div>
-                    
                     <!-- Archives -->
                     <div class="format-category">📦 Archives</div>
                     <div class="format-item"><span class="emoji">📦</span>ZIP</div>
@@ -1334,7 +1337,6 @@
                     <div class="format-item"><span class="emoji">📦</span>ISO</div>
                     <div class="format-item"><span class="emoji">📦</span>CAB</div>
                     <div class="format-item"><span class="emoji">📦</span>LZMA</div>
-                    
                     <!-- E-books -->
                     <div class="format-category">📚 E-Books</div>
                     <div class="format-item"><span class="emoji">📚</span>EPUB</div>
@@ -1347,7 +1349,6 @@
                     <div class="format-item"><span class="emoji">📚</span>KFX</div>
                     <div class="format-item"><span class="emoji">📚</span>PDB</div>
                     <div class="format-item"><span class="emoji">📚</span>PRC</div>
-                    
                     <!-- Spreadsheets -->
                     <div class="format-category">📊 Spreadsheets</div>
                     <div class="format-item"><span class="emoji">📊</span>XLSX</div>
@@ -1364,23 +1365,20 @@
             </div>
         </div>
     </section>
-    
-    <!-- ============================================================
-    PAGE 4: TEAM
-    ============================================================ -->
+
+    <!-- ===== PAGE 4: TEAM ===== -->
     <section class="page" id="team">
         <div class="container">
             <div class="section-header">
                 <span class="badge"><i class="fas fa-users"></i> Team</span>
                 <h2>Meet the <span>Developers</span></h2>
                 <p>
-                    A passionate team from <strong style="color:white;">Riphah International University</strong>, 
+                    A passionate team from <strong style="color:white;">Riphah International University</strong>,
                     Lahore Campus (Township), dedicated to making file conversion effortless.
                 </p>
             </div>
-            
+
             <div class="team-grid" id="teamGrid">
-                <!-- Sheza Abid -->
                 <div class="team-card">
                     <div class="avatar sheza">SA</div>
                     <h4>Sheza Abid</h4>
@@ -1392,8 +1390,6 @@
                         <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
-                
-                <!-- Fatima Akram -->
                 <div class="team-card">
                     <div class="avatar fatima">FA</div>
                     <h4>Fatima Akram</h4>
@@ -1405,8 +1401,6 @@
                         <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
-                
-                <!-- Aiman Imran -->
                 <div class="team-card">
                     <div class="avatar aiman">AI</div>
                     <h4>Aiman Imran</h4>
@@ -1421,27 +1415,24 @@
             </div>
         </div>
     </section>
-    
-    <!-- ============================================================
-    PAGE 5: DOWNLOAD
-    ============================================================ -->
+
+    <!-- ===== PAGE 5: DOWNLOAD ===== -->
     <section class="page download-page" id="download">
         <div class="container">
             <div class="section-header">
                 <span class="badge"><i class="fas fa-download"></i> Download</span>
                 <h2>Ready to Convert <span>Anything?</span></h2>
                 <p>
-                    Download All Files Converter AI today and experience the power of 
+                    Download All Files Converter AI today and experience the power of
                     AI-driven file conversion.
                 </p>
             </div>
 
-            <!-- ===== FIX: Correct Download Link ===== -->
-            <a href="https://github.com/bahaduralihashmi/File-Converter/releases/latest/download/AllFilesConverterAI_Riphah_Setup_v3.0.0.exe" 
-            class="btn btn-download" 
-            download 
-            target="_blank"
-            style="font-size:18px;padding:16px 40px;">
+            <a href="https://github.com/bahaduralihashmi/File-Converter/releases/latest/download/AllFilesConverterAI_Riphah_Setup_v3.0.0.exe"
+               class="btn btn-download"
+               download
+               target="_blank"
+               rel="noopener noreferrer">
                 <i class="fas fa-download"></i> Download for Windows
             </a>
 
@@ -1458,10 +1449,8 @@
             </div>
         </div>
     </section>
-    
-    <!-- ============================================================
-    FOOTER
-    ============================================================ -->
+
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-links">
@@ -1472,7 +1461,7 @@
                 <a data-page="download">Download</a>
             </div>
             <p>
-                © 2026 <strong>Sheza &amp; Team</strong> · 
+                © 2026 <strong>Sheza &amp; Team</strong> ·
                 Riphah International University, Lahore Campus (Township)
             </p>
             <p style="margin-top:4px;font-size:12px;color:var(--text-muted);">
@@ -1480,217 +1469,156 @@
             </p>
         </div>
     </footer>
-    
+
     <!-- ============================================================
     JAVASCRIPT
     ============================================================ -->
     <script>
-        // ============================================================
-        // NAVIGATION - FIXED
-        // ============================================================
-        
-        // Get all navigation elements
-        const navLinksAll = document.querySelectorAll('.nav-links a');
-        const navLogo = document.querySelector('.logo');
-        const footerLinks = document.querySelectorAll('.footer-links a');
-        const heroButtons = document.querySelectorAll('.hero-actions .btn');
-        const pageDots = document.querySelectorAll('.page-indicator .dot');
-        
-        // Navigation function
-        function navigateTo(pageId) {
-            const target = document.getElementById(pageId);
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        (function() {
+            'use strict';
+
+            // ---- Navigation helpers ----
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const logo = document.querySelector('.logo');
+            const footerLinks = document.querySelectorAll('.footer-links a');
+            const heroBtns = document.querySelectorAll('.hero-actions .btn');
+            const dots = document.querySelectorAll('.page-indicator .dot');
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navLinks');
+
+            function navigateTo(pageId) {
+                const target = document.getElementById(pageId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                navMenu.classList.remove('open');
             }
-            // Close mobile menu
-            document.getElementById('navLinks').classList.remove('open');
-        }
-        
-        // Add click listeners to all navigation elements
-        navLinksAll.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const page = link.getAttribute('data-page');
-                if (page) navigateTo(page);
-            });
-        });
-        
-        navLogo.addEventListener('click', (e) => {
-            e.preventDefault();
-            navigateTo('home');
-        });
-        
-        footerLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const page = link.getAttribute('data-page');
-                if (page) navigateTo(page);
-            });
-        });
-        
-        heroButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const page = btn.getAttribute('data-page');
-                if (page) navigateTo(page);
-            });
-        });
-        
-        pageDots.forEach(dot => {
-            dot.addEventListener('click', (e) => {
-                e.preventDefault();
-                const page = dot.getAttribute('data-page');
-                if (page) navigateTo(page);
-            });
-        });
-        
-        // ============================================================
-        // Mobile Menu
-        // ============================================================
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinks');
-        
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
-        });
-        
-        // ============================================================
-        // Navbar Scroll Effect
-        // ============================================================
-        const nav = document.getElementById('nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-        
-        // ============================================================
-        // Active Section Detection
-        // ============================================================
-        const sections = document.querySelectorAll('.page');
-        
-        function updateActiveSection() {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 150;
-                if (window.scrollY >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            // Update nav links
-            navLinksAll.forEach(link => {
-                link.classList.toggle('active', link.getAttribute('data-page') === current);
-            });
-            
-            // Update dots
-            pageDots.forEach(dot => {
-                dot.classList.toggle('active', dot.getAttribute('data-page') === current);
-            });
-        }
-        
-        window.addEventListener('scroll', updateActiveSection);
-        window.addEventListener('load', updateActiveSection);
-        
-        // ============================================================
-        // Dynamic Format Cards - Scroll Animation
-        // ============================================================
-        const formatItems = document.querySelectorAll('.format-item');
-        
-        const formatObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.05,
-            rootMargin: '0px 0px -50px 0px'
-        });
-        
-        formatItems.forEach(item => {
-            formatObserver.observe(item);
-        });
-        
-        // ============================================================
-        // Team Cards - Scroll Animation
-        // ============================================================
-        const teamCards = document.querySelectorAll('.team-card');
-        
-        const teamObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-        
-        teamCards.forEach(card => {
-            teamObserver.observe(card);
-        });
-        
-        // ============================================================
-        // Feature Cards - Scroll Animation
-        // ============================================================
-        const featureCards = document.querySelectorAll('.feature-card');
-        
-        const featureObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-        
-        featureCards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-            featureObserver.observe(card);
-        });
-        
-        // ============================================================
-        // Hero Stats - Counter Animation
-        // ============================================================
-        function animateCounter(element, target, duration = 1500) {
-            let start = 0;
-            const increment = target / (duration / 16);
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= target) {
-                    start = target;
-                    clearInterval(timer);
-                }
-                element.textContent = Math.floor(start) + '+';
-            }, 16);
-        }
-        
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const statElements = entry.target.querySelectorAll('.stat h3');
-                    const targets = [104, 7, 100];
-                    statElements.forEach((el, index) => {
-                        animateCounter(el, targets[index], 1200);
+
+            function addNavListeners(elements) {
+                elements.forEach(el => {
+                    el.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const page = this.getAttribute('data-page');
+                        if (page) navigateTo(page);
                     });
-                    statsObserver.unobserve(entry.target);
-                }
+                });
+            }
+
+            addNavListeners(navLinks);
+            addNavListeners(footerLinks);
+            addNavListeners(heroBtns);
+            addNavListeners(dots);
+
+            if (logo) {
+                logo.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    navigateTo('home');
+                });
+            }
+
+            // Mobile toggle
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('open');
+                });
+            }
+
+            // ---- Nav scroll effect ----
+            const nav = document.getElementById('nav');
+            window.addEventListener('scroll', function() {
+                nav.classList.toggle('scrolled', window.scrollY > 20);
             });
-        }, { threshold: 0.3 });
-        
-        const statsSection = document.querySelector('.hero-stats');
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
+
+            // ---- Active section detection ----
+            const sections = document.querySelectorAll('.page');
+
+            function updateActive() {
+                let current = '';
+                sections.forEach(sec => {
+                    const top = sec.offsetTop - 140;
+                    if (window.scrollY >= top) {
+                        current = sec.getAttribute('id');
+                    }
+                });
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('data-page') === current);
+                });
+                dots.forEach(dot => {
+                    dot.classList.toggle('active', dot.getAttribute('data-page') === current);
+                });
+            }
+
+            window.addEventListener('scroll', updateActive);
+            window.addEventListener('load', updateActive);
+
+            // ---- Intersection Observer for feature cards ----
+            const featureCards = document.querySelectorAll('.feature-card');
+            const featureObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+            featureCards.forEach(card => featureObserver.observe(card));
+
+            // ---- Format items ----
+            const formatItems = document.querySelectorAll('.format-item');
+            const formatObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+
+            formatItems.forEach(item => formatObserver.observe(item));
+
+            // ---- Team cards ----
+            const teamCards = document.querySelectorAll('.team-card');
+            const teamObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+            teamCards.forEach(card => teamObserver.observe(card));
+
+            // ---- Hero stats counter ----
+            function animateCounter(el, target, duration = 1400) {
+                let start = 0;
+                const increment = target / (duration / 16);
+                const timer = setInterval(() => {
+                    start += increment;
+                    if (start >= target) {
+                        start = target;
+                        clearInterval(timer);
+                    }
+                    el.textContent = Math.floor(start) + '+';
+                }, 16);
+            }
+
+            const statsWrapper = document.querySelector('.hero-stats');
+            if (statsWrapper) {
+                const statsObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const statEls = entry.target.querySelectorAll('.stat h3');
+                            const targets = [104, 7, 100];
+                            statEls.forEach((el, idx) => {
+                                animateCounter(el, targets[idx], 1300);
+                            });
+                            statsObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.2 });
+                statsObserver.observe(statsWrapper);
+            }
+
+        })();
     </script>
 </body>
 </html>

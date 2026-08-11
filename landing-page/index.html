@@ -71,7 +71,7 @@
         [data-theme="plum"] {
             --bg-dark: #1A0B1E;
             --bg-card: rgba(128, 26, 102, 0.2);
-            --text-primary: #F8E5F5;
+            --text-primary: #F8E8F5;
             --text-secondary: rgba(248, 232, 245, 0.72);
             --text-muted: rgba(248, 232, 245, 0.4);
             --border-glass: rgba(180, 60, 150, 0.15);
@@ -90,7 +90,6 @@
             line-height: 1.6;
             overflow-x: hidden;
             transition: background 0.4s ease, color 0.3s ease;
-            min-height: 100vh;
         }
 
         /* ----- SCROLLBAR ----- */
@@ -428,32 +427,51 @@
             padding: 4px 6px;
         }
 
-        /* ============================================================
-           PAGE SYSTEM (Multi-page in single file)
-           ============================================================ */
-        .page-container {
-            padding-top: 80px;
+        /* ----- PAGE INDICATOR (desktop) ----- */
+        .page-indicator {
+            position: fixed;
+            right: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .page-indicator .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--text-muted);
+            transition: var(--transition);
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .page-indicator .dot.active {
+            background: var(--primary);
+            border-color: rgba(108, 99, 255, 0.3);
+            box-shadow: 0 0 20px rgba(108, 99, 255, 0.25);
+            transform: scale(1.35);
+        }
+
+        .page-indicator .dot:hover {
+            background: var(--primary);
+        }
+
+        /* ----- PAGES (sections) ----- */
+        .page {
             min-height: 100vh;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
+            padding: 100px 0 60px;
             position: relative;
-            z-index: 1;
         }
 
-        .page-content {
-            display: none;
-            width: 100%;
-            padding: 40px 0 60px;
-            animation: fadeInPage 0.4s ease;
-        }
-
-        .page-content.active {
-            display: block;
-        }
-
-        @keyframes fadeInPage {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .page:last-child {
+            min-height: auto;
+            padding-bottom: 70px;
         }
 
         /* ----- HERO (Updated) ----- */
@@ -881,10 +899,10 @@
             transform: scale(1.15) rotate(-4deg);
         }
 
-        /* ----- TEAM (Updated with Full Details) ----- */
+        /* ----- TEAM (Updated) ----- */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 24px;
             margin-top: 20px;
         }
@@ -895,7 +913,7 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid var(--border-glass);
             border-radius: var(--radius);
-            padding: 28px 20px;
+            padding: 24px 18px;
             text-align: center;
             transition: var(--transition);
             opacity: 0;
@@ -914,59 +932,37 @@
         }
 
         .team-card .avatar {
-            width: 80px;
-            height: 80px;
+            width: 72px;
+            height: 72px;
             border-radius: 50%;
-            margin: 0 auto 14px;
+            margin: 0 auto 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 700;
             color: white;
-            flex-shrink: 0;
         }
-        .team-card .avatar.bahadur { background: linear-gradient(135deg, #F7971E, #FFD200); }
         .team-card .avatar.sheza { background: var(--gradient-1); }
-        .team-card .avatar.aiman { background: var(--gradient-3); }
         .team-card .avatar.fatima { background: var(--gradient-2); }
+        .team-card .avatar.aiman { background: var(--gradient-3); }
+        .team-card .avatar.bahadur { background: linear-gradient(135deg, #F7971E, #FFD200); }
         .team-card .avatar.ali { background: linear-gradient(135deg, #1D976C, #93F9B9); }
 
-        .team-card h4 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 2px;
-        }
-
-        .team-card .role {
-            font-size: 13px;
-            color: var(--primary);
-            font-weight: 600;
-            margin-top: 2px;
-        }
-
-        .team-card .university {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-top: 4px;
-        }
-
-        .team-card .department {
-            font-size: 12px;
-            color: var(--text-secondary);
-            margin-top: 2px;
-        }
+        .team-card h4 { font-size: 17px; font-weight: 700; }
+        .team-card .role { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+        .team-card .university { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
 
         .team-card .social-links {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin-top: 16px;
+            gap: 10px;
+            margin-top: 14px;
         }
 
         .team-card .social-links a {
-            width: 38px;
-            height: 38px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -976,7 +972,7 @@
             transition: var(--transition);
             border: 1px solid var(--border-glass);
             text-decoration: none;
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .team-card .social-links a:hover {
@@ -1201,6 +1197,7 @@
             .hero-page .hero-actions { justify-content: center; }
             .hero-page .hero-stats { justify-content: center; }
             .hero-mockup { max-width: 520px; margin: 0 auto; }
+            .page-indicator { display: none; }
             .formats-grid { grid-template-columns: repeat(auto-fill, minmax(105px, 1fr)); }
             .contact-grid { grid-template-columns: 1fr; }
             .nav-right { gap: 10px; }
@@ -1264,14 +1261,13 @@
             .format-item { padding: 14px 6px; font-size: 12px; }
             .format-item .emoji { font-size: 24px; }
             .team-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+            .page { padding: 80px 0 40px; }
             .download-page .btn-download { width: 100%; max-width: 360px; font-size: 16px; padding: 14px 24px; }
             .cookie-consent { flex-direction: column; text-align: center; }
             .cookie-consent .cookie-actions { justify-content: center; }
             .nav-right { flex-wrap: wrap; justify-content: flex-end; }
             .nav-controls select { font-size: 11px; padding: 4px 8px; }
             .theme-toggle { font-size: 11px; padding: 4px 10px; }
-            .page-container { padding-top: 70px; }
-            .page-content { padding: 20px 0 40px; }
         }
 
         @media (max-width: 480px) {
@@ -1296,6 +1292,16 @@
     <div class="bg-animation">
         <div class="orb"></div><div class="orb"></div><div class="orb"></div>
     </div>
+
+    <!-- PAGE INDICATOR -->
+    <nav class="page-indicator" id="pageIndicator">
+        <a class="dot active" data-page="home" title="Home"></a>
+        <a class="dot" data-page="features" title="Features"></a>
+        <a class="dot" data-page="formats" title="Formats"></a>
+        <a class="dot" data-page="team" title="Team"></a>
+        <a class="dot" data-page="download" title="Download"></a>
+        <a class="dot" data-page="contact" title="Contact"></a>
+    </nav>
 
     <!-- ===== NAVIGATION (Right-aligned with Dropdown) ===== -->
     <nav class="nav" id="nav">
@@ -1349,404 +1355,378 @@
         </div>
     </nav>
 
-    <!-- ============================================================
-    PAGE CONTAINER (Multi-page in single file)
-    ============================================================ -->
-    <div class="page-container">
+    <!-- ===== PAGE 1: HERO ===== -->
+    <section class="page hero-page" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge"><i class="fas fa-rocket"></i> <span data-i18n="hero.badge">v3.0.0</span></span>
+                <h1>
+                    <span data-i18n="hero.title1">Convert</span> <span class="gradient-text" data-i18n="hero.title2">Anything.</span><br />
+                    <span class="gradient-text" data-i18n="hero.title3">Anywhere.</span>
+                </h1>
+                <p data-i18n="hero.description">
+                    All Files Converter AI is a powerful, AI-driven tool supporting <strong>1000+ formats</strong>.
+                    Built with ❤️ by the <strong style="color:var(--text-primary);">generatewithali</strong> team.
+                </p>
 
-        <!-- ===== PAGE 1: HOME ===== -->
-        <div class="page-content active" id="page-home">
-            <div class="container hero-page">
-                <div class="hero-content">
-                    <span class="hero-badge"><i class="fas fa-rocket"></i> <span data-i18n="hero.badge">v3.0.0</span></span>
-                    <h1>
-                        <span data-i18n="hero.title1">Convert</span> <span class="gradient-text" data-i18n="hero.title2">Anything.</span><br />
-                        <span class="gradient-text" data-i18n="hero.title3">Anywhere.</span>
-                    </h1>
-                    <p data-i18n="hero.description">
-                        All Files Converter AI is a powerful, AI-driven tool supporting <strong>1000+ formats</strong>.
-                        Built with ❤️ by the <strong style="color:var(--text-primary);">generatewithali</strong> team.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a class="btn btn-download" data-page="download">
-                            <i class="fas fa-download"></i> <span data-i18n="hero.downloadBtn">Download Now</span>
-                        </a>
-                        <a class="btn btn-secondary" data-page="features">
-                            <i class="fas fa-arrow-right"></i> <span data-i18n="hero.exploreBtn">Explore Features</span>
-                        </a>
-                    </div>
-
-                    <div class="hero-stats">
-                        <div class="stat"><h3>104+</h3><p data-i18n="hero.stat1">Supported Formats</p></div>
-                        <div class="stat"><h3>7</h3><p data-i18n="hero.stat2">Categories</p></div>
-                        <div class="stat"><h3>100%</h3><p data-i18n="hero.stat3">Offline &amp; Secure</p></div>
-                    </div>
+                <div class="hero-actions">
+                    <a class="btn btn-download" data-page="download">
+                        <i class="fas fa-download"></i> <span data-i18n="hero.downloadBtn">Download Now</span>
+                    </a>
+                    <a class="btn btn-secondary" data-page="features">
+                        <i class="fas fa-arrow-right"></i> <span data-i18n="hero.exploreBtn">Explore Features</span>
+                    </a>
                 </div>
 
-                <div class="hero-mockup">
-                    <div class="mockup-header">
-                        <div class="mockup-dots"><span></span><span></span><span></span></div>
-                        <span class="mockup-title" data-i18n="mockup.title">All Files Converter AI</span>
+                <div class="hero-stats">
+                    <div class="stat"><h3>104+</h3><p data-i18n="hero.stat1">Supported Formats</p></div>
+                    <div class="stat"><h3>7</h3><p data-i18n="hero.stat2">Categories</p></div>
+                    <div class="stat"><h3>100%</h3><p data-i18n="hero.stat3">Offline &amp; Secure</p></div>
+                </div>
+            </div>
+
+            <div class="hero-mockup">
+                <div class="mockup-header">
+                    <div class="mockup-dots"><span></span><span></span><span></span></div>
+                    <span class="mockup-title" data-i18n="mockup.title">All Files Converter AI</span>
+                </div>
+                <div class="mockup-body">
+                    <div class="mockup-row">
+                        <span class="icon purple"><i class="fas fa-file-pdf"></i></span>
+                        <div class="info"><div class="name">Document.pdf</div><div class="size">2.4 MB</div></div>
+                        <span class="status done"><i class="fas fa-check"></i> <span data-i18n="mockup.done">Done</span></span>
                     </div>
-                    <div class="mockup-body">
-                        <div class="mockup-row">
-                            <span class="icon purple"><i class="fas fa-file-pdf"></i></span>
-                            <div class="info"><div class="name">Document.pdf</div><div class="size">2.4 MB</div></div>
-                            <span class="status done"><i class="fas fa-check"></i> <span data-i18n="mockup.done">Done</span></span>
-                        </div>
-                        <div class="mockup-row">
-                            <span class="icon green"><i class="fas fa-image"></i></span>
-                            <div class="info"><div class="name">Photo.jpg</div><div class="size">1.8 MB</div></div>
-                            <span class="status converting"><i class="fas fa-spinner fa-spin"></i> <span data-i18n="mockup.converting">Converting</span></span>
-                        </div>
-                        <div class="mockup-row">
-                            <span class="icon orange"><i class="fas fa-music"></i></span>
-                            <div class="info"><div class="name">Song.mp3</div><div class="size">5.2 MB</div></div>
-                            <span class="status queued"><i class="fas fa-clock"></i> <span data-i18n="mockup.queued">Queued</span></span>
-                        </div>
-                        <div class="mockup-row">
-                            <span class="icon red"><i class="fas fa-video"></i></span>
-                            <div class="info"><div class="name">Video.mp4</div><div class="size">12.7 MB</div></div>
-                            <span class="status error"><i class="fas fa-times"></i> <span data-i18n="mockup.error">Error</span></span>
-                        </div>
-                        <button class="mockup-btn"><i class="fas fa-arrows-spin"></i> <span data-i18n="mockup.convertAll">Convert All</span></button>
+                    <div class="mockup-row">
+                        <span class="icon green"><i class="fas fa-image"></i></span>
+                        <div class="info"><div class="name">Photo.jpg</div><div class="size">1.8 MB</div></div>
+                        <span class="status converting"><i class="fas fa-spinner fa-spin"></i> <span data-i18n="mockup.converting">Converting</span></span>
+                    </div>
+                    <div class="mockup-row">
+                        <span class="icon orange"><i class="fas fa-music"></i></span>
+                        <div class="info"><div class="name">Song.mp3</div><div class="size">5.2 MB</div></div>
+                        <span class="status queued"><i class="fas fa-clock"></i> <span data-i18n="mockup.queued">Queued</span></span>
+                    </div>
+                    <div class="mockup-row">
+                        <span class="icon red"><i class="fas fa-video"></i></span>
+                        <div class="info"><div class="name">Video.mp4</div><div class="size">12.7 MB</div></div>
+                        <span class="status error"><i class="fas fa-times"></i> <span data-i18n="mockup.error">Error</span></span>
+                    </div>
+                    <button class="mockup-btn"><i class="fas fa-arrows-spin"></i> <span data-i18n="mockup.convertAll">Convert All</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PAGE 2: FEATURES (Enhanced with Problem-Solving) ===== -->
+    <section class="page" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge"><i class="fas fa-star"></i> <span data-i18n="features.badge">Features</span></span>
+                <h2><span data-i18n="features.title1">Why Choose</span> <span data-i18n="features.title2">All Files Converter AI</span></h2>
+                <p data-i18n="features.subtitle">Designed to solve real-world file conversion problems with modern AI.</p>
+            </div>
+
+            <div class="features-grid" id="featuresGrid">
+                <div class="feature-card">
+                    <div class="icon purple"><i class="fas fa-file-export"></i></div>
+                    <h3 data-i18n="features.f1.title">1000+ Formats</h3>
+                    <p data-i18n="features.f1.desc">Convert between documents, images, audio, video, archives, e-books, and spreadsheets.</p>
+                    <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f1.problem">Incompatible file types hinder workflow.</span><br>
+                    <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f1.solution">One tool for all formats, eliminating the need for multiple converters.</span></div>
+                </div>
+                <div class="feature-card">
+                    <div class="icon blue"><i class="fas fa-robot"></i></div>
+                    <h3 data-i18n="features.f2.title">AI Assistant</h3>
+                    <p data-i18n="features.f2.desc">Intelligent help with conversions. The AI assistant guides you through every step.</p>
+                    <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f2.problem">Complex conversion settings confuse users.</span><br>
+                    <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f2.solution">AI simplifies the process, suggesting optimal settings based on file type.</span></div>
+                </div>
+                <div class="feature-card">
+                    <div class="icon green"><i class="fas fa-microphone"></i></div>
+                    <h3 data-i18n="features.f3.title">Voice Commands</h3>
+                    <p data-i18n="features.f3.desc">Hands-free operation with speech recognition. Just speak to convert your files.</p>
+                    <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f3.problem">Manual navigation is time-consuming for users with accessibility needs.</span><br>
+                    <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f3.solution">Voice control enables faster, accessible conversion for everyone.</span></div>
+                </div>
+                <div class="feature-card">
+                    <div class="icon orange"><i class="fas fa-camera"></i></div>
+                    <h3 data-i18n="features.f4.title">Camera Scanner</h3>
+                    <p data-i18n="features.f4.desc">Scan documents directly from your webcam. Perfect for digitizing physical papers.</p>
+                    <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f4.problem">Digitizing physical documents requires separate scanning tools.</span><br>
+                    <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f4.solution">Integrated scanner converts physical documents to digital formats instantly.</span></div>
+                </div>
+                <div class="feature-card">
+                    <div class="icon red"><i class="fas fa-palette"></i></div>
+                    <h3 data-i18n="features.f5.title">7 Professional Themes</h3>
+                    <p data-i18n="features.f5.desc">Customize your experience with dark mode, professional blue, elegant plum, and more.</p>
+                    <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f5.problem">Visual fatigue from static, non-adaptive interfaces.</span><br>
+                    <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f5.solution">Personalized themes reduce eye strain and improve user experience.</span></div>
+                </div>
+                <div class="feature-card">
+                    <div class="icon teal"><i class="fas fa-layer-group"></i></div>
+                    <h3 data-i18n="features.f6.title">Batch Processing</h3>
+                    <p data-i18n="features.f6.desc">Convert multiple files at once. Save time with powerful batch conversion.</p>
+                    <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f6.problem">Converting files one-by-one is slow and inefficient.</span><br>
+                    <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f6.solution">Batch processing handles hundreds of files in one go, boosting productivity.</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PAGE 3: FORMATS ===== -->
+    <section class="page" id="formats">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge"><i class="fas fa-th-large"></i> <span data-i18n="formats.badge">Formats</span></span>
+                <h2><span data-i18n="formats.title1">Supported</span> <span data-i18n="formats.title2">File Formats</span></h2>
+                <p data-i18n="formats.subtitle">Over 104 formats across 7 categories. All your conversion needs in one place.</p>
+            </div>
+
+            <div class="formats-wrapper">
+                <div class="formats-grid" id="formatsGrid">
+                    <!-- Documents -->
+                    <div class="format-category" data-i18n="formats.cat.doc">📄 Documents</div>
+                    <div class="format-item"><span class="emoji">📄</span>PDF</div>
+                    <div class="format-item"><span class="emoji">📄</span>DOCX</div>
+                    <div class="format-item"><span class="emoji">📄</span>DOC</div>
+                    <div class="format-item"><span class="emoji">📄</span>TXT</div>
+                    <div class="format-item"><span class="emoji">📄</span>HTML</div>
+                    <div class="format-item"><span class="emoji">📄</span>MD</div>
+                    <div class="format-item"><span class="emoji">📄</span>CSV</div>
+                    <div class="format-item"><span class="emoji">📄</span>XLSX</div>
+                    <div class="format-item"><span class="emoji">📄</span>XLS</div>
+                    <div class="format-item"><span class="emoji">📄</span>PPTX</div>
+                    <div class="format-item"><span class="emoji">📄</span>PPT</div>
+                    <div class="format-item"><span class="emoji">📄</span>XML</div>
+                    <div class="format-item"><span class="emoji">📄</span>JSON</div>
+                    <div class="format-item"><span class="emoji">📄</span>RTF</div>
+                    <div class="format-item"><span class="emoji">📄</span>ODT</div>
+                    <!-- Images -->
+                    <div class="format-category" data-i18n="formats.cat.img">🖼 Images</div>
+                    <div class="format-item"><span class="emoji">🖼</span>JPG</div>
+                    <div class="format-item"><span class="emoji">🖼</span>PNG</div>
+                    <div class="format-item"><span class="emoji">🖼</span>WEBP</div>
+                    <div class="format-item"><span class="emoji">🖼</span>GIF</div>
+                    <div class="format-item"><span class="emoji">🖼</span>BMP</div>
+                    <div class="format-item"><span class="emoji">🖼</span>TIFF</div>
+                    <div class="format-item"><span class="emoji">🖼</span>ICO</div>
+                    <div class="format-item"><span class="emoji">🖼</span>SVG</div>
+                    <div class="format-item"><span class="emoji">🖼</span>HEIC</div>
+                    <div class="format-item"><span class="emoji">🖼</span>AVIF</div>
+                    <!-- Audio -->
+                    <div class="format-category" data-i18n="formats.cat.audio">🎵 Audio</div>
+                    <div class="format-item"><span class="emoji">🎵</span>MP3</div>
+                    <div class="format-item"><span class="emoji">🎵</span>WAV</div>
+                    <div class="format-item"><span class="emoji">🎵</span>FLAC</div>
+                    <div class="format-item"><span class="emoji">🎵</span>AAC</div>
+                    <div class="format-item"><span class="emoji">🎵</span>OGG</div>
+                    <div class="format-item"><span class="emoji">🎵</span>M4A</div>
+                    <div class="format-item"><span class="emoji">🎵</span>WMA</div>
+                    <div class="format-item"><span class="emoji">🎵</span>OPUS</div>
+                    <div class="format-item"><span class="emoji">🎵</span>AIFF</div>
+                    <!-- Video -->
+                    <div class="format-category" data-i18n="formats.cat.video">🎬 Video</div>
+                    <div class="format-item"><span class="emoji">🎬</span>MP4</div>
+                    <div class="format-item"><span class="emoji">🎬</span>AVI</div>
+                    <div class="format-item"><span class="emoji">🎬</span>MKV</div>
+                    <div class="format-item"><span class="emoji">🎬</span>MOV</div>
+                    <div class="format-item"><span class="emoji">🎬</span>WMV</div>
+                    <div class="format-item"><span class="emoji">🎬</span>WEBM</div>
+                    <div class="format-item"><span class="emoji">🎬</span>FLV</div>
+                    <div class="format-item"><span class="emoji">🎬</span>3GP</div>
+                    <div class="format-item"><span class="emoji">🎬</span>MPG</div>
+                    <div class="format-item"><span class="emoji">🎬</span>M2TS</div>
+                    <!-- Archives -->
+                    <div class="format-category" data-i18n="formats.cat.archive">📦 Archives</div>
+                    <div class="format-item"><span class="emoji">📦</span>ZIP</div>
+                    <div class="format-item"><span class="emoji">📦</span>RAR</div>
+                    <div class="format-item"><span class="emoji">📦</span>7Z</div>
+                    <div class="format-item"><span class="emoji">📦</span>TAR</div>
+                    <div class="format-item"><span class="emoji">📦</span>GZ</div>
+                    <div class="format-item"><span class="emoji">📦</span>BZ2</div>
+                    <div class="format-item"><span class="emoji">📦</span>XZ</div>
+                    <div class="format-item"><span class="emoji">📦</span>ISO</div>
+                    <div class="format-item"><span class="emoji">📦</span>CAB</div>
+                    <div class="format-item"><span class="emoji">📦</span>LZMA</div>
+                    <!-- E-books -->
+                    <div class="format-category" data-i18n="formats.cat.ebook">📚 E-Books</div>
+                    <div class="format-item"><span class="emoji">📚</span>EPUB</div>
+                    <div class="format-item"><span class="emoji">📚</span>MOBI</div>
+                    <div class="format-item"><span class="emoji">📚</span>AZW3</div>
+                    <div class="format-item"><span class="emoji">📚</span>FB2</div>
+                    <div class="format-item"><span class="emoji">📚</span>LIT</div>
+                    <div class="format-item"><span class="emoji">📚</span>LRF</div>
+                    <div class="format-item"><span class="emoji">📚</span>AZW</div>
+                    <div class="format-item"><span class="emoji">📚</span>KFX</div>
+                    <div class="format-item"><span class="emoji">📚</span>PDB</div>
+                    <div class="format-item"><span class="emoji">📚</span>PRC</div>
+                    <!-- Spreadsheets -->
+                    <div class="format-category" data-i18n="formats.cat.sheet">📊 Spreadsheets</div>
+                    <div class="format-item"><span class="emoji">📊</span>XLSX</div>
+                    <div class="format-item"><span class="emoji">📊</span>XLS</div>
+                    <div class="format-item"><span class="emoji">📊</span>CSV</div>
+                    <div class="format-item"><span class="emoji">📊</span>ODS</div>
+                    <div class="format-item"><span class="emoji">📊</span>TSV</div>
+                    <div class="format-item"><span class="emoji">📊</span>NUMBERS</div>
+                    <div class="format-item"><span class="emoji">📊</span>HTML</div>
+                    <div class="format-item"><span class="emoji">📊</span>JSON</div>
+                    <div class="format-item"><span class="emoji">📊</span>XML</div>
+                    <div class="format-item"><span class="emoji">📊</span>DIF</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PAGE 4: TEAM (Updated) ===== -->
+    <section class="page" id="team">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge"><i class="fas fa-users"></i> <span data-i18n="team.badge">Team</span></span>
+                <h2><span data-i18n="team.title1">Meet the</span> <span data-i18n="team.title2">generatewithali</span></h2>
+                <p data-i18n="team.subtitle">A passionate team dedicated to making file conversion effortless for everyone.</p>
+            </div>
+
+            <div class="team-grid" id="teamGrid">
+                <div class="team-card">
+                    <div class="avatar bahadur">BA</div>
+                    <h4>Bahadur Ali</h4>
+                    <p class="role" data-i18n="team.bahadur.role">Application Developer &amp; AI Lead</p>
+                    <p class="university">Riphah International University, Lahore</p>
+                    <div class="social-links">
+                        <a href="https://huggingface.co/embedingHF" target="_blank" aria-label="Hugging Face"><i class="fab fa-hubspot"></i></a>
+                        <a href="https://www.linkedin.com/in/generatewithali/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/bahadur_ali804/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar sheza">SA</div>
+                    <h4>Sheza Abid</h4>
+                    <p class="role" data-i18n="team.sheza.role">Website Developer &amp; UI/UX Designer</p>
+                    <p class="university">Riphah International University, Lahore</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar aiman">AI</div>
+                    <h4>Aiman Imran</h4>
+                    <p class="role" data-i18n="team.aiman.role">Content Manager &amp; QA Support</p>
+                    <p class="university">Riphah International University, Lahore</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar fatima">FA</div>
+                    <h4>Fatima Akram</h4>
+                    <p class="role" data-i18n="team.fatima.role">QA Developer &amp; Tester</p>
+                    <p class="university">Riphah International University, Lahore</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar ali">AM</div>
+                    <h4>Ali Masood</h4>
+                    <p class="role" data-i18n="team.ali.role">Tester &amp; Documentation</p>
+                    <p class="university">Riphah International University, Lahore</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- ===== PAGE 2: FEATURES ===== -->
-        <div class="page-content" id="page-features">
-            <div class="container">
-                <div class="section-header">
-                    <span class="badge"><i class="fas fa-star"></i> <span data-i18n="features.badge">Features</span></span>
-                    <h2><span data-i18n="features.title1">Why Choose</span> <span data-i18n="features.title2">All Files Converter AI</span></h2>
-                    <p data-i18n="features.subtitle">Designed to solve real-world file conversion problems with modern AI.</p>
-                </div>
+    <!-- ===== PAGE 5: DOWNLOAD ===== -->
+    <section class="page download-page" id="download">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge"><i class="fas fa-download"></i> <span data-i18n="download.badge">Download</span></span>
+                <h2><span data-i18n="download.title1">Ready to Convert</span> <span data-i18n="download.title2">Anything?</span></h2>
+                <p data-i18n="download.subtitle">Download All Files Converter AI today and experience the power of AI-driven file conversion.</p>
+            </div>
 
-                <div class="features-grid" id="featuresGrid">
-                    <div class="feature-card">
-                        <div class="icon purple"><i class="fas fa-file-export"></i></div>
-                        <h3 data-i18n="features.f1.title">1000+ Formats</h3>
-                        <p data-i18n="features.f1.desc">Convert between documents, images, audio, video, archives, e-books, and spreadsheets.</p>
-                        <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f1.problem">Incompatible file types hinder workflow.</span><br>
-                        <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f1.solution">One tool for all formats, eliminating the need for multiple converters.</span></div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon blue"><i class="fas fa-robot"></i></div>
-                        <h3 data-i18n="features.f2.title">AI Assistant</h3>
-                        <p data-i18n="features.f2.desc">Intelligent help with conversions. The AI assistant guides you through every step.</p>
-                        <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f2.problem">Complex conversion settings confuse users.</span><br>
-                        <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f2.solution">AI simplifies the process, suggesting optimal settings based on file type.</span></div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon green"><i class="fas fa-microphone"></i></div>
-                        <h3 data-i18n="features.f3.title">Voice Commands</h3>
-                        <p data-i18n="features.f3.desc">Hands-free operation with speech recognition. Just speak to convert your files.</p>
-                        <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f3.problem">Manual navigation is time-consuming for users with accessibility needs.</span><br>
-                        <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f3.solution">Voice control enables faster, accessible conversion for everyone.</span></div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon orange"><i class="fas fa-camera"></i></div>
-                        <h3 data-i18n="features.f4.title">Camera Scanner</h3>
-                        <p data-i18n="features.f4.desc">Scan documents directly from your webcam. Perfect for digitizing physical papers.</p>
-                        <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f4.problem">Digitizing physical documents requires separate scanning tools.</span><br>
-                        <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f4.solution">Integrated scanner converts physical documents to digital formats instantly.</span></div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon red"><i class="fas fa-palette"></i></div>
-                        <h3 data-i18n="features.f5.title">7 Professional Themes</h3>
-                        <p data-i18n="features.f5.desc">Customize your experience with dark mode, professional blue, elegant plum, and more.</p>
-                        <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f5.problem">Visual fatigue from static, non-adaptive interfaces.</span><br>
-                        <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f5.solution">Personalized themes reduce eye strain and improve user experience.</span></div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon teal"><i class="fas fa-layer-group"></i></div>
-                        <h3 data-i18n="features.f6.title">Batch Processing</h3>
-                        <p data-i18n="features.f6.desc">Convert multiple files at once. Save time with powerful batch conversion.</p>
-                        <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f6.problem">Converting files one-by-one is slow and inefficient.</span><br>
-                        <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f6.solution">Batch processing handles hundreds of files in one go, boosting productivity.</span></div>
-                    </div>
-                </div>
+            <a href="https://github.com/bahaduralihashmi/File-Converter/releases/latest/download/AllFilesConverterAI_Riphah_Setup_v3.0.0.exe"
+               class="btn btn-download" download target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-download"></i> <span data-i18n="download.btn">Download for Windows</span>
+            </a>
+
+            <div class="download-badges">
+                <span class="badge"><i class="fas fa-check-circle" style="color:#38A169;"></i> <span data-i18n="download.badge1">Windows 10/11</span></span>
+                <span class="badge"><i class="fas fa-shield-alt" style="color:var(--primary);"></i> <span data-i18n="download.badge2">Secure</span></span>
+                <span class="badge"><i class="fas fa-wifi-slash" style="color:#D69E2E;"></i> <span data-i18n="download.badge3">Offline</span></span>
+                <span class="badge"><i class="fas fa-infinity" style="color:#E53E3E;"></i> <span data-i18n="download.badge4">Unlimited</span></span>
+            </div>
+
+            <div class="version-info">
+                <p><span data-i18n="download.version">Version 3.0.0 · 104+ Formats · 7 Categories</span></p>
+                <p style="margin-top:4px;" data-i18n="download.credit">Developed by generatewithali Team · Riphah International University</p>
             </div>
         </div>
+    </section>
 
-        <!-- ===== PAGE 3: FORMATS ===== -->
-        <div class="page-content" id="page-formats">
-            <div class="container">
-                <div class="section-header">
-                    <span class="badge"><i class="fas fa-th-large"></i> <span data-i18n="formats.badge">Formats</span></span>
-                    <h2><span data-i18n="formats.title1">Supported</span> <span data-i18n="formats.title2">File Formats</span></h2>
-                    <p data-i18n="formats.subtitle">Over 104 formats across 7 categories. All your conversion needs in one place.</p>
-                </div>
-
-                <div class="formats-wrapper">
-                    <div class="formats-grid" id="formatsGrid">
-                        <!-- Documents -->
-                        <div class="format-category" data-i18n="formats.cat.doc">📄 Documents</div>
-                        <div class="format-item"><span class="emoji">📄</span>PDF</div>
-                        <div class="format-item"><span class="emoji">📄</span>DOCX</div>
-                        <div class="format-item"><span class="emoji">📄</span>DOC</div>
-                        <div class="format-item"><span class="emoji">📄</span>TXT</div>
-                        <div class="format-item"><span class="emoji">📄</span>HTML</div>
-                        <div class="format-item"><span class="emoji">📄</span>MD</div>
-                        <div class="format-item"><span class="emoji">📄</span>CSV</div>
-                        <div class="format-item"><span class="emoji">📄</span>XLSX</div>
-                        <div class="format-item"><span class="emoji">📄</span>XLS</div>
-                        <div class="format-item"><span class="emoji">📄</span>PPTX</div>
-                        <div class="format-item"><span class="emoji">📄</span>PPT</div>
-                        <div class="format-item"><span class="emoji">📄</span>XML</div>
-                        <div class="format-item"><span class="emoji">📄</span>JSON</div>
-                        <div class="format-item"><span class="emoji">📄</span>RTF</div>
-                        <div class="format-item"><span class="emoji">📄</span>ODT</div>
-                        <!-- Images -->
-                        <div class="format-category" data-i18n="formats.cat.img">🖼 Images</div>
-                        <div class="format-item"><span class="emoji">🖼</span>JPG</div>
-                        <div class="format-item"><span class="emoji">🖼</span>PNG</div>
-                        <div class="format-item"><span class="emoji">🖼</span>WEBP</div>
-                        <div class="format-item"><span class="emoji">🖼</span>GIF</div>
-                        <div class="format-item"><span class="emoji">🖼</span>BMP</div>
-                        <div class="format-item"><span class="emoji">🖼</span>TIFF</div>
-                        <div class="format-item"><span class="emoji">🖼</span>ICO</div>
-                        <div class="format-item"><span class="emoji">🖼</span>SVG</div>
-                        <div class="format-item"><span class="emoji">🖼</span>HEIC</div>
-                        <div class="format-item"><span class="emoji">🖼</span>AVIF</div>
-                        <!-- Audio -->
-                        <div class="format-category" data-i18n="formats.cat.audio">🎵 Audio</div>
-                        <div class="format-item"><span class="emoji">🎵</span>MP3</div>
-                        <div class="format-item"><span class="emoji">🎵</span>WAV</div>
-                        <div class="format-item"><span class="emoji">🎵</span>FLAC</div>
-                        <div class="format-item"><span class="emoji">🎵</span>AAC</div>
-                        <div class="format-item"><span class="emoji">🎵</span>OGG</div>
-                        <div class="format-item"><span class="emoji">🎵</span>M4A</div>
-                        <div class="format-item"><span class="emoji">🎵</span>WMA</div>
-                        <div class="format-item"><span class="emoji">🎵</span>OPUS</div>
-                        <div class="format-item"><span class="emoji">🎵</span>AIFF</div>
-                        <!-- Video -->
-                        <div class="format-category" data-i18n="formats.cat.video">🎬 Video</div>
-                        <div class="format-item"><span class="emoji">🎬</span>MP4</div>
-                        <div class="format-item"><span class="emoji">🎬</span>AVI</div>
-                        <div class="format-item"><span class="emoji">🎬</span>MKV</div>
-                        <div class="format-item"><span class="emoji">🎬</span>MOV</div>
-                        <div class="format-item"><span class="emoji">🎬</span>WMV</div>
-                        <div class="format-item"><span class="emoji">🎬</span>WEBM</div>
-                        <div class="format-item"><span class="emoji">🎬</span>FLV</div>
-                        <div class="format-item"><span class="emoji">🎬</span>3GP</div>
-                        <div class="format-item"><span class="emoji">🎬</span>MPG</div>
-                        <div class="format-item"><span class="emoji">🎬</span>M2TS</div>
-                        <!-- Archives -->
-                        <div class="format-category" data-i18n="formats.cat.archive">📦 Archives</div>
-                        <div class="format-item"><span class="emoji">📦</span>ZIP</div>
-                        <div class="format-item"><span class="emoji">📦</span>RAR</div>
-                        <div class="format-item"><span class="emoji">📦</span>7Z</div>
-                        <div class="format-item"><span class="emoji">📦</span>TAR</div>
-                        <div class="format-item"><span class="emoji">📦</span>GZ</div>
-                        <div class="format-item"><span class="emoji">📦</span>BZ2</div>
-                        <div class="format-item"><span class="emoji">📦</span>XZ</div>
-                        <div class="format-item"><span class="emoji">📦</span>ISO</div>
-                        <div class="format-item"><span class="emoji">📦</span>CAB</div>
-                        <div class="format-item"><span class="emoji">📦</span>LZMA</div>
-                        <!-- E-books -->
-                        <div class="format-category" data-i18n="formats.cat.ebook">📚 E-Books</div>
-                        <div class="format-item"><span class="emoji">📚</span>EPUB</div>
-                        <div class="format-item"><span class="emoji">📚</span>MOBI</div>
-                        <div class="format-item"><span class="emoji">📚</span>AZW3</div>
-                        <div class="format-item"><span class="emoji">📚</span>FB2</div>
-                        <div class="format-item"><span class="emoji">📚</span>LIT</div>
-                        <div class="format-item"><span class="emoji">📚</span>LRF</div>
-                        <div class="format-item"><span class="emoji">📚</span>AZW</div>
-                        <div class="format-item"><span class="emoji">📚</span>KFX</div>
-                        <div class="format-item"><span class="emoji">📚</span>PDB</div>
-                        <div class="format-item"><span class="emoji">📚</span>PRC</div>
-                        <!-- Spreadsheets -->
-                        <div class="format-category" data-i18n="formats.cat.sheet">📊 Spreadsheets</div>
-                        <div class="format-item"><span class="emoji">📊</span>XLSX</div>
-                        <div class="format-item"><span class="emoji">📊</span>XLS</div>
-                        <div class="format-item"><span class="emoji">📊</span>CSV</div>
-                        <div class="format-item"><span class="emoji">📊</span>ODS</div>
-                        <div class="format-item"><span class="emoji">📊</span>TSV</div>
-                        <div class="format-item"><span class="emoji">📊</span>NUMBERS</div>
-                        <div class="format-item"><span class="emoji">📊</span>HTML</div>
-                        <div class="format-item"><span class="emoji">📊</span>JSON</div>
-                        <div class="format-item"><span class="emoji">📊</span>XML</div>
-                        <div class="format-item"><span class="emoji">📊</span>DIF</div>
-                    </div>
-                </div>
+    <!-- ===== PAGE 6: CONTACT (New) ===== -->
+    <section class="page" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge"><i class="fas fa-address-card"></i> <span data-i18n="contact.badge">Contact</span></span>
+                <h2><span data-i18n="contact.title1">Get in</span> <span data-i18n="contact.title2">Touch</span></h2>
+                <p data-i18n="contact.subtitle">We'd love to hear from you. Reach out for support, feedback, or collaboration.</p>
             </div>
-        </div>
 
-        <!-- ===== PAGE 4: TEAM (Updated with Full Details) ===== -->
-        <div class="page-content" id="page-team">
-            <div class="container">
-                <div class="section-header">
-                    <span class="badge"><i class="fas fa-users"></i> <span data-i18n="team.badge">Team</span></span>
-                    <h2><span data-i18n="team.title1">Meet the</span> <span data-i18n="team.title2">generatewithali</span></h2>
-                    <p data-i18n="team.subtitle">A passionate team dedicated to making file conversion effortless for everyone.</p>
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-card">
+                    <h3><i class="fas fa-envelope"></i> <span data-i18n="contact.form.title">Send us a Message</span></h3>
+                    <form id="contactForm">
+                        <label for="contactEmail" data-i18n="contact.form.email">Your Email</label>
+                        <input type="email" id="contactEmail" placeholder="you@example.com" required>
+
+                        <label for="contactMessage" data-i18n="contact.form.message">Message</label>
+                        <textarea id="contactMessage" placeholder="Your detailed message here..." required></textarea>
+
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> <span data-i18n="contact.form.submit">Send Message</span>
+                        </button>
+                    </form>
+                    <div id="formStatus" style="margin-top:10px;font-size:14px;"></div>
                 </div>
 
-                <div class="team-grid" id="teamGrid">
-                    <!-- Bahadur Ali -->
-                    <div class="team-card">
-                        <div class="avatar bahadur">BA</div>
-                        <h4>Bahadur Ali</h4>
-                        <p class="role">Application Developer &amp; AI Lead</p>
-                        <p class="university">Riphah International University, Lahore</p>
-                        <p class="department">Department of Computer Science</p>
-                        <div class="social-links">
-                            <a href="https://huggingface.co/embedingHF" target="_blank" aria-label="Hugging Face"><i class="fab fa-hubspot"></i></a>
-                            <a href="https://www.linkedin.com/in/generatewithali/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://www.instagram.com/bahadur_ali804/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="mailto:bahaduralimunnabhai@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Sheza Abid -->
-                    <div class="team-card">
-                        <div class="avatar sheza">SA</div>
-                        <h4>Sheza Abid</h4>
-                        <p class="role">Website Developer &amp; UI/UX Designer</p>
-                        <p class="university">Riphah International University, Lahore</p>
-                        <p class="department">Department of Computer Science</p>
-                        <div class="social-links">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="#" aria-label="Portfolio"><i class="fas fa-briefcase"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Aiman Imran -->
-                    <div class="team-card">
-                        <div class="avatar aiman">AI</div>
-                        <h4>Aiman Imran</h4>
-                        <p class="role">Content Manager &amp; QA Support</p>
-                        <p class="university">Riphah International University, Lahore</p>
-                        <p class="department">Department of Computer Science</p>
-                        <div class="social-links">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Fatima Akram -->
-                    <div class="team-card">
-                        <div class="avatar fatima">FA</div>
-                        <h4>Fatima Akram</h4>
-                        <p class="role">QA Developer &amp; Tester</p>
-                        <p class="university">Riphah International University, Lahore</p>
-                        <p class="department">Department of Computer Science</p>
-                        <div class="social-links">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Ali Masood -->
-                    <div class="team-card">
-                        <div class="avatar ali">AM</div>
-                        <h4>Ali Masood</h4>
-                        <p class="role">Tester &amp; Documentation</p>
-                        <p class="university">Riphah International University, Lahore</p>
-                        <p class="department">Department of Computer Science</p>
-                        <div class="social-links">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== PAGE 5: DOWNLOAD ===== -->
-        <div class="page-content" id="page-download">
-            <div class="container download-page">
-                <div class="section-header">
-                    <span class="badge"><i class="fas fa-download"></i> <span data-i18n="download.badge">Download</span></span>
-                    <h2><span data-i18n="download.title1">Ready to Convert</span> <span data-i18n="download.title2">Anything?</span></h2>
-                    <p data-i18n="download.subtitle">Download All Files Converter AI today and experience the power of AI-driven file conversion.</p>
-                </div>
-
-                <a href="https://github.com/bahaduralihashmi/File-Converter/releases/latest/download/AllFilesConverterAI_Riphah_Setup_v3.0.0.exe"
-                   class="btn btn-download" download target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-download"></i> <span data-i18n="download.btn">Download for Windows</span>
-                </a>
-
-                <div class="download-badges">
-                    <span class="badge"><i class="fas fa-check-circle" style="color:#38A169;"></i> <span data-i18n="download.badge1">Windows 10/11</span></span>
-                    <span class="badge"><i class="fas fa-shield-alt" style="color:var(--primary);"></i> <span data-i18n="download.badge2">Secure</span></span>
-                    <span class="badge"><i class="fas fa-wifi-slash" style="color:#D69E2E;"></i> <span data-i18n="download.badge3">Offline</span></span>
-                    <span class="badge"><i class="fas fa-infinity" style="color:#E53E3E;"></i> <span data-i18n="download.badge4">Unlimited</span></span>
-                </div>
-
-                <div class="version-info">
-                    <p><span data-i18n="download.version">Version 3.0.0 · 104+ Formats · 7 Categories</span></p>
-                    <p style="margin-top:4px;" data-i18n="download.credit">Developed by generatewithali Team · Riphah International University</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== PAGE 6: CONTACT ===== -->
-        <div class="page-content" id="page-contact">
-            <div class="container">
-                <div class="section-header">
-                    <span class="badge"><i class="fas fa-address-card"></i> <span data-i18n="contact.badge">Contact</span></span>
-                    <h2><span data-i18n="contact.title1">Get in</span> <span data-i18n="contact.title2">Touch</span></h2>
-                    <p data-i18n="contact.subtitle">We'd love to hear from you. Reach out for support, feedback, or collaboration.</p>
-                </div>
-
-                <div class="contact-grid">
-                    <!-- Contact Form -->
+                <!-- Contact Info & Cookie Consent -->
+                <div>
                     <div class="contact-card">
-                        <h3><i class="fas fa-envelope"></i> <span data-i18n="contact.form.title">Send us a Message</span></h3>
-                        <form id="contactForm">
-                            <label for="contactEmail" data-i18n="contact.form.email">Your Email</label>
-                            <input type="email" id="contactEmail" placeholder="you@example.com" required>
-
-                            <label for="contactMessage" data-i18n="contact.form.message">Message</label>
-                            <textarea id="contactMessage" placeholder="Your detailed message here..." required></textarea>
-
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-paper-plane"></i> <span data-i18n="contact.form.submit">Send Message</span>
-                            </button>
-                        </form>
-                        <div id="formStatus" style="margin-top:10px;font-size:14px;"></div>
+                        <h3><i class="fas fa-phone"></i> <span data-i18n="contact.info.title">Contact Information</span></h3>
+                        <div class="contact-info">
+                            <a href="mailto:bahaduralimunnabhai@gmail.com"><i class="fas fa-envelope"></i> bahaduralimunnabhai@gmail.com</a>
+                            <a href="https://wa.me/923034572298" target="_blank"><i class="fab fa-whatsapp"></i> +92 303 4572298</a>
+                            <a href="https://huggingface.co/embedingHF" target="_blank"><i class="fab fa-hubspot"></i> Hugging Face</a>
+                            <a href="https://www.linkedin.com/in/generatewithali/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                            <a href="https://www.instagram.com/bahadur_ali804/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                        </div>
                     </div>
 
-                    <!-- Contact Info & Cookie Consent -->
-                    <div>
-                        <div class="contact-card">
-                            <h3><i class="fas fa-phone"></i> <span data-i18n="contact.info.title">Contact Information</span></h3>
-                            <div class="contact-info">
-                                <a href="mailto:bahaduralimunnabhai@gmail.com"><i class="fas fa-envelope"></i> bahaduralimunnabhai@gmail.com</a>
-                                <a href="https://wa.me/923034572298" target="_blank"><i class="fab fa-whatsapp"></i> +92 303 4572298</a>
-                                <a href="https://huggingface.co/embedingHF" target="_blank"><i class="fab fa-hubspot"></i> Hugging Face</a>
-                                <a href="https://www.linkedin.com/in/generatewithali/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-                                <a href="https://www.instagram.com/bahadur_ali804/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                            </div>
+                    <!-- Cookie Subscription -->
+                    <div class="cookie-consent" id="cookieConsent">
+                        <p><i class="fas fa-cookie-bite" style="color:var(--primary);margin-right:8px;"></i> <span data-i18n="cookie.text">We use cookies to enhance your experience. Subscribe to our updates.</span></p>
+                        <div class="cookie-actions">
+                            <input type="email" id="cookieEmail" placeholder="your@email.com" style="padding:8px 16px;border-radius:30px;border:1px solid var(--border-glass);background:rgba(255,255,255,0.04);color:var(--text-primary);font-family:'Inter',sans-serif;outline:none;min-width:180px;">
+                            <button class="btn btn-primary" id="cookieSubscribeBtn" style="padding:8px 22px;font-size:13px;">
+                                <i class="fas fa-check"></i> <span data-i18n="cookie.subscribe">Subscribe</span>
+                            </button>
                         </div>
-
-                        <!-- Cookie Subscription -->
-                        <div class="cookie-consent" id="cookieConsent">
-                            <p><i class="fas fa-cookie-bite" style="color:var(--primary);margin-right:8px;"></i> <span data-i18n="cookie.text">We use cookies to enhance your experience. Subscribe to our updates.</span></p>
-                            <div class="cookie-actions">
-                                <input type="email" id="cookieEmail" placeholder="your@email.com" style="padding:8px 16px;border-radius:30px;border:1px solid var(--border-glass);background:rgba(255,255,255,0.04);color:var(--text-primary);font-family:'Inter',sans-serif;outline:none;min-width:180px;">
-                                <button class="btn btn-primary" id="cookieSubscribeBtn" style="padding:8px 22px;font-size:13px;">
-                                    <i class="fas fa-check"></i> <span data-i18n="cookie.subscribe">Subscribe</span>
-                                </button>
-                            </div>
-                            <div id="cookieStatus" style="width:100%;font-size:13px;margin-top:6px;"></div>
-                        </div>
+                        <div id="cookieStatus" style="width:100%;font-size:13px;margin-top:6px;"></div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-    </div>
-
-    <!-- ===== FOOTER ===== -->
+    <!-- ===== FOOTER (Updated) ===== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-links">
@@ -1794,6 +1774,7 @@
                 applyTheme(themes[currentThemeIndex]);
             });
 
+            // Load saved theme
             const savedTheme = localStorage.getItem('converter-theme');
             if (savedTheme && themes.includes(savedTheme)) {
                 applyTheme(savedTheme);
@@ -1876,6 +1857,11 @@
                     'team.title1': 'Meet the',
                     'team.title2': 'generatewithali',
                     'team.subtitle': 'A passionate team dedicated to making file conversion effortless for everyone.',
+                    'team.bahadur.role': 'Application Developer & AI Lead',
+                    'team.sheza.role': 'Website Developer & UI/UX Designer',
+                    'team.aiman.role': 'Content Manager & QA Support',
+                    'team.fatima.role': 'QA Developer & Tester',
+                    'team.ali.role': 'Tester & Documentation',
                     'download.badge': 'Download',
                     'download.title1': 'Ready to Convert',
                     'download.title2': 'Anything?',
@@ -1971,6 +1957,11 @@
                     'team.title1': 'Lernen Sie',
                     'team.title2': 'generatewithali',
                     'team.subtitle': 'Ein leidenschaftliches Team, das sich dafür einsetzt, die Dateikonvertierung für alle mühelos zu machen.',
+                    'team.bahadur.role': 'Anwendungsentwickler & KI-Leiter',
+                    'team.sheza.role': 'Webentwickler & UI/UX-Designer',
+                    'team.aiman.role': 'Content-Manager & QA-Support',
+                    'team.fatima.role': 'QA-Entwickler & Tester',
+                    'team.ali.role': 'Tester & Dokumentation',
                     'download.badge': 'Herunterladen',
                     'download.title1': 'Bereit zum Konvertieren',
                     'download.title2': 'Alles?',
@@ -2066,6 +2057,11 @@
                     'team.title1': '认识',
                     'team.title2': 'generatewithali',
                     'team.subtitle': '一个充满热情的团队，致力于让文件转换对每个人都变得轻松。',
+                    'team.bahadur.role': '应用程序开发人员与 AI 主管',
+                    'team.sheza.role': '网站开发人员与 UI/UX 设计师',
+                    'team.aiman.role': '内容经理与 QA 支持',
+                    'team.fatima.role': 'QA 开发人员与测试员',
+                    'team.ali.role': '测试员与文档',
                     'download.badge': '下载',
                     'download.title1': '准备转换',
                     'download.title2': '任何文件？',
@@ -2161,6 +2157,11 @@
                     'team.title1': 'تعرف على',
                     'team.title2': 'generatewithali',
                     'team.subtitle': 'فريق شغوف مكرس لجعل تحويل الملفات سهلاً للجميع.',
+                    'team.bahadur.role': 'مطور التطبيق وقائد الذكاء الاصطناعي',
+                    'team.sheza.role': 'مطور الويب ومصمم UI/UX',
+                    'team.aiman.role': 'مدير المحتوى ودعم ضمان الجودة',
+                    'team.fatima.role': 'مطور ضمان الجودة ومختبر',
+                    'team.ali.role': 'مختبر وكاتب وثائق',
                     'download.badge': 'تحميل',
                     'download.title1': 'مستعد لتحويل',
                     'download.title2': 'أي شيء؟',
@@ -2218,63 +2219,45 @@
             }
 
             // =====================
-            // 3. PAGE NAVIGATION SYSTEM
+            // 3. NAVIGATION (Core)
             // =====================
-            const pageLinks = document.querySelectorAll('[data-page]');
-            const pageContents = document.querySelectorAll('.page-content');
-            const nav = document.getElementById('nav');
-
-            function navigateToPage(pageId) {
-                // Hide all pages
-                pageContents.forEach(p => p.classList.remove('active'));
-                
-                // Show target page
-                const targetPage = document.getElementById('page-' + pageId);
-                if (targetPage) {
-                    targetPage.classList.add('active');
-                }
-
-                // Update active nav links
-                document.querySelectorAll('.nav-links a, .footer-links a, .dropdown-menu a').forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('data-page') === pageId) {
-                        link.classList.add('active');
-                    }
-                });
-
-                // Close mobile menu
-                navMenu.classList.remove('open');
-
-                // Scroll to top
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-
-            // Add click listeners to all page links
-            pageLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const page = this.getAttribute('data-page');
-                    if (page) {
-                        navigateToPage(page);
-                        // Update URL hash for browser history
-                        history.pushState(null, '', '#' + page);
-                    }
-                });
-            });
-
-            // Handle browser back/forward
-            window.addEventListener('popstate', function() {
-                const hash = window.location.hash.replace('#', '') || 'home';
-                navigateToPage(hash);
-            });
-
-            // Load initial page from URL hash
-            const initialPage = window.location.hash.replace('#', '') || 'home';
-            navigateToPage(initialPage);
-
-            // Mobile toggle
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const logo = document.querySelector('.logo');
+            const footerLinks = document.querySelectorAll('.footer-links a');
+            const heroBtns = document.querySelectorAll('.hero-actions .btn');
+            const dots = document.querySelectorAll('.page-indicator .dot');
             const navToggle = document.getElementById('navToggle');
             const navMenu = document.getElementById('navLinks');
+
+            function navigateTo(pageId) {
+                const target = document.getElementById(pageId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                navMenu.classList.remove('open');
+            }
+
+            function addNavListeners(elements) {
+                elements.forEach(el => {
+                    el.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const page = this.getAttribute('data-page');
+                        if (page) navigateTo(page);
+                    });
+                });
+            }
+
+            addNavListeners(navLinks);
+            addNavListeners(footerLinks);
+            addNavListeners(heroBtns);
+            addNavListeners(dots);
+
+            if (logo) {
+                logo.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    navigateTo('home');
+                });
+            }
 
             if (navToggle && navMenu) {
                 navToggle.addEventListener('click', function() {
@@ -2282,59 +2265,66 @@
                 });
             }
 
-            // Nav scroll effect
+            // ---- Nav scroll effect ----
+            const nav = document.getElementById('nav');
             window.addEventListener('scroll', function() {
                 nav.classList.toggle('scrolled', window.scrollY > 20);
             });
 
+            // ---- Active section detection ----
+            const sections = document.querySelectorAll('.page');
+
+            function updateActive() {
+                let current = '';
+                sections.forEach(sec => {
+                    const top = sec.offsetTop - 140;
+                    if (window.scrollY >= top) {
+                        current = sec.getAttribute('id');
+                    }
+                });
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('data-page') === current);
+                });
+                dots.forEach(dot => {
+                    dot.classList.toggle('active', dot.getAttribute('data-page') === current);
+                });
+            }
+
+            window.addEventListener('scroll', updateActive);
+            window.addEventListener('load', updateActive);
+
             // =====================
             // 4. INTERSECTION OBSERVERS (Animations)
             // =====================
-            function setupObservers() {
-                // Features
-                const featureCards = document.querySelectorAll('#page-features .feature-card');
-                const featureObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
-                        }
-                    });
-                }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-                featureCards.forEach(card => featureObserver.observe(card));
+            const featureCards = document.querySelectorAll('.feature-card');
+            const featureObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+            featureCards.forEach(card => featureObserver.observe(card));
 
-                // Format items
-                const formatItems = document.querySelectorAll('#page-formats .format-item');
-                const formatObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
-                        }
-                    });
-                }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
-                formatItems.forEach(item => formatObserver.observe(item));
+            const formatItems = document.querySelectorAll('.format-item');
+            const formatObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+            formatItems.forEach(item => formatObserver.observe(item));
 
-                // Team cards
-                const teamCards = document.querySelectorAll('#page-team .team-card');
-                const teamObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
-                        }
-                    });
-                }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-                teamCards.forEach(card => teamObserver.observe(card));
-            }
-
-            // Setup observers after initial load
-            setTimeout(setupObservers, 100);
-
-            // Re-run observers when page changes
-            const observer = new MutationObserver(() => {
-                setTimeout(setupObservers, 200);
-            });
-            document.querySelectorAll('.page-content').forEach(el => {
-                observer.observe(el, { attributes: true, attributeFilter: ['class'] });
-            });
+            const teamCards = document.querySelectorAll('.team-card');
+            const teamObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+            teamCards.forEach(card => teamObserver.observe(card));
 
             // =====================
             // 5. HERO STATS COUNTER
@@ -2352,29 +2342,21 @@
                 }, 16);
             }
 
-            function checkAndRunStats() {
-                const homePage = document.getElementById('page-home');
-                if (homePage && homePage.classList.contains('active')) {
-                    const statsWrapper = homePage.querySelector('.hero-stats');
-                    if (statsWrapper && !statsWrapper.dataset.counterRun) {
-                        statsWrapper.dataset.counterRun = 'true';
-                        const statEls = statsWrapper.querySelectorAll('.stat h3');
-                        const targets = [104, 7, 100];
-                        statEls.forEach((el, idx) => {
-                            animateCounter(el, targets[idx], 1300);
-                        });
-                    }
-                }
-            }
-
-            setTimeout(checkAndRunStats, 300);
-
-            const homeObserver = new MutationObserver(() => {
-                checkAndRunStats();
-            });
-            const homePage = document.getElementById('page-home');
-            if (homePage) {
-                homeObserver.observe(homePage, { attributes: true, attributeFilter: ['class'] });
+            const statsWrapper = document.querySelector('.hero-stats');
+            if (statsWrapper) {
+                const statsObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const statEls = entry.target.querySelectorAll('.stat h3');
+                            const targets = [104, 7, 100];
+                            statEls.forEach((el, idx) => {
+                                animateCounter(el, targets[idx], 1300);
+                            });
+                            statsObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.2 });
+                statsObserver.observe(statsWrapper);
             }
 
             // =====================
@@ -2383,24 +2365,22 @@
             const contactForm = document.getElementById('contactForm');
             const formStatus = document.getElementById('formStatus');
 
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const email = document.getElementById('contactEmail').value.trim();
-                    const message = document.getElementById('contactMessage').value.trim();
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = document.getElementById('contactEmail').value.trim();
+                const message = document.getElementById('contactMessage').value.trim();
 
-                    if (!email || !message) {
-                        formStatus.innerHTML = '<span style="color:#E53E3E;">Please fill in all fields.</span>';
-                        return;
-                    }
+                if (!email || !message) {
+                    formStatus.innerHTML = '<span style="color:#E53E3E;">Please fill in all fields.</span>';
+                    return;
+                }
 
-                    formStatus.innerHTML = '<span style="color:#38A169;"><i class="fas fa-spinner fa-spin"></i> Sending...</span>';
-                    setTimeout(() => {
-                        formStatus.innerHTML = '<span style="color:#38A169;"><i class="fas fa-check-circle"></i> Message sent successfully!</span>';
-                        contactForm.reset();
-                    }, 1500);
-                });
-            }
+                formStatus.innerHTML = '<span style="color:#38A169;"><i class="fas fa-spinner fa-spin"></i> Sending...</span>';
+                setTimeout(() => {
+                    formStatus.innerHTML = '<span style="color:#38A169;"><i class="fas fa-check-circle"></i> Message sent successfully!</span>';
+                    contactForm.reset();
+                }, 1500);
+            });
 
             // =====================
             // 7. COOKIE / SUBSCRIPTION
@@ -2409,25 +2389,23 @@
             const cookieEmail = document.getElementById('cookieEmail');
             const cookieStatus = document.getElementById('cookieStatus');
 
-            if (cookieSubscribeBtn) {
-                cookieSubscribeBtn.addEventListener('click', function() {
-                    const email = cookieEmail.value.trim();
-                    if (!email || !email.includes('@')) {
-                        cookieStatus.innerHTML = '<span style="color:#E53E3E;">Please enter a valid email.</span>';
-                        return;
-                    }
+            cookieSubscribeBtn.addEventListener('click', function() {
+                const email = cookieEmail.value.trim();
+                if (!email || !email.includes('@')) {
+                    cookieStatus.innerHTML = '<span style="color:#E53E3E;">Please enter a valid email.</span>';
+                    return;
+                }
 
-                    cookieStatus.innerHTML = '<span style="color:#38A169;"><i class="fas fa-spinner fa-spin"></i> Subscribing...</span>';
-                    setTimeout(() => {
-                        cookieStatus.innerHTML = '<span style="color:#38A169;"><i class="fas fa-check-circle"></i> Subscribed successfully!</span>';
-                        cookieEmail.value = '';
-                        localStorage.setItem('cookie-consent', 'true');
-                    }, 1000);
-                });
-            }
+                cookieStatus.innerHTML = '<span style="color:#38A169;"><i class="fas fa-spinner fa-spin"></i> Subscribing...</span>';
+                setTimeout(() => {
+                    cookieStatus.innerHTML = '<span style="color:#38A169;"><i class="fas fa-check-circle"></i> Subscribed successfully!</span>';
+                    cookieEmail.value = '';
+                    localStorage.setItem('cookie-consent', 'true');
+                }, 1000);
+            });
 
-            if (localStorage.getItem('cookie-consent') === 'true' && cookieStatus) {
-                cookieStatus.innerHTML = '<span style="color:#38A169;"><i class="fas fa-check-circle"></i> You are subscribed.';
+            if (localStorage.getItem('cookie-consent') === 'true') {
+                cookieStatus.innerHTML = '<span style="color:#38A169;"><i class="fas fa-check-circle"></i> You are subscribed.</span>';
             }
 
         })();

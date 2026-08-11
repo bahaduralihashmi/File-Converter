@@ -14,5 +14,18 @@
     }
   ],
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "regions": ["sfo1"]
+  "regions": ["sfo1"],
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "regions": ["iad1"],
+  "functionFailoverRegions": ["cle1"],
+  "functions": {
+    "api/eu-data.js": {
+      "regions": ["cdg1"],
+      "functionFailoverRegions": ["lhr1"]
+    },
+    "api/us-west.js": {
+      "regions": ["sfo1"],
+      "functionFailoverRegions": ["pdx1"]
+    }
+  }
 }

@@ -6,8 +6,8 @@
     <title>All Files Converter AI · Premium</title>
 
     <!-- Favicon (Website Icon for Tabs) -->
-    <link rel="icon" type="image/png" href="https://github.com/bahaduralihashmi/File-Converter/blob/main/icons8-camera-50.png" />
-    <link rel="apple-touch-icon" href="https://github.com/bahaduralihashmi/File-Converter/blob/main/icons8-camera-50.png" />
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/000000/converter.png" />
+    <link rel="apple-touch-icon" href="https://img.icons8.com/fluency/48/000000/converter.png" />
 
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
@@ -881,10 +881,10 @@
             transform: scale(1.15) rotate(-4deg);
         }
 
-        /* ----- TEAM (Updated) ----- */
+        /* ----- TEAM (Updated with Full Details) ----- */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 24px;
             margin-top: 20px;
         }
@@ -895,7 +895,7 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid var(--border-glass);
             border-radius: var(--radius);
-            padding: 24px 18px;
+            padding: 28px 20px;
             text-align: center;
             transition: var(--transition);
             opacity: 0;
@@ -914,37 +914,59 @@
         }
 
         .team-card .avatar {
-            width: 72px;
-            height: 72px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            margin: 0 auto 12px;
+            margin: 0 auto 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
             color: white;
+            flex-shrink: 0;
         }
-        .team-card .avatar.sheza { background: var(--gradient-1); }
-        .team-card .avatar.fatima { background: var(--gradient-2); }
-        .team-card .avatar.aiman { background: var(--gradient-3); }
         .team-card .avatar.bahadur { background: linear-gradient(135deg, #F7971E, #FFD200); }
+        .team-card .avatar.sheza { background: var(--gradient-1); }
+        .team-card .avatar.aiman { background: var(--gradient-3); }
+        .team-card .avatar.fatima { background: var(--gradient-2); }
         .team-card .avatar.ali { background: linear-gradient(135deg, #1D976C, #93F9B9); }
 
-        .team-card h4 { font-size: 17px; font-weight: 700; }
-        .team-card .role { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
-        .team-card .university { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+        .team-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .team-card .role {
+            font-size: 13px;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .team-card .university {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .team-card .department {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
 
         .team-card .social-links {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-top: 14px;
+            gap: 12px;
+            margin-top: 16px;
         }
 
         .team-card .social-links a {
-            width: 34px;
-            height: 34px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -954,7 +976,7 @@
             transition: var(--transition);
             border: 1px solid var(--border-glass);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 15px;
         }
 
         .team-card .social-links a:hover {
@@ -1554,7 +1576,7 @@
             </div>
         </div>
 
-        <!-- ===== PAGE 4: TEAM ===== -->
+        <!-- ===== PAGE 4: TEAM (Updated with Full Details) ===== -->
         <div class="page-content" id="page-team">
             <div class="container">
                 <div class="section-header">
@@ -1564,55 +1586,74 @@
                 </div>
 
                 <div class="team-grid" id="teamGrid">
+                    <!-- Bahadur Ali -->
                     <div class="team-card">
                         <div class="avatar bahadur">BA</div>
                         <h4>Bahadur Ali</h4>
-                        <p class="role" data-i18n="team.bahadur.role">Application Developer &amp; AI Lead</p>
+                        <p class="role">Application Developer &amp; AI Lead</p>
                         <p class="university">Riphah International University, Lahore</p>
+                        <p class="department">Department of Computer Science</p>
                         <div class="social-links">
                             <a href="https://huggingface.co/embedingHF" target="_blank" aria-label="Hugging Face"><i class="fab fa-hubspot"></i></a>
                             <a href="https://www.linkedin.com/in/generatewithali/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                             <a href="https://www.instagram.com/bahadur_ali804/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="mailto:bahaduralimunnabhai@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
+
+                    <!-- Sheza Abid -->
                     <div class="team-card">
                         <div class="avatar sheza">SA</div>
                         <h4>Sheza Abid</h4>
-                        <p class="role" data-i18n="team.sheza.role">Website Developer &amp; UI/UX Designer</p>
+                        <p class="role">Website Developer &amp; UI/UX Designer</p>
                         <p class="university">Riphah International University, Lahore</p>
+                        <p class="department">Department of Computer Science</p>
                         <div class="social-links">
                             <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" aria-label="Portfolio"><i class="fas fa-briefcase"></i></a>
                         </div>
                     </div>
+
+                    <!-- Aiman Imran -->
                     <div class="team-card">
                         <div class="avatar aiman">AI</div>
                         <h4>Aiman Imran</h4>
-                        <p class="role" data-i18n="team.aiman.role">Content Manager &amp; QA Support</p>
+                        <p class="role">Content Manager &amp; QA Support</p>
                         <p class="university">Riphah International University, Lahore</p>
+                        <p class="department">Department of Computer Science</p>
                         <div class="social-links">
                             <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-card">
-                        <div class="avatar fatima">FA</div>
-                        <h4>Fatima Akram</h4>
-                        <p class="role" data-i18n="team.fatima.role">QA Developer &amp; Tester</p>
-                        <p class="university">Riphah International University, Lahore</p>
-                        <div class="social-links">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
+
+                    <!-- Fatima Akram -->
+                    <div class="team-card">
+                        <div class="avatar fatima">FA</div>
+                        <h4>Fatima Akram</h4>
+                        <p class="role">QA Developer &amp; Tester</p>
+                        <p class="university">Riphah International University, Lahore</p>
+                        <p class="department">Department of Computer Science</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Ali Masood -->
                     <div class="team-card">
                         <div class="avatar ali">AM</div>
                         <h4>Ali Masood</h4>
-                        <p class="role" data-i18n="team.ali.role">Tester &amp; Documentation</p>
+                        <p class="role">Tester &amp; Documentation</p>
                         <p class="university">Riphah International University, Lahore</p>
+                        <p class="department">Department of Computer Science</p>
                         <div class="social-links">
                             <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1835,11 +1876,6 @@
                     'team.title1': 'Meet the',
                     'team.title2': 'generatewithali',
                     'team.subtitle': 'A passionate team dedicated to making file conversion effortless for everyone.',
-                    'team.bahadur.role': 'Application Developer & AI Lead',
-                    'team.sheza.role': 'Website Developer & UI/UX Designer',
-                    'team.aiman.role': 'Content Manager & QA Support',
-                    'team.fatima.role': 'QA Developer & Tester',
-                    'team.ali.role': 'Tester & Documentation',
                     'download.badge': 'Download',
                     'download.title1': 'Ready to Convert',
                     'download.title2': 'Anything?',
@@ -1935,11 +1971,6 @@
                     'team.title1': 'Lernen Sie',
                     'team.title2': 'generatewithali',
                     'team.subtitle': 'Ein leidenschaftliches Team, das sich dafür einsetzt, die Dateikonvertierung für alle mühelos zu machen.',
-                    'team.bahadur.role': 'Anwendungsentwickler & KI-Leiter',
-                    'team.sheza.role': 'Webentwickler & UI/UX-Designer',
-                    'team.aiman.role': 'Content-Manager & QA-Support',
-                    'team.fatima.role': 'QA-Entwickler & Tester',
-                    'team.ali.role': 'Tester & Dokumentation',
                     'download.badge': 'Herunterladen',
                     'download.title1': 'Bereit zum Konvertieren',
                     'download.title2': 'Alles?',
@@ -2035,11 +2066,6 @@
                     'team.title1': '认识',
                     'team.title2': 'generatewithali',
                     'team.subtitle': '一个充满热情的团队，致力于让文件转换对每个人都变得轻松。',
-                    'team.bahadur.role': '应用程序开发人员与 AI 主管',
-                    'team.sheza.role': '网站开发人员与 UI/UX 设计师',
-                    'team.aiman.role': '内容经理与 QA 支持',
-                    'team.fatima.role': 'QA 开发人员与测试员',
-                    'team.ali.role': '测试员与文档',
                     'download.badge': '下载',
                     'download.title1': '准备转换',
                     'download.title2': '任何文件？',
@@ -2135,11 +2161,6 @@
                     'team.title1': 'تعرف على',
                     'team.title2': 'generatewithali',
                     'team.subtitle': 'فريق شغوف مكرس لجعل تحويل الملفات سهلاً للجميع.',
-                    'team.bahadur.role': 'مطور التطبيق وقائد الذكاء الاصطناعي',
-                    'team.sheza.role': 'مطور الويب ومصمم UI/UX',
-                    'team.aiman.role': 'مدير المحتوى ودعم ضمان الجودة',
-                    'team.fatima.role': 'مطور ضمان الجودة ومختبر',
-                    'team.ali.role': 'مختبر وكاتب وثائق',
                     'download.badge': 'تحميل',
                     'download.title1': 'مستعد لتحويل',
                     'download.title2': 'أي شيء؟',
@@ -2269,7 +2290,6 @@
             // =====================
             // 4. INTERSECTION OBSERVERS (Animations)
             // =====================
-            // We need to re-run observers when pages change
             function setupObservers() {
                 // Features
                 const featureCards = document.querySelectorAll('#page-features .feature-card');
@@ -2332,7 +2352,6 @@
                 }, 16);
             }
 
-            // Run stats counter when home page is visible
             function checkAndRunStats() {
                 const homePage = document.getElementById('page-home');
                 if (homePage && homePage.classList.contains('active')) {
@@ -2348,10 +2367,8 @@
                 }
             }
 
-            // Run on initial load
             setTimeout(checkAndRunStats, 300);
 
-            // Run when home page becomes active
             const homeObserver = new MutationObserver(() => {
                 checkAndRunStats();
             });

@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <title>All Files Converter AI · Premium</title>
 
+    <!-- Favicon (Website Icon for Tabs) -->
+    <link rel="icon" type="image/png" href="https://github.com/bahaduralihashmi/File-Converter/blob/main/icons8-camera-50.png" />
+    <link rel="apple-touch-icon" href="https://github.com/bahaduralihashmi/File-Converter/blob/main/icons8-camera-50.png" />
+
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <style>
-        /* ----- RESET & VARIABLES ----- */
+        /* ----- RESET & VARIABLES (Enhanced) ----- */
         * {
             margin: 0;
             padding: 0;
@@ -18,6 +22,7 @@
         }
 
         :root {
+            /* Core colors */
             --primary: #6C63FF;
             --primary-dark: #5A52D5;
             --secondary: #FF6B6B;
@@ -25,6 +30,8 @@
             --gradient-1: linear-gradient(135deg, #6C63FF 0%, #3A7BD5 100%);
             --gradient-2: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
             --gradient-3: linear-gradient(135deg, #11998E 0%, #38EF7D 100%);
+            
+            /* Theme variables (to be toggled) */
             --bg-dark: #0A0A1A;
             --bg-card: rgba(255, 255, 255, 0.04);
             --text-primary: #FFFFFF;
@@ -32,8 +39,43 @@
             --text-muted: rgba(255, 255, 255, 0.4);
             --border-glass: rgba(255, 255, 255, 0.08);
             --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
+            
+            /* Sizes */
             --radius: 16px;
             --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Light Theme */
+        [data-theme="light"] {
+            --bg-dark: #F4F7FC;
+            --bg-card: rgba(255, 255, 255, 0.7);
+            --text-primary: #1A202C;
+            --text-secondary: rgba(26, 32, 44, 0.72);
+            --text-muted: rgba(26, 32, 44, 0.5);
+            --border-glass: rgba(0, 0, 0, 0.08);
+            --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Professional Blue Theme */
+        [data-theme="blue"] {
+            --bg-dark: #0B1A33;
+            --bg-card: rgba(26, 67, 128, 0.25);
+            --text-primary: #E8F0FE;
+            --text-secondary: rgba(232, 240, 254, 0.72);
+            --text-muted: rgba(232, 240, 254, 0.4);
+            --border-glass: rgba(66, 133, 244, 0.15);
+            --shadow-glass: 0 8px 32px rgba(0, 20, 50, 0.4);
+        }
+
+        /* Elegant Plum Theme */
+        [data-theme="plum"] {
+            --bg-dark: #1A0B1E;
+            --bg-card: rgba(128, 26, 102, 0.2);
+            --text-primary: #F8E5F5;
+            --text-secondary: rgba(248, 232, 245, 0.72);
+            --text-muted: rgba(248, 232, 245, 0.4);
+            --border-glass: rgba(180, 60, 150, 0.15);
+            --shadow-glass: 0 8px 32px rgba(30, 0, 30, 0.4);
         }
 
         html {
@@ -47,21 +89,16 @@
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
+            transition: background 0.4s ease, color 0.3s ease;
+            min-height: 100vh;
         }
 
         /* ----- SCROLLBAR ----- */
-        ::-webkit-scrollbar {
-            width: 5px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-dark);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 6px;
-        }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 6px; }
 
-        /* ----- ANIMATED BACKGROUND (refined) ----- */
+        /* ----- ANIMATED BACKGROUND ----- */
         .bg-animation {
             position: fixed;
             inset: 0;
@@ -86,7 +123,6 @@
             right: -10%;
             animation-delay: -2s;
         }
-
         .bg-animation .orb:nth-child(2) {
             width: 500px;
             height: 500px;
@@ -95,7 +131,6 @@
             left: -10%;
             animation-delay: -10s;
         }
-
         .bg-animation .orb:nth-child(3) {
             width: 380px;
             height: 380px;
@@ -107,12 +142,8 @@
         }
 
         @keyframes orbFloat {
-            0% {
-                transform: translate(0, 0) scale(1);
-            }
-            100% {
-                transform: translate(40px, -30px) scale(1.12);
-            }
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(40px, -30px) scale(1.12); }
         }
 
         /* ----- GLASS & CONTAINER ----- */
@@ -133,14 +164,16 @@
             z-index: 1;
         }
 
-        /* ----- FIXED NAVIGATION (more refined) ----- */
+        /* ============================================================
+           NAVIGATION (Right-aligned with Dropdown)
+           ============================================================ */
         .nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 14px 0;
+            padding: 10px 0;
             background: rgba(10, 10, 26, 0.72);
             backdrop-filter: blur(22px);
             -webkit-backdrop-filter: blur(22px);
@@ -153,10 +186,19 @@
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
         }
 
+        [data-theme="light"] .nav {
+            background: rgba(244, 247, 252, 0.85);
+        }
+        [data-theme="light"] .nav.scrolled {
+            background: rgba(244, 247, 252, 0.95);
+        }
+
         .nav .container {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .nav .logo {
@@ -165,7 +207,7 @@
             gap: 10px;
             font-size: 20px;
             font-weight: 800;
-            color: white;
+            color: var(--text-primary);
             text-decoration: none;
             cursor: pointer;
             letter-spacing: -0.3px;
@@ -184,10 +226,18 @@
             flex-shrink: 0;
         }
 
+        /* ---- Right-aligned nav items ---- */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-left: auto;
+        }
+
         .nav .nav-links {
             display: flex;
             align-items: center;
-            gap: 28px;
+            gap: 8px;
             list-style: none;
         }
 
@@ -199,14 +249,16 @@
             transition: var(--transition);
             position: relative;
             cursor: pointer;
-            padding: 4px 0;
+            padding: 6px 12px;
+            border-radius: 30px;
         }
 
         .nav .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -2px;
-            left: 0;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
             width: 0;
             height: 2px;
             background: var(--gradient-1);
@@ -216,15 +268,16 @@
 
         .nav .nav-links a:hover,
         .nav .nav-links a.active {
-            color: white;
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.04);
         }
         .nav .nav-links a:hover::after,
         .nav .nav-links a.active::after {
-            width: 100%;
+            width: 60%;
         }
 
         .nav .nav-cta {
-            padding: 8px 22px;
+            padding: 6px 18px;
             background: var(--gradient-1);
             border-radius: 50px;
             color: white !important;
@@ -237,69 +290,173 @@
         .nav .nav-cta:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 28px rgba(108, 99, 255, 0.4);
+            background: var(--gradient-1);
         }
         .nav .nav-cta::after {
             display: none !important;
+        }
+
+        /* ---- Dropdown (Pages) ---- */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown > a {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .dropdown > a i {
+            font-size: 12px;
+            transition: var(--transition);
+        }
+
+        .dropdown:hover > a i {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            min-width: 160px;
+            background: rgba(10, 10, 26, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius);
+            padding: 8px 0;
+            box-shadow: var(--shadow-glass);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: var(--transition);
+            list-style: none;
+            z-index: 1001;
+        }
+
+        [data-theme="light"] .dropdown-menu {
+            background: rgba(244, 247, 252, 0.95);
+        }
+
+        .dropdown:hover .dropdown-menu,
+        .dropdown:focus-within .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 8px 20px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: var(--transition);
+            border-radius: 0;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--text-primary);
+        }
+
+        .dropdown-menu a::after {
+            display: none !important;
+        }
+
+        /* ---- Theme & Language Controls ---- */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-controls select {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border-glass);
+            border-radius: 30px;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            outline: none;
+            transition: var(--transition);
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-controls select:hover {
+            border-color: var(--primary);
+        }
+
+        .nav-controls select option {
+            background: var(--bg-dark);
+            color: var(--text-primary);
+        }
+
+        .theme-toggle {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 30px;
+            padding: 5px 12px;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            backdrop-filter: blur(8px);
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--primary);
+            transform: scale(1.02);
         }
 
         .nav-toggle {
             display: none;
             background: none;
             border: none;
-            color: white;
-            font-size: 24px;
+            color: var(--text-primary);
+            font-size: 22px;
             cursor: pointer;
             padding: 4px 6px;
         }
 
-        /* ----- PAGE INDICATOR (desktop only) ----- */
-        .page-indicator {
-            position: fixed;
-            right: 22px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .page-indicator .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--text-muted);
-            transition: var(--transition);
-            cursor: pointer;
-            border: 2px solid transparent;
-        }
-
-        .page-indicator .dot.active {
-            background: var(--primary);
-            border-color: rgba(108, 99, 255, 0.3);
-            box-shadow: 0 0 20px rgba(108, 99, 255, 0.25);
-            transform: scale(1.35);
-        }
-
-        .page-indicator .dot:hover {
-            background: var(--primary);
-        }
-
-        /* ----- PAGES (sections) ----- */
-        .page {
+        /* ============================================================
+           PAGE SYSTEM (Multi-page in single file)
+           ============================================================ */
+        .page-container {
+            padding-top: 80px;
             min-height: 100vh;
             display: flex;
-            align-items: center;
-            padding: 100px 0 60px;
+            align-items: flex-start;
             position: relative;
+            z-index: 1;
         }
 
-        .page:last-child {
-            min-height: auto;
-            padding-bottom: 70px;
+        .page-content {
+            display: none;
+            width: 100%;
+            padding: 40px 0 60px;
+            animation: fadeInPage 0.4s ease;
         }
 
-        /* ----- HERO ----- */
+        .page-content.active {
+            display: block;
+        }
+
+        @keyframes fadeInPage {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ----- HERO (Updated) ----- */
         .hero-page .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -381,7 +538,7 @@
 
         .btn-secondary {
             background: rgba(255, 255, 255, 0.05);
-            color: white;
+            color: var(--text-primary);
             border: 1px solid var(--border-glass);
         }
         .btn-secondary:hover {
@@ -457,15 +614,9 @@
             border-radius: 50%;
             display: block;
         }
-        .mockup-dots span:nth-child(1) {
-            background: #FF5F56;
-        }
-        .mockup-dots span:nth-child(2) {
-            background: #FFBD2E;
-        }
-        .mockup-dots span:nth-child(3) {
-            background: #27C93F;
-        }
+        .mockup-dots span:nth-child(1) { background: #FF5F56; }
+        .mockup-dots span:nth-child(2) { background: #FFBD2E; }
+        .mockup-dots span:nth-child(3) { background: #27C93F; }
 
         .mockup-title {
             font-size: 13px;
@@ -474,9 +625,7 @@
             letter-spacing: 0.2px;
         }
 
-        .mockup-body {
-            padding-top: 14px;
-        }
+        .mockup-body { padding-top: 14px; }
 
         .mockup-row {
             display: flex;
@@ -489,9 +638,7 @@
             transition: var(--transition);
         }
 
-        .mockup-row:hover {
-            background: rgba(255, 255, 255, 0.06);
-        }
+        .mockup-row:hover { background: rgba(255, 255, 255, 0.06); }
 
         .mockup-row .icon {
             width: 32px;
@@ -503,34 +650,14 @@
             font-size: 14px;
             flex-shrink: 0;
         }
-        .mockup-row .icon.purple {
-            background: rgba(108, 99, 255, 0.2);
-            color: var(--primary);
-        }
-        .mockup-row .icon.green {
-            background: rgba(56, 161, 105, 0.2);
-            color: #38A169;
-        }
-        .mockup-row .icon.orange {
-            background: rgba(214, 158, 46, 0.2);
-            color: #D69E2E;
-        }
-        .mockup-row .icon.red {
-            background: rgba(225, 62, 62, 0.2);
-            color: #E53E3E;
-        }
+        .mockup-row .icon.purple { background: rgba(108, 99, 255, 0.2); color: var(--primary); }
+        .mockup-row .icon.green { background: rgba(56, 161, 105, 0.2); color: #38A169; }
+        .mockup-row .icon.orange { background: rgba(214, 158, 46, 0.2); color: #D69E2E; }
+        .mockup-row .icon.red { background: rgba(225, 62, 62, 0.2); color: #E53E3E; }
 
-        .mockup-row .info {
-            flex: 1;
-        }
-        .mockup-row .info .name {
-            font-size: 13px;
-            font-weight: 500;
-        }
-        .mockup-row .info .size {
-            font-size: 11px;
-            color: var(--text-muted);
-        }
+        .mockup-row .info { flex: 1; }
+        .mockup-row .info .name { font-size: 13px; font-weight: 500; }
+        .mockup-row .info .size { font-size: 11px; color: var(--text-muted); }
 
         .mockup-row .status {
             font-size: 11px;
@@ -538,22 +665,10 @@
             padding: 2px 12px;
             border-radius: 50px;
         }
-        .mockup-row .status.done {
-            background: rgba(56, 161, 105, 0.15);
-            color: #38A169;
-        }
-        .mockup-row .status.converting {
-            background: rgba(214, 158, 46, 0.15);
-            color: #D69E2E;
-        }
-        .mockup-row .status.queued {
-            background: rgba(108, 99, 255, 0.15);
-            color: var(--primary);
-        }
-        .mockup-row .status.error {
-            background: rgba(225, 62, 62, 0.15);
-            color: #E53E3E;
-        }
+        .mockup-row .status.done { background: rgba(56, 161, 105, 0.15); color: #38A169; }
+        .mockup-row .status.converting { background: rgba(214, 158, 46, 0.15); color: #D69E2E; }
+        .mockup-row .status.queued { background: rgba(108, 99, 255, 0.15); color: var(--primary); }
+        .mockup-row .status.error { background: rgba(225, 62, 62, 0.15); color: #E53E3E; }
 
         .mockup-btn {
             width: 100%;
@@ -617,7 +732,7 @@
             margin: 10px auto 0;
         }
 
-        /* ----- FEATURES ----- */
+        /* ----- FEATURES (Enhanced with Problem-Solving) ----- */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -658,30 +773,12 @@
             font-size: 22px;
             margin-bottom: 16px;
         }
-        .feature-card .icon.purple {
-            background: rgba(108, 99, 255, 0.15);
-            color: var(--primary);
-        }
-        .feature-card .icon.blue {
-            background: rgba(58, 123, 213, 0.15);
-            color: #3A7BD5;
-        }
-        .feature-card .icon.green {
-            background: rgba(56, 161, 105, 0.15);
-            color: #38A169;
-        }
-        .feature-card .icon.orange {
-            background: rgba(214, 158, 46, 0.15);
-            color: #D69E2E;
-        }
-        .feature-card .icon.red {
-            background: rgba(225, 62, 62, 0.15);
-            color: #E53E3E;
-        }
-        .feature-card .icon.teal {
-            background: rgba(49, 151, 149, 0.15);
-            color: #319795;
-        }
+        .feature-card .icon.purple { background: rgba(108, 99, 255, 0.15); color: var(--primary); }
+        .feature-card .icon.blue { background: rgba(58, 123, 213, 0.15); color: #3A7BD5; }
+        .feature-card .icon.green { background: rgba(56, 161, 105, 0.15); color: #38A169; }
+        .feature-card .icon.orange { background: rgba(214, 158, 46, 0.15); color: #D69E2E; }
+        .feature-card .icon.red { background: rgba(225, 62, 62, 0.15); color: #E53E3E; }
+        .feature-card .icon.teal { background: rgba(49, 151, 149, 0.15); color: #319795; }
 
         .feature-card h3 {
             font-size: 18px;
@@ -693,6 +790,17 @@
             font-size: 14px;
             color: var(--text-secondary);
             line-height: 1.7;
+        }
+        .feature-card .problem-solution {
+            margin-top: 12px;
+            padding: 12px 16px;
+            background: rgba(108, 99, 255, 0.06);
+            border-radius: 8px;
+            border-left: 3px solid var(--primary);
+            font-size: 13px;
+        }
+        .feature-card .problem-solution strong {
+            color: var(--text-primary);
         }
 
         /* ----- FORMATS (grid with motion) ----- */
@@ -753,9 +861,7 @@
             transition: opacity 0.4s ease;
         }
 
-        .format-item:hover::before {
-            opacity: 1;
-        }
+        .format-item:hover::before { opacity: 1; }
 
         .format-item:hover {
             transform: translateY(-5px) scale(1.02);
@@ -775,11 +881,11 @@
             transform: scale(1.15) rotate(-4deg);
         }
 
-        /* ----- TEAM ----- */
+        /* ----- TEAM (Updated) ----- */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
             margin-top: 20px;
         }
 
@@ -789,7 +895,7 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid var(--border-glass);
             border-radius: var(--radius);
-            padding: 32px 24px;
+            padding: 24px 18px;
             text-align: center;
             transition: var(--transition);
             opacity: 0;
@@ -808,54 +914,37 @@
         }
 
         .team-card .avatar {
-            width: 80px;
-            height: 80px;
+            width: 72px;
+            height: 72px;
             border-radius: 50%;
-            margin: 0 auto 14px;
+            margin: 0 auto 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 700;
             color: white;
         }
-        .team-card .avatar.sheza {
-            background: var(--gradient-1);
-        }
-        .team-card .avatar.fatima {
-            background: var(--gradient-2);
-        }
-        .team-card .avatar.aiman {
-            background: var(--gradient-3);
-        }
+        .team-card .avatar.sheza { background: var(--gradient-1); }
+        .team-card .avatar.fatima { background: var(--gradient-2); }
+        .team-card .avatar.aiman { background: var(--gradient-3); }
+        .team-card .avatar.bahadur { background: linear-gradient(135deg, #F7971E, #FFD200); }
+        .team-card .avatar.ali { background: linear-gradient(135deg, #1D976C, #93F9B9); }
 
-        .team-card h4 {
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .team-card .role {
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-top: 2px;
-        }
-
-        .team-card .university {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-top: 6px;
-        }
+        .team-card h4 { font-size: 17px; font-weight: 700; }
+        .team-card .role { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+        .team-card .university { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
 
         .team-card .social-links {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin-top: 16px;
+            gap: 10px;
+            margin-top: 14px;
         }
 
         .team-card .social-links a {
-            width: 36px;
-            height: 36px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -865,7 +954,7 @@
             transition: var(--transition);
             border: 1px solid var(--border-glass);
             text-decoration: none;
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .team-card .social-links a:hover {
@@ -876,15 +965,8 @@
         }
 
         /* ----- DOWNLOAD PAGE ----- */
-        .download-page {
-            text-align: center;
-        }
-
-        .download-page .btn-download {
-            font-size: 18px;
-            padding: 16px 44px;
-            margin-top: 8px;
-        }
+        .download-page { text-align: center; }
+        .download-page .btn-download { font-size: 18px; padding: 16px 44px; margin-top: 8px; }
 
         .download-badges {
             display: flex;
@@ -912,12 +994,149 @@
             color: var(--text-muted);
             font-size: 14px;
         }
+        .version-info p { margin-top: 2px; }
 
-        .version-info p {
-            margin-top: 2px;
+        /* ----- CONTACT / COOKIE SECTION (New) ----- */
+        .contact-section {
+            margin-top: 30px;
         }
 
-        /* ----- FOOTER ----- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            border-color: rgba(108, 99, 255, 0.25);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-card h3 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-card h3 i {
+            color: var(--primary);
+        }
+
+        .contact-card label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 14px;
+            margin-bottom: 4px;
+            color: var(--text-secondary);
+        }
+
+        .contact-card input,
+        .contact-card textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-glass);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .contact-card input:focus,
+        .contact-card textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+        }
+
+        .contact-card textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-card .btn {
+            margin-top: 18px;
+            width: 100%;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .contact-info a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-glass);
+        }
+
+        .contact-info a:hover {
+            color: var(--text-primary);
+            border-color: var(--primary);
+            background: rgba(108, 99, 255, 0.06);
+        }
+
+        .contact-info a i {
+            width: 20px;
+            color: var(--primary);
+        }
+
+        .cookie-consent {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .cookie-consent p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            flex: 1;
+        }
+
+        .cookie-consent .cookie-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-consent .cookie-actions .btn {
+            padding: 8px 22px;
+            font-size: 13px;
+        }
+
+        /* ----- FOOTER (Updated) ----- */
         .footer {
             padding: 40px 0 30px;
             border-top: 1px solid var(--border-glass);
@@ -933,9 +1152,7 @@
             transition: var(--transition);
             cursor: pointer;
         }
-        .footer a:hover {
-            color: white;
-        }
+        .footer a:hover { color: var(--text-primary); }
 
         .footer .footer-links {
             display: flex;
@@ -949,12 +1166,8 @@
            RESPONSIVE
            ============================================================ */
         @media (max-width: 1024px) {
-            .hero-page .container {
-                gap: 40px;
-            }
-            .hero-page h1 {
-                font-size: clamp(34px, 5vw, 56px);
-            }
+            .hero-page .container { gap: 40px; }
+            .hero-page h1 { font-size: clamp(34px, 5vw, 56px); }
         }
 
         @media (max-width: 992px) {
@@ -962,29 +1175,13 @@
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-
-            .hero-page p {
-                margin: 18px auto 0;
-            }
-            .hero-page .hero-actions {
-                justify-content: center;
-            }
-            .hero-page .hero-stats {
-                justify-content: center;
-            }
-
-            .hero-mockup {
-                max-width: 520px;
-                margin: 0 auto;
-            }
-
-            .page-indicator {
-                display: none;
-            }
-
-            .formats-grid {
-                grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
-            }
+            .hero-page p { margin: 18px auto 0; }
+            .hero-page .hero-actions { justify-content: center; }
+            .hero-page .hero-stats { justify-content: center; }
+            .hero-mockup { max-width: 520px; margin: 0 auto; }
+            .formats-grid { grid-template-columns: repeat(auto-fill, minmax(105px, 1fr)); }
+            .contact-grid { grid-template-columns: 1fr; }
+            .nav-right { gap: 10px; }
         }
 
         @media (max-width: 768px) {
@@ -997,18 +1194,42 @@
                 background: rgba(10, 10, 26, 0.96);
                 backdrop-filter: blur(20px);
                 -webkit-backdrop-filter: blur(20px);
-                padding: 24px 28px;
+                padding: 20px 24px;
                 flex-direction: column;
-                gap: 14px;
+                gap: 10px;
                 border-bottom: 1px solid var(--border-glass);
             }
+            [data-theme="light"] .nav .nav-links {
+                background: rgba(244, 247, 252, 0.96);
+            }
+            .nav .nav-links.open { display: flex; }
+            .nav-toggle { display: block; }
 
-            .nav .nav-links.open {
-                display: flex;
+            .nav .nav-links a {
+                padding: 8px 16px;
+                width: 100%;
+                text-align: center;
             }
 
-            .nav-toggle {
+            .dropdown-menu {
+                position: static;
+                background: transparent;
+                box-shadow: none;
+                border: none;
+                padding: 0 0 0 20px;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                display: none;
+            }
+
+            .dropdown:hover .dropdown-menu,
+            .dropdown:focus-within .dropdown-menu {
                 display: block;
+            }
+
+            .dropdown > a i {
+                display: none;
             }
 
             .hero-page .hero-stats {
@@ -1016,578 +1237,1088 @@
                 gap: 14px;
                 align-items: center;
             }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .formats-grid {
-                grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
-                gap: 10px;
-            }
-            .format-item {
-                padding: 14px 6px;
-                font-size: 12px;
-            }
-            .format-item .emoji {
-                font-size: 24px;
-            }
-
-            .team-grid {
-                grid-template-columns: 1fr;
-                max-width: 400px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .page {
-                padding: 80px 0 40px;
-            }
-
-            .download-page .btn-download {
-                width: 100%;
-                max-width: 360px;
-                font-size: 16px;
-                padding: 14px 24px;
-            }
+            .features-grid { grid-template-columns: 1fr; }
+            .formats-grid { grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); gap: 10px; }
+            .format-item { padding: 14px 6px; font-size: 12px; }
+            .format-item .emoji { font-size: 24px; }
+            .team-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+            .download-page .btn-download { width: 100%; max-width: 360px; font-size: 16px; padding: 14px 24px; }
+            .cookie-consent { flex-direction: column; text-align: center; }
+            .cookie-consent .cookie-actions { justify-content: center; }
+            .nav-right { flex-wrap: wrap; justify-content: flex-end; }
+            .nav-controls select { font-size: 11px; padding: 4px 8px; }
+            .theme-toggle { font-size: 11px; padding: 4px 10px; }
+            .page-container { padding-top: 70px; }
+            .page-content { padding: 20px 0 40px; }
         }
 
         @media (max-width: 480px) {
-            .hero-page h1 {
-                font-size: 30px;
-            }
-            .hero-page .hero-actions .btn {
-                width: 100%;
-                justify-content: center;
-            }
-            .formats-grid {
-                grid-template-columns: repeat(auto-fill, minmax(74px, 1fr));
-                gap: 8px;
-            }
-            .format-item {
-                padding: 12px 4px;
-                font-size: 11px;
-            }
-            .format-item .emoji {
-                font-size: 20px;
-            }
-            .container {
-                padding: 0 16px;
-            }
-            .hero-mockup {
-                padding: 16px;
-            }
+            .hero-page h1 { font-size: 30px; }
+            .hero-page .hero-actions .btn { width: 100%; justify-content: center; }
+            .formats-grid { grid-template-columns: repeat(auto-fill, minmax(74px, 1fr)); gap: 8px; }
+            .format-item { padding: 12px 4px; font-size: 11px; }
+            .format-item .emoji { font-size: 20px; }
+            .container { padding: 0 16px; }
+            .hero-mockup { padding: 16px; }
+            .nav .logo { font-size: 17px; }
+            .nav .logo-icon { width: 32px; height: 32px; font-size: 14px; }
         }
 
-        /* Utility for scroll animations */
-        .hidden-init {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        .visible-init {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .hidden-init { opacity: 0; transform: translateY(30px); }
+        .visible-init { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 
 <body>
-
     <!-- BACKGROUND -->
     <div class="bg-animation">
-        <div class="orb"></div>
-        <div class="orb"></div>
-        <div class="orb"></div>
+        <div class="orb"></div><div class="orb"></div><div class="orb"></div>
     </div>
 
-    <!-- PAGE INDICATOR (desktop) -->
-    <nav class="page-indicator" id="pageIndicator">
-        <a class="dot active" data-page="home" title="Home"></a>
-        <a class="dot" data-page="features" title="Features"></a>
-        <a class="dot" data-page="formats" title="Formats"></a>
-        <a class="dot" data-page="team" title="Team"></a>
-        <a class="dot" data-page="download" title="Download"></a>
-    </nav>
-
-    <!-- NAVIGATION -->
+    <!-- ===== NAVIGATION (Right-aligned with Dropdown) ===== -->
     <nav class="nav" id="nav">
         <div class="container">
+            <!-- Logo -->
             <a class="logo" data-page="home">
                 <span class="logo-icon"><i class="fas fa-arrows-spin"></i></span>
-                <span>Converter AI</span>
+                <span data-i18n="brand">Converter AI</span>
             </a>
 
-            <ul class="nav-links" id="navLinks">
-                <li><a class="active" data-page="home">Home</a></li>
-                <li><a data-page="features">Features</a></li>
-                <li><a data-page="formats">Formats</a></li>
-                <li><a data-page="team">Team</a></li>
-                <li><a data-page="download" class="nav-cta">Download</a></li>
-            </ul>
+            <!-- Right-aligned items -->
+            <div class="nav-right">
+                <!-- Navigation Links -->
+                <ul class="nav-links" id="navLinks">
+                    <!-- Home -->
+                    <li><a class="active" data-page="home" data-i18n="nav.home">Home</a></li>
 
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
+                    <!-- Pages Dropdown -->
+                    <li class="dropdown">
+                        <a href="#" data-i18n="nav.pages">Pages <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a data-page="features" data-i18n="nav.features">Features</a></li>
+                            <li><a data-page="formats" data-i18n="nav.formats">Formats</a></li>
+                            <li><a data-page="team" data-i18n="nav.team">Team</a></li>
+                            <li><a data-page="contact" data-i18n="nav.contact">Contact</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Download (CTA) -->
+                    <li><a data-page="download" data-i18n="nav.download" class="nav-cta">Download</a></li>
+                </ul>
+
+                <!-- Theme & Language Controls -->
+                <div class="nav-controls">
+                    <select id="languageSelect" aria-label="Select Language">
+                        <option value="en">🇬🇧 EN</option>
+                        <option value="de">🇩🇪 DE</option>
+                        <option value="zh">🇨🇳 中文</option>
+                        <option value="ar">🇸🇦 العربية</option>
+                    </select>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                        <i class="fas fa-palette"></i> <span id="themeLabel">Theme</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- ===== PAGE 1: HERO ===== -->
-    <section class="page hero-page" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <span class="hero-badge"><i class="fas fa-rocket"></i> v3.0.0</span>
-                <h1>
-                    Convert <span class="gradient-text">Anything.</span><br />
-                    <span class="gradient-text">Anywhere.</span>
-                </h1>
-                <p>
-                    All Files Converter AI is a powerful, AI-driven tool supporting <strong>1000+ formats</strong>.
-                    Built with ❤️ by students of <strong style="color:white;">Riphah International University</strong>.
-                </p>
+    <!-- ============================================================
+    PAGE CONTAINER (Multi-page in single file)
+    ============================================================ -->
+    <div class="page-container">
 
-                <div class="hero-actions">
-                    <a class="btn btn-download" data-page="download">
-                        <i class="fas fa-download"></i> Download Now
-                    </a>
-                    <a class="btn btn-secondary" data-page="features">
-                        <i class="fas fa-arrow-right"></i> Explore Features
-                    </a>
+        <!-- ===== PAGE 1: HOME ===== -->
+        <div class="page-content active" id="page-home">
+            <div class="container hero-page">
+                <div class="hero-content">
+                    <span class="hero-badge"><i class="fas fa-rocket"></i> <span data-i18n="hero.badge">v3.0.0</span></span>
+                    <h1>
+                        <span data-i18n="hero.title1">Convert</span> <span class="gradient-text" data-i18n="hero.title2">Anything.</span><br />
+                        <span class="gradient-text" data-i18n="hero.title3">Anywhere.</span>
+                    </h1>
+                    <p data-i18n="hero.description">
+                        All Files Converter AI is a powerful, AI-driven tool supporting <strong>1000+ formats</strong>.
+                        Built with ❤️ by the <strong style="color:var(--text-primary);">generatewithali</strong> team.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-download" data-page="download">
+                            <i class="fas fa-download"></i> <span data-i18n="hero.downloadBtn">Download Now</span>
+                        </a>
+                        <a class="btn btn-secondary" data-page="features">
+                            <i class="fas fa-arrow-right"></i> <span data-i18n="hero.exploreBtn">Explore Features</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat"><h3>104+</h3><p data-i18n="hero.stat1">Supported Formats</p></div>
+                        <div class="stat"><h3>7</h3><p data-i18n="hero.stat2">Categories</p></div>
+                        <div class="stat"><h3>100%</h3><p data-i18n="hero.stat3">Offline &amp; Secure</p></div>
+                    </div>
                 </div>
 
-                <div class="hero-stats">
-                    <div class="stat">
-                        <h3>104+</h3>
-                        <p>Supported Formats</p>
+                <div class="hero-mockup">
+                    <div class="mockup-header">
+                        <div class="mockup-dots"><span></span><span></span><span></span></div>
+                        <span class="mockup-title" data-i18n="mockup.title">All Files Converter AI</span>
                     </div>
-                    <div class="stat">
-                        <h3>7</h3>
-                        <p>Categories</p>
-                    </div>
-                    <div class="stat">
-                        <h3>100%</h3>
-                        <p>Offline &amp; Secure</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hero-mockup">
-                <div class="mockup-header">
-                    <div class="mockup-dots">
-                        <span></span><span></span><span></span>
-                    </div>
-                    <span class="mockup-title">All Files Converter AI</span>
-                </div>
-                <div class="mockup-body">
-                    <div class="mockup-row">
-                        <span class="icon purple"><i class="fas fa-file-pdf"></i></span>
-                        <div class="info">
-                            <div class="name">Document.pdf</div>
-                            <div class="size">2.4 MB</div>
+                    <div class="mockup-body">
+                        <div class="mockup-row">
+                            <span class="icon purple"><i class="fas fa-file-pdf"></i></span>
+                            <div class="info"><div class="name">Document.pdf</div><div class="size">2.4 MB</div></div>
+                            <span class="status done"><i class="fas fa-check"></i> <span data-i18n="mockup.done">Done</span></span>
                         </div>
-                        <span class="status done"><i class="fas fa-check"></i> Done</span>
-                    </div>
-                    <div class="mockup-row">
-                        <span class="icon green"><i class="fas fa-image"></i></span>
-                        <div class="info">
-                            <div class="name">Photo.jpg</div>
-                            <div class="size">1.8 MB</div>
+                        <div class="mockup-row">
+                            <span class="icon green"><i class="fas fa-image"></i></span>
+                            <div class="info"><div class="name">Photo.jpg</div><div class="size">1.8 MB</div></div>
+                            <span class="status converting"><i class="fas fa-spinner fa-spin"></i> <span data-i18n="mockup.converting">Converting</span></span>
                         </div>
-                        <span class="status converting"><i class="fas fa-spinner fa-spin"></i> Converting</span>
-                    </div>
-                    <div class="mockup-row">
-                        <span class="icon orange"><i class="fas fa-music"></i></span>
-                        <div class="info">
-                            <div class="name">Song.mp3</div>
-                            <div class="size">5.2 MB</div>
+                        <div class="mockup-row">
+                            <span class="icon orange"><i class="fas fa-music"></i></span>
+                            <div class="info"><div class="name">Song.mp3</div><div class="size">5.2 MB</div></div>
+                            <span class="status queued"><i class="fas fa-clock"></i> <span data-i18n="mockup.queued">Queued</span></span>
                         </div>
-                        <span class="status queued"><i class="fas fa-clock"></i> Queued</span>
-                    </div>
-                    <div class="mockup-row">
-                        <span class="icon red"><i class="fas fa-video"></i></span>
-                        <div class="info">
-                            <div class="name">Video.mp4</div>
-                            <div class="size">12.7 MB</div>
+                        <div class="mockup-row">
+                            <span class="icon red"><i class="fas fa-video"></i></span>
+                            <div class="info"><div class="name">Video.mp4</div><div class="size">12.7 MB</div></div>
+                            <span class="status error"><i class="fas fa-times"></i> <span data-i18n="mockup.error">Error</span></span>
                         </div>
-                        <span class="status error"><i class="fas fa-times"></i> Error</span>
-                    </div>
-                    <button class="mockup-btn">
-                        <i class="fas fa-arrows-spin"></i> Convert All
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== PAGE 2: FEATURES ===== -->
-    <section class="page" id="features">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge"><i class="fas fa-star"></i> Features</span>
-                <h2>Why Choose <span>All Files Converter AI</span></h2>
-                <p>Designed with modern UX principles, our tool makes file conversion effortless for everyone.</p>
-            </div>
-
-            <div class="features-grid" id="featuresGrid">
-                <div class="feature-card">
-                    <div class="icon purple"><i class="fas fa-file-export"></i></div>
-                    <h3>1000+ Formats</h3>
-                    <p>Convert between documents, images, audio, video, archives, e-books, and spreadsheets with ease.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon blue"><i class="fas fa-robot"></i></div>
-                    <h3>AI Assistant</h3>
-                    <p>Get intelligent help with conversions. The built-in AI assistant guides you through every step.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon green"><i class="fas fa-microphone"></i></div>
-                    <h3>Voice Commands</h3>
-                    <p>Hands-free operation with speech recognition. Just speak to convert your files.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon orange"><i class="fas fa-camera"></i></div>
-                    <h3>Camera Scanner</h3>
-                    <p>Scan documents directly from your webcam. Perfect for digitizing physical papers.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon red"><i class="fas fa-palette"></i></div>
-                    <h3>7 Professional Themes</h3>
-                    <p>Customize your experience with dark mode, professional blue, elegant plum, and more.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon teal"><i class="fas fa-layer-group"></i></div>
-                    <h3>Batch Processing</h3>
-                    <p>Convert multiple files at once. Save time with powerful batch conversion capabilities.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== PAGE 3: FORMATS ===== -->
-    <section class="page" id="formats">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge"><i class="fas fa-th-large"></i> Formats</span>
-                <h2>Supported <span>File Formats</span></h2>
-                <p>Over 104 formats across 7 categories. All your conversion needs in one place.</p>
-            </div>
-
-            <div class="formats-wrapper">
-                <div class="formats-grid" id="formatsGrid">
-                    <!-- Documents -->
-                    <div class="format-category">📄 Documents</div>
-                    <div class="format-item"><span class="emoji">📄</span>PDF</div>
-                    <div class="format-item"><span class="emoji">📄</span>DOCX</div>
-                    <div class="format-item"><span class="emoji">📄</span>DOC</div>
-                    <div class="format-item"><span class="emoji">📄</span>TXT</div>
-                    <div class="format-item"><span class="emoji">📄</span>HTML</div>
-                    <div class="format-item"><span class="emoji">📄</span>MD</div>
-                    <div class="format-item"><span class="emoji">📄</span>CSV</div>
-                    <div class="format-item"><span class="emoji">📄</span>XLSX</div>
-                    <div class="format-item"><span class="emoji">📄</span>XLS</div>
-                    <div class="format-item"><span class="emoji">📄</span>PPTX</div>
-                    <div class="format-item"><span class="emoji">📄</span>PPT</div>
-                    <div class="format-item"><span class="emoji">📄</span>XML</div>
-                    <div class="format-item"><span class="emoji">📄</span>JSON</div>
-                    <div class="format-item"><span class="emoji">📄</span>RTF</div>
-                    <div class="format-item"><span class="emoji">📄</span>ODT</div>
-                    <!-- Images -->
-                    <div class="format-category">🖼 Images</div>
-                    <div class="format-item"><span class="emoji">🖼</span>JPG</div>
-                    <div class="format-item"><span class="emoji">🖼</span>PNG</div>
-                    <div class="format-item"><span class="emoji">🖼</span>WEBP</div>
-                    <div class="format-item"><span class="emoji">🖼</span>GIF</div>
-                    <div class="format-item"><span class="emoji">🖼</span>BMP</div>
-                    <div class="format-item"><span class="emoji">🖼</span>TIFF</div>
-                    <div class="format-item"><span class="emoji">🖼</span>ICO</div>
-                    <div class="format-item"><span class="emoji">🖼</span>SVG</div>
-                    <div class="format-item"><span class="emoji">🖼</span>HEIC</div>
-                    <div class="format-item"><span class="emoji">🖼</span>AVIF</div>
-                    <!-- Audio -->
-                    <div class="format-category">🎵 Audio</div>
-                    <div class="format-item"><span class="emoji">🎵</span>MP3</div>
-                    <div class="format-item"><span class="emoji">🎵</span>WAV</div>
-                    <div class="format-item"><span class="emoji">🎵</span>FLAC</div>
-                    <div class="format-item"><span class="emoji">🎵</span>AAC</div>
-                    <div class="format-item"><span class="emoji">🎵</span>OGG</div>
-                    <div class="format-item"><span class="emoji">🎵</span>M4A</div>
-                    <div class="format-item"><span class="emoji">🎵</span>WMA</div>
-                    <div class="format-item"><span class="emoji">🎵</span>OPUS</div>
-                    <div class="format-item"><span class="emoji">🎵</span>AIFF</div>
-                    <!-- Video -->
-                    <div class="format-category">🎬 Video</div>
-                    <div class="format-item"><span class="emoji">🎬</span>MP4</div>
-                    <div class="format-item"><span class="emoji">🎬</span>AVI</div>
-                    <div class="format-item"><span class="emoji">🎬</span>MKV</div>
-                    <div class="format-item"><span class="emoji">🎬</span>MOV</div>
-                    <div class="format-item"><span class="emoji">🎬</span>WMV</div>
-                    <div class="format-item"><span class="emoji">🎬</span>WEBM</div>
-                    <div class="format-item"><span class="emoji">🎬</span>FLV</div>
-                    <div class="format-item"><span class="emoji">🎬</span>3GP</div>
-                    <div class="format-item"><span class="emoji">🎬</span>MPG</div>
-                    <div class="format-item"><span class="emoji">🎬</span>M2TS</div>
-                    <!-- Archives -->
-                    <div class="format-category">📦 Archives</div>
-                    <div class="format-item"><span class="emoji">📦</span>ZIP</div>
-                    <div class="format-item"><span class="emoji">📦</span>RAR</div>
-                    <div class="format-item"><span class="emoji">📦</span>7Z</div>
-                    <div class="format-item"><span class="emoji">📦</span>TAR</div>
-                    <div class="format-item"><span class="emoji">📦</span>GZ</div>
-                    <div class="format-item"><span class="emoji">📦</span>BZ2</div>
-                    <div class="format-item"><span class="emoji">📦</span>XZ</div>
-                    <div class="format-item"><span class="emoji">📦</span>ISO</div>
-                    <div class="format-item"><span class="emoji">📦</span>CAB</div>
-                    <div class="format-item"><span class="emoji">📦</span>LZMA</div>
-                    <!-- E-books -->
-                    <div class="format-category">📚 E-Books</div>
-                    <div class="format-item"><span class="emoji">📚</span>EPUB</div>
-                    <div class="format-item"><span class="emoji">📚</span>MOBI</div>
-                    <div class="format-item"><span class="emoji">📚</span>AZW3</div>
-                    <div class="format-item"><span class="emoji">📚</span>FB2</div>
-                    <div class="format-item"><span class="emoji">📚</span>LIT</div>
-                    <div class="format-item"><span class="emoji">📚</span>LRF</div>
-                    <div class="format-item"><span class="emoji">📚</span>AZW</div>
-                    <div class="format-item"><span class="emoji">📚</span>KFX</div>
-                    <div class="format-item"><span class="emoji">📚</span>PDB</div>
-                    <div class="format-item"><span class="emoji">📚</span>PRC</div>
-                    <!-- Spreadsheets -->
-                    <div class="format-category">📊 Spreadsheets</div>
-                    <div class="format-item"><span class="emoji">📊</span>XLSX</div>
-                    <div class="format-item"><span class="emoji">📊</span>XLS</div>
-                    <div class="format-item"><span class="emoji">📊</span>CSV</div>
-                    <div class="format-item"><span class="emoji">📊</span>ODS</div>
-                    <div class="format-item"><span class="emoji">📊</span>TSV</div>
-                    <div class="format-item"><span class="emoji">📊</span>NUMBERS</div>
-                    <div class="format-item"><span class="emoji">📊</span>HTML</div>
-                    <div class="format-item"><span class="emoji">📊</span>JSON</div>
-                    <div class="format-item"><span class="emoji">📊</span>XML</div>
-                    <div class="format-item"><span class="emoji">📊</span>DIF</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== PAGE 4: TEAM ===== -->
-    <section class="page" id="team">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge"><i class="fas fa-users"></i> Team</span>
-                <h2>Meet the <span>Developers</span></h2>
-                <p>
-                    A passionate team from <strong style="color:white;">Riphah International University</strong>,
-                    Lahore Campus (Township), dedicated to making file conversion effortless.
-                </p>
-            </div>
-
-            <div class="team-grid" id="teamGrid">
-                <div class="team-card">
-                    <div class="avatar sheza">SA</div>
-                    <h4>Sheza Abid</h4>
-                    <p class="role">Project Lead &amp; UI/UX Designer</p>
-                    <p class="university">Riphah International University, Lahore</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="avatar fatima">FA</div>
-                    <h4>Fatima Akram</h4>
-                    <p class="role">Backend Developer &amp; AI Integration</p>
-                    <p class="university">Riphah International University, Lahore</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="avatar aiman">AI</div>
-                    <h4>Aiman Imran</h4>
-                    <p class="role">Database &amp; Testing Specialist</p>
-                    <p class="university">Riphah International University, Lahore</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <button class="mockup-btn"><i class="fas fa-arrows-spin"></i> <span data-i18n="mockup.convertAll">Convert All</span></button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- ===== PAGE 5: DOWNLOAD ===== -->
-    <section class="page download-page" id="download">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge"><i class="fas fa-download"></i> Download</span>
-                <h2>Ready to Convert <span>Anything?</span></h2>
-                <p>
-                    Download All Files Converter AI today and experience the power of
-                    AI-driven file conversion.
-                </p>
-            </div>
+        <!-- ===== PAGE 2: FEATURES ===== -->
+        <div class="page-content" id="page-features">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge"><i class="fas fa-star"></i> <span data-i18n="features.badge">Features</span></span>
+                    <h2><span data-i18n="features.title1">Why Choose</span> <span data-i18n="features.title2">All Files Converter AI</span></h2>
+                    <p data-i18n="features.subtitle">Designed to solve real-world file conversion problems with modern AI.</p>
+                </div>
 
-            <a href="https://github.com/bahaduralihashmi/File-Converter/releases/latest/download/AllFilesConverterAI_Riphah_Setup_v3.0.0.exe"
-               class="btn btn-download"
-               download
-               target="_blank"
-               rel="noopener noreferrer">
-                <i class="fas fa-download"></i> Download for Windows
-            </a>
-
-            <div class="download-badges">
-                <span class="badge"><i class="fas fa-check-circle" style="color:#38A169;"></i> Windows 10/11</span>
-                <span class="badge"><i class="fas fa-shield-alt" style="color:var(--primary);"></i> Secure</span>
-                <span class="badge"><i class="fas fa-wifi-slash" style="color:#D69E2E;"></i> Offline</span>
-                <span class="badge"><i class="fas fa-infinity" style="color:#E53E3E;"></i> Unlimited</span>
-            </div>
-
-            <div class="version-info">
-                <p>Version 3.0.0 · 104+ Formats · 7 Categories</p>
-                <p style="margin-top:4px;">Developed by Sheza &amp; Team · Riphah International University</p>
+                <div class="features-grid" id="featuresGrid">
+                    <div class="feature-card">
+                        <div class="icon purple"><i class="fas fa-file-export"></i></div>
+                        <h3 data-i18n="features.f1.title">1000+ Formats</h3>
+                        <p data-i18n="features.f1.desc">Convert between documents, images, audio, video, archives, e-books, and spreadsheets.</p>
+                        <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f1.problem">Incompatible file types hinder workflow.</span><br>
+                        <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f1.solution">One tool for all formats, eliminating the need for multiple converters.</span></div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon blue"><i class="fas fa-robot"></i></div>
+                        <h3 data-i18n="features.f2.title">AI Assistant</h3>
+                        <p data-i18n="features.f2.desc">Intelligent help with conversions. The AI assistant guides you through every step.</p>
+                        <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f2.problem">Complex conversion settings confuse users.</span><br>
+                        <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f2.solution">AI simplifies the process, suggesting optimal settings based on file type.</span></div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon green"><i class="fas fa-microphone"></i></div>
+                        <h3 data-i18n="features.f3.title">Voice Commands</h3>
+                        <p data-i18n="features.f3.desc">Hands-free operation with speech recognition. Just speak to convert your files.</p>
+                        <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f3.problem">Manual navigation is time-consuming for users with accessibility needs.</span><br>
+                        <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f3.solution">Voice control enables faster, accessible conversion for everyone.</span></div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon orange"><i class="fas fa-camera"></i></div>
+                        <h3 data-i18n="features.f4.title">Camera Scanner</h3>
+                        <p data-i18n="features.f4.desc">Scan documents directly from your webcam. Perfect for digitizing physical papers.</p>
+                        <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f4.problem">Digitizing physical documents requires separate scanning tools.</span><br>
+                        <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f4.solution">Integrated scanner converts physical documents to digital formats instantly.</span></div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon red"><i class="fas fa-palette"></i></div>
+                        <h3 data-i18n="features.f5.title">7 Professional Themes</h3>
+                        <p data-i18n="features.f5.desc">Customize your experience with dark mode, professional blue, elegant plum, and more.</p>
+                        <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f5.problem">Visual fatigue from static, non-adaptive interfaces.</span><br>
+                        <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f5.solution">Personalized themes reduce eye strain and improve user experience.</span></div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon teal"><i class="fas fa-layer-group"></i></div>
+                        <h3 data-i18n="features.f6.title">Batch Processing</h3>
+                        <p data-i18n="features.f6.desc">Convert multiple files at once. Save time with powerful batch conversion.</p>
+                        <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f6.problem">Converting files one-by-one is slow and inefficient.</span><br>
+                        <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f6.solution">Batch processing handles hundreds of files in one go, boosting productivity.</span></div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+
+        <!-- ===== PAGE 3: FORMATS ===== -->
+        <div class="page-content" id="page-formats">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge"><i class="fas fa-th-large"></i> <span data-i18n="formats.badge">Formats</span></span>
+                    <h2><span data-i18n="formats.title1">Supported</span> <span data-i18n="formats.title2">File Formats</span></h2>
+                    <p data-i18n="formats.subtitle">Over 104 formats across 7 categories. All your conversion needs in one place.</p>
+                </div>
+
+                <div class="formats-wrapper">
+                    <div class="formats-grid" id="formatsGrid">
+                        <!-- Documents -->
+                        <div class="format-category" data-i18n="formats.cat.doc">📄 Documents</div>
+                        <div class="format-item"><span class="emoji">📄</span>PDF</div>
+                        <div class="format-item"><span class="emoji">📄</span>DOCX</div>
+                        <div class="format-item"><span class="emoji">📄</span>DOC</div>
+                        <div class="format-item"><span class="emoji">📄</span>TXT</div>
+                        <div class="format-item"><span class="emoji">📄</span>HTML</div>
+                        <div class="format-item"><span class="emoji">📄</span>MD</div>
+                        <div class="format-item"><span class="emoji">📄</span>CSV</div>
+                        <div class="format-item"><span class="emoji">📄</span>XLSX</div>
+                        <div class="format-item"><span class="emoji">📄</span>XLS</div>
+                        <div class="format-item"><span class="emoji">📄</span>PPTX</div>
+                        <div class="format-item"><span class="emoji">📄</span>PPT</div>
+                        <div class="format-item"><span class="emoji">📄</span>XML</div>
+                        <div class="format-item"><span class="emoji">📄</span>JSON</div>
+                        <div class="format-item"><span class="emoji">📄</span>RTF</div>
+                        <div class="format-item"><span class="emoji">📄</span>ODT</div>
+                        <!-- Images -->
+                        <div class="format-category" data-i18n="formats.cat.img">🖼 Images</div>
+                        <div class="format-item"><span class="emoji">🖼</span>JPG</div>
+                        <div class="format-item"><span class="emoji">🖼</span>PNG</div>
+                        <div class="format-item"><span class="emoji">🖼</span>WEBP</div>
+                        <div class="format-item"><span class="emoji">🖼</span>GIF</div>
+                        <div class="format-item"><span class="emoji">🖼</span>BMP</div>
+                        <div class="format-item"><span class="emoji">🖼</span>TIFF</div>
+                        <div class="format-item"><span class="emoji">🖼</span>ICO</div>
+                        <div class="format-item"><span class="emoji">🖼</span>SVG</div>
+                        <div class="format-item"><span class="emoji">🖼</span>HEIC</div>
+                        <div class="format-item"><span class="emoji">🖼</span>AVIF</div>
+                        <!-- Audio -->
+                        <div class="format-category" data-i18n="formats.cat.audio">🎵 Audio</div>
+                        <div class="format-item"><span class="emoji">🎵</span>MP3</div>
+                        <div class="format-item"><span class="emoji">🎵</span>WAV</div>
+                        <div class="format-item"><span class="emoji">🎵</span>FLAC</div>
+                        <div class="format-item"><span class="emoji">🎵</span>AAC</div>
+                        <div class="format-item"><span class="emoji">🎵</span>OGG</div>
+                        <div class="format-item"><span class="emoji">🎵</span>M4A</div>
+                        <div class="format-item"><span class="emoji">🎵</span>WMA</div>
+                        <div class="format-item"><span class="emoji">🎵</span>OPUS</div>
+                        <div class="format-item"><span class="emoji">🎵</span>AIFF</div>
+                        <!-- Video -->
+                        <div class="format-category" data-i18n="formats.cat.video">🎬 Video</div>
+                        <div class="format-item"><span class="emoji">🎬</span>MP4</div>
+                        <div class="format-item"><span class="emoji">🎬</span>AVI</div>
+                        <div class="format-item"><span class="emoji">🎬</span>MKV</div>
+                        <div class="format-item"><span class="emoji">🎬</span>MOV</div>
+                        <div class="format-item"><span class="emoji">🎬</span>WMV</div>
+                        <div class="format-item"><span class="emoji">🎬</span>WEBM</div>
+                        <div class="format-item"><span class="emoji">🎬</span>FLV</div>
+                        <div class="format-item"><span class="emoji">🎬</span>3GP</div>
+                        <div class="format-item"><span class="emoji">🎬</span>MPG</div>
+                        <div class="format-item"><span class="emoji">🎬</span>M2TS</div>
+                        <!-- Archives -->
+                        <div class="format-category" data-i18n="formats.cat.archive">📦 Archives</div>
+                        <div class="format-item"><span class="emoji">📦</span>ZIP</div>
+                        <div class="format-item"><span class="emoji">📦</span>RAR</div>
+                        <div class="format-item"><span class="emoji">📦</span>7Z</div>
+                        <div class="format-item"><span class="emoji">📦</span>TAR</div>
+                        <div class="format-item"><span class="emoji">📦</span>GZ</div>
+                        <div class="format-item"><span class="emoji">📦</span>BZ2</div>
+                        <div class="format-item"><span class="emoji">📦</span>XZ</div>
+                        <div class="format-item"><span class="emoji">📦</span>ISO</div>
+                        <div class="format-item"><span class="emoji">📦</span>CAB</div>
+                        <div class="format-item"><span class="emoji">📦</span>LZMA</div>
+                        <!-- E-books -->
+                        <div class="format-category" data-i18n="formats.cat.ebook">📚 E-Books</div>
+                        <div class="format-item"><span class="emoji">📚</span>EPUB</div>
+                        <div class="format-item"><span class="emoji">📚</span>MOBI</div>
+                        <div class="format-item"><span class="emoji">📚</span>AZW3</div>
+                        <div class="format-item"><span class="emoji">📚</span>FB2</div>
+                        <div class="format-item"><span class="emoji">📚</span>LIT</div>
+                        <div class="format-item"><span class="emoji">📚</span>LRF</div>
+                        <div class="format-item"><span class="emoji">📚</span>AZW</div>
+                        <div class="format-item"><span class="emoji">📚</span>KFX</div>
+                        <div class="format-item"><span class="emoji">📚</span>PDB</div>
+                        <div class="format-item"><span class="emoji">📚</span>PRC</div>
+                        <!-- Spreadsheets -->
+                        <div class="format-category" data-i18n="formats.cat.sheet">📊 Spreadsheets</div>
+                        <div class="format-item"><span class="emoji">📊</span>XLSX</div>
+                        <div class="format-item"><span class="emoji">📊</span>XLS</div>
+                        <div class="format-item"><span class="emoji">📊</span>CSV</div>
+                        <div class="format-item"><span class="emoji">📊</span>ODS</div>
+                        <div class="format-item"><span class="emoji">📊</span>TSV</div>
+                        <div class="format-item"><span class="emoji">📊</span>NUMBERS</div>
+                        <div class="format-item"><span class="emoji">📊</span>HTML</div>
+                        <div class="format-item"><span class="emoji">📊</span>JSON</div>
+                        <div class="format-item"><span class="emoji">📊</span>XML</div>
+                        <div class="format-item"><span class="emoji">📊</span>DIF</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PAGE 4: TEAM ===== -->
+        <div class="page-content" id="page-team">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge"><i class="fas fa-users"></i> <span data-i18n="team.badge">Team</span></span>
+                    <h2><span data-i18n="team.title1">Meet the</span> <span data-i18n="team.title2">generatewithali</span></h2>
+                    <p data-i18n="team.subtitle">A passionate team dedicated to making file conversion effortless for everyone.</p>
+                </div>
+
+                <div class="team-grid" id="teamGrid">
+                    <div class="team-card">
+                        <div class="avatar bahadur">BA</div>
+                        <h4>Bahadur Ali</h4>
+                        <p class="role" data-i18n="team.bahadur.role">Application Developer &amp; AI Lead</p>
+                        <p class="university">Riphah International University, Lahore</p>
+                        <div class="social-links">
+                            <a href="https://huggingface.co/embedingHF" target="_blank" aria-label="Hugging Face"><i class="fab fa-hubspot"></i></a>
+                            <a href="https://www.linkedin.com/in/generatewithali/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.instagram.com/bahadur_ali804/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="avatar sheza">SA</div>
+                        <h4>Sheza Abid</h4>
+                        <p class="role" data-i18n="team.sheza.role">Website Developer &amp; UI/UX Designer</p>
+                        <p class="university">Riphah International University, Lahore</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="avatar aiman">AI</div>
+                        <h4>Aiman Imran</h4>
+                        <p class="role" data-i18n="team.aiman.role">Content Manager &amp; QA Support</p>
+                        <p class="university">Riphah International University, Lahore</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="avatar fatima">FA</div>
+                        <h4>Fatima Akram</h4>
+                        <p class="role" data-i18n="team.fatima.role">QA Developer &amp; Tester</p>
+                        <p class="university">Riphah International University, Lahore</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="avatar ali">AM</div>
+                        <h4>Ali Masood</h4>
+                        <p class="role" data-i18n="team.ali.role">Tester &amp; Documentation</p>
+                        <p class="university">Riphah International University, Lahore</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PAGE 5: DOWNLOAD ===== -->
+        <div class="page-content" id="page-download">
+            <div class="container download-page">
+                <div class="section-header">
+                    <span class="badge"><i class="fas fa-download"></i> <span data-i18n="download.badge">Download</span></span>
+                    <h2><span data-i18n="download.title1">Ready to Convert</span> <span data-i18n="download.title2">Anything?</span></h2>
+                    <p data-i18n="download.subtitle">Download All Files Converter AI today and experience the power of AI-driven file conversion.</p>
+                </div>
+
+                <a href="https://github.com/bahaduralihashmi/File-Converter/releases/latest/download/AllFilesConverterAI_Riphah_Setup_v3.0.0.exe"
+                   class="btn btn-download" download target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-download"></i> <span data-i18n="download.btn">Download for Windows</span>
+                </a>
+
+                <div class="download-badges">
+                    <span class="badge"><i class="fas fa-check-circle" style="color:#38A169;"></i> <span data-i18n="download.badge1">Windows 10/11</span></span>
+                    <span class="badge"><i class="fas fa-shield-alt" style="color:var(--primary);"></i> <span data-i18n="download.badge2">Secure</span></span>
+                    <span class="badge"><i class="fas fa-wifi-slash" style="color:#D69E2E;"></i> <span data-i18n="download.badge3">Offline</span></span>
+                    <span class="badge"><i class="fas fa-infinity" style="color:#E53E3E;"></i> <span data-i18n="download.badge4">Unlimited</span></span>
+                </div>
+
+                <div class="version-info">
+                    <p><span data-i18n="download.version">Version 3.0.0 · 104+ Formats · 7 Categories</span></p>
+                    <p style="margin-top:4px;" data-i18n="download.credit">Developed by generatewithali Team · Riphah International University</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PAGE 6: CONTACT ===== -->
+        <div class="page-content" id="page-contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge"><i class="fas fa-address-card"></i> <span data-i18n="contact.badge">Contact</span></span>
+                    <h2><span data-i18n="contact.title1">Get in</span> <span data-i18n="contact.title2">Touch</span></h2>
+                    <p data-i18n="contact.subtitle">We'd love to hear from you. Reach out for support, feedback, or collaboration.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-card">
+                        <h3><i class="fas fa-envelope"></i> <span data-i18n="contact.form.title">Send us a Message</span></h3>
+                        <form id="contactForm">
+                            <label for="contactEmail" data-i18n="contact.form.email">Your Email</label>
+                            <input type="email" id="contactEmail" placeholder="you@example.com" required>
+
+                            <label for="contactMessage" data-i18n="contact.form.message">Message</label>
+                            <textarea id="contactMessage" placeholder="Your detailed message here..." required></textarea>
+
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> <span data-i18n="contact.form.submit">Send Message</span>
+                            </button>
+                        </form>
+                        <div id="formStatus" style="margin-top:10px;font-size:14px;"></div>
+                    </div>
+
+                    <!-- Contact Info & Cookie Consent -->
+                    <div>
+                        <div class="contact-card">
+                            <h3><i class="fas fa-phone"></i> <span data-i18n="contact.info.title">Contact Information</span></h3>
+                            <div class="contact-info">
+                                <a href="mailto:bahaduralimunnabhai@gmail.com"><i class="fas fa-envelope"></i> bahaduralimunnabhai@gmail.com</a>
+                                <a href="https://wa.me/923034572298" target="_blank"><i class="fab fa-whatsapp"></i> +92 303 4572298</a>
+                                <a href="https://huggingface.co/embedingHF" target="_blank"><i class="fab fa-hubspot"></i> Hugging Face</a>
+                                <a href="https://www.linkedin.com/in/generatewithali/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                                <a href="https://www.instagram.com/bahadur_ali804/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                            </div>
+                        </div>
+
+                        <!-- Cookie Subscription -->
+                        <div class="cookie-consent" id="cookieConsent">
+                            <p><i class="fas fa-cookie-bite" style="color:var(--primary);margin-right:8px;"></i> <span data-i18n="cookie.text">We use cookies to enhance your experience. Subscribe to our updates.</span></p>
+                            <div class="cookie-actions">
+                                <input type="email" id="cookieEmail" placeholder="your@email.com" style="padding:8px 16px;border-radius:30px;border:1px solid var(--border-glass);background:rgba(255,255,255,0.04);color:var(--text-primary);font-family:'Inter',sans-serif;outline:none;min-width:180px;">
+                                <button class="btn btn-primary" id="cookieSubscribeBtn" style="padding:8px 22px;font-size:13px;">
+                                    <i class="fas fa-check"></i> <span data-i18n="cookie.subscribe">Subscribe</span>
+                                </button>
+                            </div>
+                            <div id="cookieStatus" style="width:100%;font-size:13px;margin-top:6px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-links">
-                <a data-page="home">Home</a>
-                <a data-page="features">Features</a>
-                <a data-page="formats">Formats</a>
-                <a data-page="team">Team</a>
-                <a data-page="download">Download</a>
+                <a data-page="home" data-i18n="nav.home">Home</a>
+                <a data-page="features" data-i18n="nav.features">Features</a>
+                <a data-page="formats" data-i18n="nav.formats">Formats</a>
+                <a data-page="team" data-i18n="nav.team">Team</a>
+                <a data-page="download" data-i18n="nav.download">Download</a>
+                <a data-page="contact" data-i18n="nav.contact">Contact</a>
             </div>
             <p>
-                © 2026 <strong>Sheza &amp; Team</strong> ·
-                Riphah International University, Lahore Campus (Township)
+                © 2026 <strong>generatewithali Team</strong> ·
+                <span data-i18n="footer.rights">All rights reserved.</span>
             </p>
-            <p style="margin-top:4px;font-size:12px;color:var(--text-muted);">
-                All Files Converter AI v3.0.0 · Built with ❤️ for the community
+            <p style="margin-top:4px;font-size:12px;color:var(--text-muted);" data-i18n="footer.credit">
+                All Files Converter AI v3.0.0 · Built with ❤️ by the generatewithali team
             </p>
         </div>
     </footer>
 
     <!-- ============================================================
-    JAVASCRIPT
+    JAVASCRIPT (Enhanced)
     ============================================================ -->
     <script>
         (function() {
             'use strict';
 
-            // ---- Navigation helpers ----
-            const navLinks = document.querySelectorAll('.nav-links a');
-            const logo = document.querySelector('.logo');
-            const footerLinks = document.querySelectorAll('.footer-links a');
-            const heroBtns = document.querySelectorAll('.hero-actions .btn');
-            const dots = document.querySelectorAll('.page-indicator .dot');
+            // =====================
+            // 1. THEME TOGGLE
+            // =====================
+            const themeToggle = document.getElementById('themeToggle');
+            const themeLabel = document.getElementById('themeLabel');
+            const themes = ['dark', 'light', 'blue', 'plum'];
+            let currentThemeIndex = 0;
+
+            function applyTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('converter-theme', theme);
+                const names = { dark: '🌙 Dark', light: '☀️ Light', blue: '🔵 Blue', plum: '🟣 Plum' };
+                themeLabel.textContent = names[theme] || 'Theme';
+            }
+
+            themeToggle.addEventListener('click', function() {
+                currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+                applyTheme(themes[currentThemeIndex]);
+            });
+
+            const savedTheme = localStorage.getItem('converter-theme');
+            if (savedTheme && themes.includes(savedTheme)) {
+                applyTheme(savedTheme);
+                currentThemeIndex = themes.indexOf(savedTheme);
+            } else {
+                applyTheme('dark');
+            }
+
+            // =====================
+            // 2. LANGUAGE / i18n
+            // =====================
+            const translations = {
+                en: {
+                    brand: 'Converter AI',
+                    'nav.home': 'Home',
+                    'nav.pages': 'Pages',
+                    'nav.features': 'Features',
+                    'nav.formats': 'Formats',
+                    'nav.team': 'Team',
+                    'nav.download': 'Download',
+                    'nav.contact': 'Contact',
+                    'hero.badge': 'v3.0.0',
+                    'hero.title1': 'Convert',
+                    'hero.title2': 'Anything.',
+                    'hero.title3': 'Anywhere.',
+                    'hero.description': 'All Files Converter AI is a powerful, AI-driven tool supporting <strong>1000+ formats</strong>. Built with ❤️ by the <strong style="color:var(--text-primary);">generatewithali</strong> team.',
+                    'hero.downloadBtn': 'Download Now',
+                    'hero.exploreBtn': 'Explore Features',
+                    'hero.stat1': 'Supported Formats',
+                    'hero.stat2': 'Categories',
+                    'hero.stat3': 'Offline & Secure',
+                    'mockup.title': 'All Files Converter AI',
+                    'mockup.done': 'Done',
+                    'mockup.converting': 'Converting',
+                    'mockup.queued': 'Queued',
+                    'mockup.error': 'Error',
+                    'mockup.convertAll': 'Convert All',
+                    'features.badge': 'Features',
+                    'features.title1': 'Why Choose',
+                    'features.title2': 'All Files Converter AI',
+                    'features.subtitle': 'Designed to solve real-world file conversion problems with modern AI.',
+                    'features.problem': 'Problem:',
+                    'features.solution': 'Solution:',
+                    'features.f1.title': '1000+ Formats',
+                    'features.f1.desc': 'Convert between documents, images, audio, video, archives, e-books, and spreadsheets.',
+                    'features.f1.problem': 'Incompatible file types hinder workflow.',
+                    'features.f1.solution': 'One tool for all formats, eliminating the need for multiple converters.',
+                    'features.f2.title': 'AI Assistant',
+                    'features.f2.desc': 'Intelligent help with conversions. The AI assistant guides you through every step.',
+                    'features.f2.problem': 'Complex conversion settings confuse users.',
+                    'features.f2.solution': 'AI simplifies the process, suggesting optimal settings based on file type.',
+                    'features.f3.title': 'Voice Commands',
+                    'features.f3.desc': 'Hands-free operation with speech recognition. Just speak to convert your files.',
+                    'features.f3.problem': 'Manual navigation is time-consuming for users with accessibility needs.',
+                    'features.f3.solution': 'Voice control enables faster, accessible conversion for everyone.',
+                    'features.f4.title': 'Camera Scanner',
+                    'features.f4.desc': 'Scan documents directly from your webcam. Perfect for digitizing physical papers.',
+                    'features.f4.problem': 'Digitizing physical documents requires separate scanning tools.',
+                    'features.f4.solution': 'Integrated scanner converts physical documents to digital formats instantly.',
+                    'features.f5.title': '7 Professional Themes',
+                    'features.f5.desc': 'Customize your experience with dark mode, professional blue, elegant plum, and more.',
+                    'features.f5.problem': 'Visual fatigue from static, non-adaptive interfaces.',
+                    'features.f5.solution': 'Personalized themes reduce eye strain and improve user experience.',
+                    'features.f6.title': 'Batch Processing',
+                    'features.f6.desc': 'Convert multiple files at once. Save time with powerful batch conversion.',
+                    'features.f6.problem': 'Converting files one-by-one is slow and inefficient.',
+                    'features.f6.solution': 'Batch processing handles hundreds of files in one go, boosting productivity.',
+                    'formats.badge': 'Formats',
+                    'formats.title1': 'Supported',
+                    'formats.title2': 'File Formats',
+                    'formats.subtitle': 'Over 104 formats across 7 categories. All your conversion needs in one place.',
+                    'formats.cat.doc': '📄 Documents',
+                    'formats.cat.img': '🖼 Images',
+                    'formats.cat.audio': '🎵 Audio',
+                    'formats.cat.video': '🎬 Video',
+                    'formats.cat.archive': '📦 Archives',
+                    'formats.cat.ebook': '📚 E-Books',
+                    'formats.cat.sheet': '📊 Spreadsheets',
+                    'team.badge': 'Team',
+                    'team.title1': 'Meet the',
+                    'team.title2': 'generatewithali',
+                    'team.subtitle': 'A passionate team dedicated to making file conversion effortless for everyone.',
+                    'team.bahadur.role': 'Application Developer & AI Lead',
+                    'team.sheza.role': 'Website Developer & UI/UX Designer',
+                    'team.aiman.role': 'Content Manager & QA Support',
+                    'team.fatima.role': 'QA Developer & Tester',
+                    'team.ali.role': 'Tester & Documentation',
+                    'download.badge': 'Download',
+                    'download.title1': 'Ready to Convert',
+                    'download.title2': 'Anything?',
+                    'download.subtitle': 'Download All Files Converter AI today and experience the power of AI-driven file conversion.',
+                    'download.btn': 'Download for Windows',
+                    'download.badge1': 'Windows 10/11',
+                    'download.badge2': 'Secure',
+                    'download.badge3': 'Offline',
+                    'download.badge4': 'Unlimited',
+                    'download.version': 'Version 3.0.0 · 104+ Formats · 7 Categories',
+                    'download.credit': 'Developed by generatewithali Team · Riphah International University',
+                    'contact.badge': 'Contact',
+                    'contact.title1': 'Get in',
+                    'contact.title2': 'Touch',
+                    'contact.subtitle': 'We\'d love to hear from you. Reach out for support, feedback, or collaboration.',
+                    'contact.form.title': 'Send us a Message',
+                    'contact.form.email': 'Your Email',
+                    'contact.form.message': 'Message',
+                    'contact.form.submit': 'Send Message',
+                    'contact.info.title': 'Contact Information',
+                    'cookie.text': 'We use cookies to enhance your experience. Subscribe to our updates.',
+                    'cookie.subscribe': 'Subscribe',
+                    'footer.rights': 'All rights reserved.',
+                    'footer.credit': 'All Files Converter AI v3.0.0 · Built with ❤️ by the generatewithali team'
+                },
+                de: {
+                    brand: 'Converter KI',
+                    'nav.home': 'Startseite',
+                    'nav.pages': 'Seiten',
+                    'nav.features': 'Funktionen',
+                    'nav.formats': 'Formate',
+                    'nav.team': 'Team',
+                    'nav.download': 'Herunterladen',
+                    'nav.contact': 'Kontakt',
+                    'hero.badge': 'v3.0.0',
+                    'hero.title1': 'Konvertieren Sie',
+                    'hero.title2': 'Alles.',
+                    'hero.title3': 'Überall.',
+                    'hero.description': 'All Files Converter AI ist ein leistungsstarkes, KI-gesteuertes Tool, das <strong>1000+ Formate</strong> unterstützt. Entwickelt mit ❤️ vom <strong style="color:var(--text-primary);">generatewithali</strong>-Team.',
+                    'hero.downloadBtn': 'Jetzt herunterladen',
+                    'hero.exploreBtn': 'Funktionen erkunden',
+                    'hero.stat1': 'Unterstützte Formate',
+                    'hero.stat2': 'Kategorien',
+                    'hero.stat3': 'Offline & Sicher',
+                    'mockup.title': 'All Files Converter KI',
+                    'mockup.done': 'Fertig',
+                    'mockup.converting': 'Konvertiere',
+                    'mockup.queued': 'Wartet',
+                    'mockup.error': 'Fehler',
+                    'mockup.convertAll': 'Alle konvertieren',
+                    'features.badge': 'Funktionen',
+                    'features.title1': 'Warum',
+                    'features.title2': 'All Files Converter AI',
+                    'features.subtitle': 'Entwickelt, um reale Probleme der Dateikonvertierung mit moderner KI zu lösen.',
+                    'features.problem': 'Problem:',
+                    'features.solution': 'Lösung:',
+                    'features.f1.title': '1000+ Formate',
+                    'features.f1.desc': 'Konvertieren Sie zwischen Dokumenten, Bildern, Audio, Video, Archiven, E-Books und Tabellen.',
+                    'features.f1.problem': 'Inkompatible Dateitypen behindern den Arbeitsablauf.',
+                    'features.f1.solution': 'Ein Tool für alle Formate, das mehrere Konverter überflüssig macht.',
+                    'features.f2.title': 'KI-Assistent',
+                    'features.f2.desc': 'Intelligente Hilfe bei Konvertierungen. Der KI-Assistent führt Sie durch jeden Schritt.',
+                    'features.f2.problem': 'Komplexe Konvertierungseinstellungen verwirren Benutzer.',
+                    'features.f2.solution': 'KI vereinfacht den Prozess und schlägt optimale Einstellungen basierend auf dem Dateityp vor.',
+                    'features.f3.title': 'Sprachbefehle',
+                    'features.f3.desc': 'Freihändige Bedienung mit Spracherkennung. Sprechen Sie einfach, um Ihre Dateien zu konvertieren.',
+                    'features.f3.problem': 'Die manuelle Navigation ist für Benutzer mit Zugänglichkeitsanforderungen zeitaufwändig.',
+                    'features.f3.solution': 'Sprachsteuerung ermöglicht eine schnellere, zugänglichere Konvertierung für alle.',
+                    'features.f4.title': 'Kamera-Scanner',
+                    'features.f4.desc': 'Scannen Sie Dokumente direkt von Ihrer Webcam. Perfekt zur Digitalisierung physischer Papiere.',
+                    'features.f4.problem': 'Die Digitalisierung physischer Dokumente erfordert separate Scanner-Tools.',
+                    'features.f4.solution': 'Integrierter Scanner wandelt physische Dokumente sofort in digitale Formate um.',
+                    'features.f5.title': '7 professionelle Themen',
+                    'features.f5.desc': 'Passen Sie Ihr Erlebnis mit Dunkelmodus, professionellem Blau, elegantem Pflaume und mehr an.',
+                    'features.f5.problem': 'Visuelle Ermüdung durch statische, nicht anpassbare Oberflächen.',
+                    'features.f5.solution': 'Personalisierte Themen reduzieren die Augenbelastung und verbessern die Benutzererfahrung.',
+                    'features.f6.title': 'Stapelverarbeitung',
+                    'features.f6.desc': 'Konvertieren Sie mehrere Dateien auf einmal. Sparen Sie Zeit mit leistungsstarker Stapelkonvertierung.',
+                    'features.f6.problem': 'Die Einzelkonvertierung von Dateien ist langsam und ineffizient.',
+                    'features.f6.solution': 'Die Stapelverarbeitung erledigt Hunderte von Dateien auf einmal und steigert die Produktivität.',
+                    'formats.badge': 'Formate',
+                    'formats.title1': 'Unterstützte',
+                    'formats.title2': 'Dateiformate',
+                    'formats.subtitle': 'Über 104 Formate in 7 Kategorien. Alle Ihre Konvertierungsbedürfnisse an einem Ort.',
+                    'formats.cat.doc': '📄 Dokumente',
+                    'formats.cat.img': '🖼 Bilder',
+                    'formats.cat.audio': '🎵 Audio',
+                    'formats.cat.video': '🎬 Video',
+                    'formats.cat.archive': '📦 Archive',
+                    'formats.cat.ebook': '📚 E-Books',
+                    'formats.cat.sheet': '📊 Tabellen',
+                    'team.badge': 'Team',
+                    'team.title1': 'Lernen Sie',
+                    'team.title2': 'generatewithali',
+                    'team.subtitle': 'Ein leidenschaftliches Team, das sich dafür einsetzt, die Dateikonvertierung für alle mühelos zu machen.',
+                    'team.bahadur.role': 'Anwendungsentwickler & KI-Leiter',
+                    'team.sheza.role': 'Webentwickler & UI/UX-Designer',
+                    'team.aiman.role': 'Content-Manager & QA-Support',
+                    'team.fatima.role': 'QA-Entwickler & Tester',
+                    'team.ali.role': 'Tester & Dokumentation',
+                    'download.badge': 'Herunterladen',
+                    'download.title1': 'Bereit zum Konvertieren',
+                    'download.title2': 'Alles?',
+                    'download.subtitle': 'Laden Sie All Files Converter AI noch heute herunter und erleben Sie die Leistungsfähigkeit der KI-gesteuerten Dateikonvertierung.',
+                    'download.btn': 'Für Windows herunterladen',
+                    'download.badge1': 'Windows 10/11',
+                    'download.badge2': 'Sicher',
+                    'download.badge3': 'Offline',
+                    'download.badge4': 'Unbegrenzt',
+                    'download.version': 'Version 3.0.0 · 104+ Formate · 7 Kategorien',
+                    'download.credit': 'Entwickelt vom generatewithali Team · Riphah International University',
+                    'contact.badge': 'Kontakt',
+                    'contact.title1': 'Kontaktieren',
+                    'contact.title2': 'Sie uns',
+                    'contact.subtitle': 'Wir freuen uns von Ihnen zu hören. Kontaktieren Sie uns für Support, Feedback oder Zusammenarbeit.',
+                    'contact.form.title': 'Senden Sie uns eine Nachricht',
+                    'contact.form.email': 'Ihre E-Mail',
+                    'contact.form.message': 'Nachricht',
+                    'contact.form.submit': 'Nachricht senden',
+                    'contact.info.title': 'Kontaktinformationen',
+                    'cookie.text': 'Wir verwenden Cookies, um Ihr Erlebnis zu verbessern. Abonnieren Sie unsere Updates.',
+                    'cookie.subscribe': 'Abonnieren',
+                    'footer.rights': 'Alle Rechte vorbehalten.',
+                    'footer.credit': 'All Files Converter AI v3.0.0 · Mit ❤️ vom generatewithali Team entwickelt'
+                },
+                zh: {
+                    brand: '转换器 AI',
+                    'nav.home': '首页',
+                    'nav.pages': '页面',
+                    'nav.features': '功能',
+                    'nav.formats': '格式',
+                    'nav.team': '团队',
+                    'nav.download': '下载',
+                    'nav.contact': '联系',
+                    'hero.badge': 'v3.0.0',
+                    'hero.title1': '转换',
+                    'hero.title2': '任何文件。',
+                    'hero.title3': '随时随地。',
+                    'hero.description': 'All Files Converter AI 是一个强大的 AI 驱动工具，支持 <strong>1000+ 种格式</strong>。由 <strong style="color:var(--text-primary);">generatewithali</strong> 团队 ❤️ 打造。',
+                    'hero.downloadBtn': '立即下载',
+                    'hero.exploreBtn': '探索功能',
+                    'hero.stat1': '支持格式',
+                    'hero.stat2': '类别',
+                    'hero.stat3': '离线与安全',
+                    'mockup.title': 'All Files Converter AI',
+                    'mockup.done': '完成',
+                    'mockup.converting': '转换中',
+                    'mockup.queued': '排队中',
+                    'mockup.error': '错误',
+                    'mockup.convertAll': '全部转换',
+                    'features.badge': '功能',
+                    'features.title1': '为什么选择',
+                    'features.title2': 'All Files Converter AI',
+                    'features.subtitle': '旨在用现代 AI 解决现实世界的文件转换问题。',
+                    'features.problem': '问题：',
+                    'features.solution': '解决方案：',
+                    'features.f1.title': '1000+ 格式',
+                    'features.f1.desc': '在文档、图像、音频、视频、压缩包、电子书和电子表格之间进行转换。',
+                    'features.f1.problem': '不兼容的文件类型阻碍工作流程。',
+                    'features.f1.solution': '一个工具支持所有格式，无需多个转换器。',
+                    'features.f2.title': 'AI 助手',
+                    'features.f2.desc': '提供智能转换帮助。AI 助手会逐步指导您。',
+                    'features.f2.problem': '复杂的转换设置让用户感到困惑。',
+                    'features.f2.solution': 'AI 简化流程，根据文件类型建议最佳设置。',
+                    'features.f3.title': '语音命令',
+                    'features.f3.desc': '通过语音识别实现免提操作。只需说出指令即可转换文件。',
+                    'features.f3.problem': '对于有辅助功能需求的用户，手动导航耗时。',
+                    'features.f3.solution': '语音控制为每个人提供更快、更便捷的转换。',
+                    'features.f4.title': '摄像头扫描仪',
+                    'features.f4.desc': '直接从网络摄像头扫描文档。非常适合将纸质文件数字化。',
+                    'features.f4.problem': '数字化物理文档需要单独的扫描工具。',
+                    'features.f4.solution': '集成扫描仪可将物理文档即时转换为数字格式。',
+                    'features.f5.title': '7 种专业主题',
+                    'features.f5.desc': '使用深色模式、专业蓝、优雅紫等自定义您的体验。',
+                    'features.f5.problem': '静态、非自适应界面造成视觉疲劳。',
+                    'features.f5.solution': '个性化主题可减轻眼睛疲劳并改善用户体验。',
+                    'features.f6.title': '批量处理',
+                    'features.f6.desc': '一次转换多个文件。通过强大的批量转换节省时间。',
+                    'features.f6.problem': '逐个转换文件缓慢且低效。',
+                    'features.f6.solution': '批量处理可一次性处理数百个文件，提高生产力。',
+                    'formats.badge': '格式',
+                    'formats.title1': '支持的',
+                    'formats.title2': '文件格式',
+                    'formats.subtitle': '跨越 7 个类别的 104 多种格式。满足您所有的转换需求。',
+                    'formats.cat.doc': '📄 文档',
+                    'formats.cat.img': '🖼 图像',
+                    'formats.cat.audio': '🎵 音频',
+                    'formats.cat.video': '🎬 视频',
+                    'formats.cat.archive': '📦 压缩包',
+                    'formats.cat.ebook': '📚 电子书',
+                    'formats.cat.sheet': '📊 电子表格',
+                    'team.badge': '团队',
+                    'team.title1': '认识',
+                    'team.title2': 'generatewithali',
+                    'team.subtitle': '一个充满热情的团队，致力于让文件转换对每个人都变得轻松。',
+                    'team.bahadur.role': '应用程序开发人员与 AI 主管',
+                    'team.sheza.role': '网站开发人员与 UI/UX 设计师',
+                    'team.aiman.role': '内容经理与 QA 支持',
+                    'team.fatima.role': 'QA 开发人员与测试员',
+                    'team.ali.role': '测试员与文档',
+                    'download.badge': '下载',
+                    'download.title1': '准备转换',
+                    'download.title2': '任何文件？',
+                    'download.subtitle': '立即下载 All Files Converter AI，体验 AI 驱动的文件转换功能。',
+                    'download.btn': '下载 Windows 版本',
+                    'download.badge1': 'Windows 10/11',
+                    'download.badge2': '安全',
+                    'download.badge3': '离线',
+                    'download.badge4': '无限',
+                    'download.version': '版本 3.0.0 · 104+ 格式 · 7 类别',
+                    'download.credit': '由 generatewithali 团队开发 · Riphah 国际大学',
+                    'contact.badge': '联系',
+                    'contact.title1': '联系',
+                    'contact.title2': '我们',
+                    'contact.subtitle': '我们很乐意听取您的意见。如需支持、反馈或合作，请联系我们。',
+                    'contact.form.title': '给我们发送消息',
+                    'contact.form.email': '您的邮箱',
+                    'contact.form.message': '消息',
+                    'contact.form.submit': '发送消息',
+                    'contact.info.title': '联系信息',
+                    'cookie.text': '我们使用 Cookie 来提升您的体验。订阅我们的更新。',
+                    'cookie.subscribe': '订阅',
+                    'footer.rights': '保留所有权利。',
+                    'footer.credit': 'All Files Converter AI v3.0.0 · 由 generatewithali 团队 ❤️ 打造'
+                },
+                ar: {
+                    brand: 'محول الذكاء الاصطناعي',
+                    'nav.home': 'الرئيسية',
+                    'nav.pages': 'الصفحات',
+                    'nav.features': 'الميزات',
+                    'nav.formats': 'الصيغ',
+                    'nav.team': 'الفريق',
+                    'nav.download': 'تحميل',
+                    'nav.contact': 'اتصل',
+                    'hero.badge': 'الإصدار 3.0.0',
+                    'hero.title1': 'حوّل',
+                    'hero.title2': 'أي شيء.',
+                    'hero.title3': 'في أي مكان.',
+                    'hero.description': 'All Files Converter AI هو أداة قوية تعمل بالذكاء الاصطناعي وتدعم <strong>أكثر من 1000 صيغة</strong>. صُنع ب❤️ بواسطة فريق <strong style="color:var(--text-primary);">generatewithali</strong>.',
+                    'hero.downloadBtn': 'تحميل الآن',
+                    'hero.exploreBtn': 'استكشف الميزات',
+                    'hero.stat1': 'الصيغ المدعومة',
+                    'hero.stat2': 'الفئات',
+                    'hero.stat3': 'غير متصل وآمن',
+                    'mockup.title': 'محول الملفات بالذكاء الاصطناعي',
+                    'mockup.done': 'تم',
+                    'mockup.converting': 'جاري التحويل',
+                    'mockup.queued': 'في قائمة الانتظار',
+                    'mockup.error': 'خطأ',
+                    'mockup.convertAll': 'تحويل الكل',
+                    'features.badge': 'الميزات',
+                    'features.title1': 'لماذا تختار',
+                    'features.title2': 'محول الملفات بالذكاء الاصطناعي',
+                    'features.subtitle': 'مصمم لحل مشاكل تحويل الملفات الواقعية باستخدام الذكاء الاصطناعي الحديث.',
+                    'features.problem': 'المشكلة:',
+                    'features.solution': 'الحل:',
+                    'features.f1.title': 'أكثر من 1000 صيغة',
+                    'features.f1.desc': 'تحويل بين المستندات والصور والصوت والفيديو والأرشيفات والكتب الإلكترونية وجداول البيانات.',
+                    'features.f1.problem': 'أنواع الملفات غير المتوافقة تعيق سير العمل.',
+                    'features.f1.solution': 'أداة واحدة لجميع الصيغ، مما يلغي الحاجة إلى محولات متعددة.',
+                    'features.f2.title': 'مساعد الذكاء الاصطناعي',
+                    'features.f2.desc': 'مساعدة ذكية في عمليات التحويل. يرشدك مساعد الذكاء الاصطناعي خلال كل خطوة.',
+                    'features.f2.problem': 'إعدادات التحويل المعقدة تربك المستخدمين.',
+                    'features.f2.solution': 'يعمل الذكاء الاصطناعي على تبسيط العملية، ويقترح الإعدادات المثلى بناءً على نوع الملف.',
+                    'features.f3.title': 'الأوامر الصوتية',
+                    'features.f3.desc': 'تشغيل بدون استخدام اليدين عبر التعرف على الصوت. فقط تحدث لتحويل ملفاتك.',
+                    'features.f3.problem': 'التنقل اليدوي يستغرق وقتًا طويلاً للمستخدمين ذوي احتياجات الوصول.',
+                    'features.f3.solution': 'يتيح التحكم الصوتي تحويلاً أسرع وأسهل للجميع.',
+                    'features.f4.title': 'ماسح الكاميرا',
+                    'features.f4.desc': 'امسح المستندات ضوئيًا مباشرة من كاميرا الويب. مثالي لرقمنة الأوراق المادية.',
+                    'features.f4.problem': 'تتطلب رقمنة المستندات المادية أدوات مسح منفصلة.',
+                    'features.f4.solution': 'يحول الماسح الضوئي المدمج المستندات المادية إلى صيغ رقمية فورًا.',
+                    'features.f5.title': '7 قوالب احترافية',
+                    'features.f5.desc': 'خصص تجربتك مع الوضع المظلم والأزرق الاحترافي والبرقوقي الأنيق والمزيد.',
+                    'features.f5.problem': 'إجهاد بصري من واجهات ثابتة وغير قابلة للتكيف.',
+                    'features.f5.solution': 'تقوالب مخصصة تقلل من إجهاد العين وتحسن تجربة المستخدم.',
+                    'features.f6.title': 'المعالجة المجمعة',
+                    'features.f6.desc': 'تحويل ملفات متعددة دفعة واحدة. وفر الوقت مع تحويل مجمّع قوي.',
+                    'features.f6.problem': 'تحويل الملفات واحدًا تلو الآخر بطيء وغير فعال.',
+                    'features.f6.solution': 'تعالج المعالجة المجمعة مئات الملفات دفعة واحدة، مما يعزز الإنتاجية.',
+                    'formats.badge': 'الصيغ',
+                    'formats.title1': 'صيغ',
+                    'formats.title2': 'الملفات المدعومة',
+                    'formats.subtitle': 'أكثر من 104 صيغة في 7 فئات. جميع احتياجات التحويل في مكان واحد.',
+                    'formats.cat.doc': '📄 المستندات',
+                    'formats.cat.img': '🖼 الصور',
+                    'formats.cat.audio': '🎵 الصوت',
+                    'formats.cat.video': '🎬 الفيديو',
+                    'formats.cat.archive': '📦 الأرشيفات',
+                    'formats.cat.ebook': '📚 الكتب الإلكترونية',
+                    'formats.cat.sheet': '📊 جداول البيانات',
+                    'team.badge': 'الفريق',
+                    'team.title1': 'تعرف على',
+                    'team.title2': 'generatewithali',
+                    'team.subtitle': 'فريق شغوف مكرس لجعل تحويل الملفات سهلاً للجميع.',
+                    'team.bahadur.role': 'مطور التطبيق وقائد الذكاء الاصطناعي',
+                    'team.sheza.role': 'مطور الويب ومصمم UI/UX',
+                    'team.aiman.role': 'مدير المحتوى ودعم ضمان الجودة',
+                    'team.fatima.role': 'مطور ضمان الجودة ومختبر',
+                    'team.ali.role': 'مختبر وكاتب وثائق',
+                    'download.badge': 'تحميل',
+                    'download.title1': 'مستعد لتحويل',
+                    'download.title2': 'أي شيء؟',
+                    'download.subtitle': 'قم بتحميل All Files Converter AI اليوم واختبر قوة تحويل الملفات المدعوم بالذكاء الاصطناعي.',
+                    'download.btn': 'تحميل لنظام ويندوز',
+                    'download.badge1': 'ويندوز 10/11',
+                    'download.badge2': 'آمن',
+                    'download.badge3': 'غير متصل',
+                    'download.badge4': 'غير محدود',
+                    'download.version': 'الإصدار 3.0.0 · 104+ صيغة · 7 فئات',
+                    'download.credit': 'تم التطوير بواسطة فريق generatewithali · جامعة ريبها الدولية',
+                    'contact.badge': 'اتصل',
+                    'contact.title1': 'تواصل',
+                    'contact.title2': 'معنا',
+                    'contact.subtitle': 'يسعدنا سماع رأيك. تواصل معنا للدعم أو الملاحظات أو التعاون.',
+                    'contact.form.title': 'أرسل لنا رسالة',
+                    'contact.form.email': 'بريدك الإلكتروني',
+                    'contact.form.message': 'الرسالة',
+                    'contact.form.submit': 'إرسال الرسالة',
+                    'contact.info.title': 'معلومات الاتصال',
+                    'cookie.text': 'نستخدم ملفات تعريف الارتباط لتحسين تجربتك. اشترك في تحديثاتنا.',
+                    'cookie.subscribe': 'اشترك',
+                    'footer.rights': 'جميع الحقوق محفوظة.',
+                    'footer.credit': 'All Files Converter AI v3.0.0 · صُنع ب❤️ بواسطة فريق generatewithali'
+                }
+            };
+
+            const langSelect = document.getElementById('languageSelect');
+
+            function applyLanguage(lang) {
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (translations[lang] && translations[lang][key]) {
+                        if (el.innerHTML !== el.textContent) {
+                            el.innerHTML = translations[lang][key];
+                        } else {
+                            el.textContent = translations[lang][key];
+                        }
+                    }
+                });
+                localStorage.setItem('converter-lang', lang);
+                langSelect.value = lang;
+                document.documentElement.lang = lang;
+            }
+
+            langSelect.addEventListener('change', function() {
+                applyLanguage(this.value);
+            });
+
+            const savedLang = localStorage.getItem('converter-lang');
+            if (savedLang && translations[savedLang]) {
+                applyLanguage(savedLang);
+            } else {
+                applyLanguage('en');
+            }
+
+            // =====================
+            // 3. PAGE NAVIGATION SYSTEM
+            // =====================
+            const pageLinks = document.querySelectorAll('[data-page]');
+            const pageContents = document.querySelectorAll('.page-content');
+            const nav = document.getElementById('nav');
+
+            function navigateToPage(pageId) {
+                // Hide all pages
+                pageContents.forEach(p => p.classList.remove('active'));
+                
+                // Show target page
+                const targetPage = document.getElementById('page-' + pageId);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                }
+
+                // Update active nav links
+                document.querySelectorAll('.nav-links a, .footer-links a, .dropdown-menu a').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-page') === pageId) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Close mobile menu
+                navMenu.classList.remove('open');
+
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Add click listeners to all page links
+            pageLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = this.getAttribute('data-page');
+                    if (page) {
+                        navigateToPage(page);
+                        // Update URL hash for browser history
+                        history.pushState(null, '', '#' + page);
+                    }
+                });
+            });
+
+            // Handle browser back/forward
+            window.addEventListener('popstate', function() {
+                const hash = window.location.hash.replace('#', '') || 'home';
+                navigateToPage(hash);
+            });
+
+            // Load initial page from URL hash
+            const initialPage = window.location.hash.replace('#', '') || 'home';
+            navigateToPage(initialPage);
+
+            // Mobile toggle
             const navToggle = document.getElementById('navToggle');
             const navMenu = document.getElementById('navLinks');
 
-            function navigateTo(pageId) {
-                const target = document.getElementById(pageId);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-                navMenu.classList.remove('open');
-            }
-
-            function addNavListeners(elements) {
-                elements.forEach(el => {
-                    el.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        const page = this.getAttribute('data-page');
-                        if (page) navigateTo(page);
-                    });
-                });
-            }
-
-            addNavListeners(navLinks);
-            addNavListeners(footerLinks);
-            addNavListeners(heroBtns);
-            addNavListeners(dots);
-
-            if (logo) {
-                logo.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    navigateTo('home');
-                });
-            }
-
-            // Mobile toggle
             if (navToggle && navMenu) {
                 navToggle.addEventListener('click', function() {
                     navMenu.classList.toggle('open');
                 });
             }
 
-            // ---- Nav scroll effect ----
-            const nav = document.getElementById('nav');
+            // Nav scroll effect
             window.addEventListener('scroll', function() {
                 nav.classList.toggle('scrolled', window.scrollY > 20);
             });
 
-            // ---- Active section detection ----
-            const sections = document.querySelectorAll('.page');
+            // =====================
+            // 4. INTERSECTION OBSERVERS (Animations)
+            // =====================
+            // We need to re-run observers when pages change
+            function setupObservers() {
+                // Features
+                const featureCards = document.querySelectorAll('#page-features .feature-card');
+                const featureObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+                featureCards.forEach(card => featureObserver.observe(card));
 
-            function updateActive() {
-                let current = '';
-                sections.forEach(sec => {
-                    const top = sec.offsetTop - 140;
-                    if (window.scrollY >= top) {
-                        current = sec.getAttribute('id');
-                    }
-                });
-                navLinks.forEach(link => {
-                    link.classList.toggle('active', link.getAttribute('data-page') === current);
-                });
-                dots.forEach(dot => {
-                    dot.classList.toggle('active', dot.getAttribute('data-page') === current);
-                });
+                // Format items
+                const formatItems = document.querySelectorAll('#page-formats .format-item');
+                const formatObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+                formatItems.forEach(item => formatObserver.observe(item));
+
+                // Team cards
+                const teamCards = document.querySelectorAll('#page-team .team-card');
+                const teamObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+                teamCards.forEach(card => teamObserver.observe(card));
             }
 
-            window.addEventListener('scroll', updateActive);
-            window.addEventListener('load', updateActive);
+            // Setup observers after initial load
+            setTimeout(setupObservers, 100);
 
-            // ---- Intersection Observer for feature cards ----
-            const featureCards = document.querySelectorAll('.feature-card');
-            const featureObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+            // Re-run observers when page changes
+            const observer = new MutationObserver(() => {
+                setTimeout(setupObservers, 200);
+            });
+            document.querySelectorAll('.page-content').forEach(el => {
+                observer.observe(el, { attributes: true, attributeFilter: ['class'] });
+            });
 
-            featureCards.forEach(card => featureObserver.observe(card));
-
-            // ---- Format items ----
-            const formatItems = document.querySelectorAll('.format-item');
-            const formatObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
-
-            formatItems.forEach(item => formatObserver.observe(item));
-
-            // ---- Team cards ----
-            const teamCards = document.querySelectorAll('.team-card');
-            const teamObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-
-            teamCards.forEach(card => teamObserver.observe(card));
-
-            // ---- Hero stats counter ----
+            // =====================
+            // 5. HERO STATS COUNTER
+            // =====================
             function animateCounter(el, target, duration = 1400) {
                 let start = 0;
                 const increment = target / (duration / 16);
@@ -1601,21 +2332,85 @@
                 }, 16);
             }
 
-            const statsWrapper = document.querySelector('.hero-stats');
-            if (statsWrapper) {
-                const statsObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const statEls = entry.target.querySelectorAll('.stat h3');
-                            const targets = [104, 7, 100];
-                            statEls.forEach((el, idx) => {
-                                animateCounter(el, targets[idx], 1300);
-                            });
-                            statsObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.2 });
-                statsObserver.observe(statsWrapper);
+            // Run stats counter when home page is visible
+            function checkAndRunStats() {
+                const homePage = document.getElementById('page-home');
+                if (homePage && homePage.classList.contains('active')) {
+                    const statsWrapper = homePage.querySelector('.hero-stats');
+                    if (statsWrapper && !statsWrapper.dataset.counterRun) {
+                        statsWrapper.dataset.counterRun = 'true';
+                        const statEls = statsWrapper.querySelectorAll('.stat h3');
+                        const targets = [104, 7, 100];
+                        statEls.forEach((el, idx) => {
+                            animateCounter(el, targets[idx], 1300);
+                        });
+                    }
+                }
+            }
+
+            // Run on initial load
+            setTimeout(checkAndRunStats, 300);
+
+            // Run when home page becomes active
+            const homeObserver = new MutationObserver(() => {
+                checkAndRunStats();
+            });
+            const homePage = document.getElementById('page-home');
+            if (homePage) {
+                homeObserver.observe(homePage, { attributes: true, attributeFilter: ['class'] });
+            }
+
+            // =====================
+            // 6. CONTACT FORM
+            // =====================
+            const contactForm = document.getElementById('contactForm');
+            const formStatus = document.getElementById('formStatus');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = document.getElementById('contactEmail').value.trim();
+                    const message = document.getElementById('contactMessage').value.trim();
+
+                    if (!email || !message) {
+                        formStatus.innerHTML = '<span style="color:#E53E3E;">Please fill in all fields.</span>';
+                        return;
+                    }
+
+                    formStatus.innerHTML = '<span style="color:#38A169;"><i class="fas fa-spinner fa-spin"></i> Sending...</span>';
+                    setTimeout(() => {
+                        formStatus.innerHTML = '<span style="color:#38A169;"><i class="fas fa-check-circle"></i> Message sent successfully!</span>';
+                        contactForm.reset();
+                    }, 1500);
+                });
+            }
+
+            // =====================
+            // 7. COOKIE / SUBSCRIPTION
+            // =====================
+            const cookieSubscribeBtn = document.getElementById('cookieSubscribeBtn');
+            const cookieEmail = document.getElementById('cookieEmail');
+            const cookieStatus = document.getElementById('cookieStatus');
+
+            if (cookieSubscribeBtn) {
+                cookieSubscribeBtn.addEventListener('click', function() {
+                    const email = cookieEmail.value.trim();
+                    if (!email || !email.includes('@')) {
+                        cookieStatus.innerHTML = '<span style="color:#E53E3E;">Please enter a valid email.</span>';
+                        return;
+                    }
+
+                    cookieStatus.innerHTML = '<span style="color:#38A169;"><i class="fas fa-spinner fa-spin"></i> Subscribing...</span>';
+                    setTimeout(() => {
+                        cookieStatus.innerHTML = '<span style="color:#38A169;"><i class="fas fa-check-circle"></i> Subscribed successfully!</span>';
+                        cookieEmail.value = '';
+                        localStorage.setItem('cookie-consent', 'true');
+                    }, 1000);
+                });
+            }
+
+            if (localStorage.getItem('cookie-consent') === 'true' && cookieStatus) {
+                cookieStatus.innerHTML = '<span style="color:#38A169;"><i class="fas fa-check-circle"></i> You are subscribed.';
             }
 
         })();

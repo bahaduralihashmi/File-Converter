@@ -1,44 +1,38 @@
 {
   "name": "all-files-converter-ai",
   "version": 2,
-  "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    }
-  ],
   "routes": [
     {
       "src": "/favicon.ico",
-      "dest": "/landing-page/favicon.ico",
+      "dest": "/favicon.ico",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
       }
     },
     {
       "src": "/favicon-96x96.png",
-      "dest": "/landing-page/favicon-96x96.png",
+      "dest": "/favicon-96x96.png",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
       }
     },
     {
       "src": "/favicon.svg",
-      "dest": "/landing-page/favicon.svg",
+      "dest": "/favicon.svg",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
       }
     },
     {
       "src": "/apple-touch-icon.png",
-      "dest": "/landing-page/apple-touch-icon.png",
+      "dest": "/apple-touch-icon.png",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
       }
     },
     {
       "src": "/site.webmanifest",
-      "dest": "/landing-page/site.webmanifest",
+      "dest": "/site.webmanifest",
       "headers": {
         "Content-Type": "application/json",
         "Cache-Control": "public, max-age=31536000, immutable"
@@ -46,21 +40,21 @@
     },
     {
       "src": "/web-app-manifest-192x192.png",
-      "dest": "/landing-page/web-app-manifest-192x192.png",
+      "dest": "/web-app-manifest-192x192.png",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
       }
     },
     {
       "src": "/web-app-manifest-512x512.png",
-      "dest": "/landing-page/web-app-manifest-512x512.png",
+      "dest": "/web-app-manifest-512x512.png",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
       }
     },
     {
       "src": "/(.*)",
-      "dest": "/landing-page/index.html"
+      "dest": "/index.html"
     }
   ],
   "$schema": "https://openapi.vercel.sh/vercel.json",

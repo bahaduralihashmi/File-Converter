@@ -2768,6 +2768,66 @@
         }
         privacyDiv.style.display = 'flex';
     }
+    
+    // Add this to your existing page routing logic
+function showPage(pageId) {
+    // ... existing code ...
+    
+    if (pageId === 'sitemap') {
+        showSitemapPage();
+    }
+    // ... existing code ...
+}
+
+// New function to display sitemap
+function showSitemapPage() {
+    // Hide all main sections
+    document.querySelectorAll('.page').forEach(section => {
+        section.style.display = 'none';
+    });
+    document.querySelector('.footer').style.display = 'none';
+    document.querySelector('.bg-animation').style.display = 'none';
+
+    // Create sitemap container
+    let sitemapDiv = document.getElementById('sitemapPage');
+    if (!sitemapDiv) {
+        sitemapDiv = document.createElement('div');
+        sitemapDiv.id = 'sitemapPage';
+        sitemapDiv.style.cssText = 'min-height:100vh; padding:40px 20px; background:var(--bg-dark); color:#fff; font-family:monospace;';
+        sitemapDiv.innerHTML = `
+            <div style="max-width:800px; margin:0 auto; background:var(--bg-card); padding:40px; border-radius:16px; border:1px solid var(--border-glass);">
+                <a href="/" style="color:var(--primary); text-decoration:none; display:inline-block; margin-bottom:20px;">← Back to Home</a>
+                <h1 style="color:var(--primary);">🗺️ Sitemap</h1>
+                <pre style="background:rgba(0,0,0,0.3); padding:20px; border-radius:8px; overflow-x:auto; white-space:pre-wrap; word-wrap:break-word; color:var(--text-secondary);">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+    &lt;url&gt;
+        &lt;loc&gt;https://www.allfileconvertor.site/&lt;/loc&gt;
+        &lt;lastmod&gt;2026-09-05&lt;/lastmod&gt;
+        &lt;changefreq&gt;weekly&lt;/changefreq&gt;
+        &lt;priority&gt;1.0&lt;/priority&gt;
+    &lt;/url&gt;
+    &lt;url&gt;
+        &lt;loc&gt;https://www.allfileconvertor.site/?page=privacy&lt;/loc&gt;
+        &lt;lastmod&gt;2026-09-05&lt;/lastmod&gt;
+        &lt;changefreq&gt;monthly&lt;/changefreq&gt;
+        &lt;priority&gt;0.5&lt;/priority&gt;
+    &lt;/url&gt;
+    &lt;url&gt;
+        &lt;loc&gt;https://www.allfileconvertor.site/?page=about&lt;/loc&gt;
+        &lt;lastmod&gt;2026-09-05&lt;/lastmod&gt;
+        &lt;changefreq&gt;monthly&lt;/changefreq&gt;
+        &lt;priority&gt;0.5&lt;/priority&gt;
+    &lt;/url&gt;
+&lt;/urlset&gt;
+                </pre>
+                <p style="color:var(--text-muted); font-size:14px; margin-top:10px;">This sitemap is available at: <a href="?page=sitemap" style="color:var(--primary);">https://www.allfileconvertor.site/?page=sitemap</a></p>
+            </div>
+        `;
+        document.body.appendChild(sitemapDiv);
+    }
+    sitemapDiv.style.display = 'block';
+}
 
     // Show About Page
     function showAboutPage() {

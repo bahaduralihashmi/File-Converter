@@ -2019,6 +2019,7 @@
                 <a data-page="contact" data-i18n="nav.contact">Contact</a>
                 <a href="?page=privacy">Privacy Policy</a>
                 <a href="?page=about">About Us</a>
+                <a href="?page=sitemap">Sitemap</a>
             </div>
             <p>
                 © 2026 <strong>generatewithali Team</strong> ·
@@ -2031,7 +2032,7 @@
     </footer>
 
     <!-- ============================================================
-    JAVASCRIPT (Full Implementation)
+    JAVASCRIPT (Merged & Fixed)
     ============================================================ -->
     <script>
         (function() {
@@ -2688,117 +2689,153 @@
                 cookieStatus.innerHTML = '<span style="color:#38A169;"><i class="fas fa-check-circle"></i> You are subscribed.</span>';
             }
 
-        })();
-    </script>
-    <script>
-// ============================================
-// PAGE ROUTING USING URL PARAMETERS
-// ============================================
+            // ============================================
+            // 8. PAGE ROUTING USING URL PARAMETERS (FIXED)
+            // ============================================
 
-(function() {
-    'use strict';
+            function getPageParam() {
+                const params = new URLSearchParams(window.location.search);
+                return params.get('page');
+            }
 
-    // Get the page parameter from URL
-    function getPageParam() {
-        const params = new URLSearchParams(window.location.search);
-        return params.get('page');
-    }
+            function showPrivacyPage() {
+                document.querySelectorAll('.page').forEach(section => {
+                    section.style.display = 'none';
+                });
+                document.querySelector('.footer').style.display = 'none';
+                document.querySelector('.bg-animation').style.display = 'none';
 
-    // Show Privacy Page
-    function showPrivacyPage() {
-        // Hide all main sections
-        document.querySelectorAll('.page').forEach(section => {
-            section.style.display = 'none';
-        });
-        document.querySelector('.footer').style.display = 'none';
-        document.querySelector('.bg-animation').style.display = 'none';
+                let privacyDiv = document.getElementById('privacyPage');
+                if (!privacyDiv) {
+                    privacyDiv = document.createElement('div');
+                    privacyDiv.id = 'privacyPage';
+                    privacyDiv.style.cssText = 'min-height:100vh; display:flex; align-items:center; justify-content:center; padding:40px 20px; background:var(--bg-dark);';
+                    privacyDiv.innerHTML = `
+                        <div style="max-width:800px; width:100%; margin:0 auto; background:var(--bg-card); padding:40px; border-radius:16px; border:1px solid var(--border-glass);">
+                            <a href="/" style="color:var(--primary); text-decoration:none; display:inline-block; margin-bottom:20px;">← Back to Home</a>
+                            <h1 style="color:var(--primary); font-size:32px; margin:0 0 10px 0;">🔒 Privacy Policy</h1>
+                            <p style="color:var(--text-secondary);"><strong>Last updated:</strong> September 5, 2026</p>
+                            <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">1. Introduction</h2>
+                            <p style="color:var(--text-secondary);">Welcome to All Files Converter AI. Your privacy is important to us. This Privacy Policy explains how we handle your information when you use our website and desktop application.</p>
+                            <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">2. Desktop Application (Offline)</h2>
+                            <p style="color:var(--text-secondary);"><strong>All Files Converter AI is a fully offline desktop application.</strong> We do not collect, store, transmit, or have access to any of your files or personal data. All file conversions happen locally on your device. Your files never leave your computer.</p>
+                            <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">3. Website Data Collection</h2>
+                            <p style="color:var(--text-secondary);">Our website may collect anonymous usage data through:</p>
+                            <ul style="color:var(--text-secondary); padding-left:20px;">
+                                <li><strong>Google AdSense</strong> – for displaying relevant advertisements</li>
+                                <li><strong>Cookies</strong> – for website functionality and ad personalization</li>
+                            </ul>
+                            <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">4. Cookies</h2>
+                            <p style="color:var(--text-secondary);">Cookies are small text files stored on your device. We use cookies to:</p>
+                            <ul style="color:var(--text-secondary); padding-left:20px;">
+                                <li>Remember your theme preference (dark/light/blue/plum)</li>
+                                <li>Remember your language preference</li>
+                                <li>Enable Google AdSense to display relevant ads</li>
+                            </ul>
+                            <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">5. Third-Party Services</h2>
+                            <p style="color:var(--text-secondary);">We use the following third-party services:</p>
+                            <ul style="color:var(--text-secondary); padding-left:20px;">
+                                <li><strong>Google AdSense</strong> – for advertising. <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--primary);">Google's Privacy Policy</a></li>
+                                <li><strong>Google Fonts</strong> – for web typography</li>
+                                <li><strong>Font Awesome</strong> – for icons</li>
+                            </ul>
+                            <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">6. Contact Us</h2>
+                            <p style="color:var(--text-secondary);">If you have any questions about this Privacy Policy, please contact us:</p>
+                            <ul style="color:var(--text-secondary); padding-left:20px;">
+                                <li><strong>Email:</strong> <a href="mailto:bahaduralimunnabhai@gmail.com" style="color:var(--primary);">bahaduralimunnabhai@gmail.com</a></li>
+                                <li><strong>WhatsApp:</strong> <a href="https://wa.me/923034572298" style="color:var(--primary);">+92 303 4572298</a></li>
+                            </ul>
+                            <p style="margin-top:30px; font-size:14px; color:var(--text-muted);">© 2026 generatewithali Team. All rights reserved.</p>
+                        </div>
+                    `;
+                    document.body.appendChild(privacyDiv);
+                }
+                privacyDiv.style.display = 'flex';
+            }
 
-        // Create privacy content if it doesn't exist
-        let privacyDiv = document.getElementById('privacyPage');
-        if (!privacyDiv) {
-            privacyDiv = document.createElement('div');
-            privacyDiv.id = 'privacyPage';
-            privacyDiv.style.cssText = 'min-height:100vh; display:flex; align-items:center; justify-content:center; padding:40px 20px; background:var(--bg-dark);';
-            privacyDiv.innerHTML = `
-                <div style="max-width:800px; width:100%; margin:0 auto; background:var(--bg-card); padding:40px; border-radius:16px; border:1px solid var(--border-glass);">
-                    <a href="/" style="color:var(--primary); text-decoration:none; display:inline-block; margin-bottom:20px;">← Back to Home</a>
-                    <h1 style="color:var(--primary); font-size:32px; margin:0 0 10px 0;">🔒 Privacy Policy</h1>
-                    <p style="color:var(--text-secondary);"><strong>Last updated:</strong> September 5, 2026</p>
+            function showAboutPage() {
+                document.querySelectorAll('.page').forEach(section => {
+                    section.style.display = 'none';
+                });
+                document.querySelector('.footer').style.display = 'none';
+                document.querySelector('.bg-animation').style.display = 'none';
 
-                    <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">1. Introduction</h2>
-                    <p style="color:var(--text-secondary);">Welcome to All Files Converter AI. Your privacy is important to us. This Privacy Policy explains how we handle your information when you use our website and desktop application.</p>
+                let aboutDiv = document.getElementById('aboutPage');
+                if (!aboutDiv) {
+                    aboutDiv = document.createElement('div');
+                    aboutDiv.id = 'aboutPage';
+                    aboutDiv.style.cssText = 'min-height:100vh; display:flex; align-items:center; justify-content:center; padding:40px 20px; background:var(--bg-dark);';
+                    aboutDiv.innerHTML = `
+                        <div style="max-width:800px; width:100%; margin:0 auto; background:var(--bg-card); padding:40px; border-radius:16px; border:1px solid var(--border-glass);">
+                            <a href="/" style="color:var(--primary); text-decoration:none; display:inline-block; margin-bottom:20px;">← Back to Home</a>
+                            <h1 style="color:var(--primary); font-size:32px; margin:0 0 10px 0;">👋 About All Files Converter AI</h1>
+                            <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">Our Mission</h2>
+                            <p style="color:var(--text-secondary);">To make file conversion <strong>accessible, secure, and completely free</strong> for everyone.</p>
+                            <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">Who We Are</h2>
+                            <p style="color:var(--text-secondary);">We are the <strong>generatewithali</strong> team - a group of passionate developers, designers, and testers from <strong>Riphah International University, Lahore</strong>.</p>
+                            <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">Why We Built This</h2>
+                            <ul style="color:var(--text-secondary); padding-left:20px;">
+                                <li>❌ Most file converters are <strong>expensive</strong> with subscription fees</li>
+                                <li>❌ Online converters are <strong>insecure</strong> – your files go to unknown servers</li>
+                                <li>❌ Free tools often have <strong>limited format support</strong></li>
+                            </ul>
+                            <p style="color:var(--text-secondary);">So we built <strong>All Files Converter AI</strong> – a free, offline, secure, and powerful converter that supports <strong>1000+ formats</strong>.</p>
+                            <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">Our Team</h2>
+                            <div style="margin:10px 0; padding:15px 20px; background:rgba(255,255,255,0.03); border-radius:10px; border-left:3px solid #6C63FF;">
+                                <strong style="color:var(--text-primary);">Bahadur Ali</strong><br />
+                                <span style="color:var(--text-secondary); font-size:14px;">Application Developer & AI Lead</span><br />
+                                <span style="color:var(--text-muted); font-size:13px;">Riphah International University, Lahore</span>
+                            </div>
+                            <div style="margin:10px 0; padding:15px 20px; background:rgba(255,255,255,0.03); border-radius:10px; border-left:3px solid #6C63FF;">
+                                <strong style="color:var(--text-primary);">Sheza Abid</strong><br />
+                                <span style="color:var(--text-secondary); font-size:14px;">Website Developer & UI/UX Designer</span><br />
+                                <span style="color:var(--text-muted); font-size:13px;">Riphah International University, Lahore</span>
+                            </div>
+                            <div style="margin:10px 0; padding:15px 20px; background:rgba(255,255,255,0.03); border-radius:10px; border-left:3px solid #6C63FF;">
+                                <strong style="color:var(--text-primary);">Fatima Akram</strong><br />
+                                <span style="color:var(--text-secondary); font-size:14px;">QA Developer & Tester</span><br />
+                                <span style="color:var(--text-muted); font-size:13px;">Riphah International University, Lahore</span>
+                            </div>
+                            <div style="margin:10px 0; padding:15px 20px; background:rgba(255,255,255,0.03); border-radius:10px; border-left:3px solid #6C63FF;">
+                                <strong style="color:var(--text-primary);">Aiman Imran</strong><br />
+                                <span style="color:var(--text-secondary); font-size:14px;">Content Manager & QA Support</span><br />
+                                <span style="color:var(--text-muted); font-size:13px;">Riphah International University, Lahore</span>
+                            </div>
+                            <div style="margin:10px 0; padding:15px 20px; background:rgba(255,255,255,0.03); border-radius:10px; border-left:3px solid #6C63FF;">
+                                <strong style="color:var(--text-primary);">Ali Masood</strong><br />
+                                <span style="color:var(--text-secondary); font-size:14px;">Tester & Documentation</span><br />
+                                <span style="color:var(--text-muted); font-size:13px;">Riphah International University, Lahore</span>
+                            </div>
+                            <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">Contact Us</h2>
+                            <ul style="color:var(--text-secondary); padding-left:20px;">
+                                <li><strong>Email:</strong> <a href="mailto:bahaduralimunnabhai@gmail.com" style="color:var(--primary);">bahaduralimunnabhai@gmail.com</a></li>
+                                <li><strong>WhatsApp:</strong> <a href="https://wa.me/923034572298" style="color:var(--primary);">+92 303 4572298</a></li>
+                            </ul>
+                            <p style="margin-top:30px; font-size:14px; color:var(--text-muted);">© 2026 generatewithali Team. All rights reserved.</p>
+                        </div>
+                    `;
+                    document.body.appendChild(aboutDiv);
+                }
+                aboutDiv.style.display = 'flex';
+            }
 
-                    <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">2. Desktop Application (Offline)</h2>
-                    <p style="color:var(--text-secondary);"><strong>All Files Converter AI is a fully offline desktop application.</strong> We do not collect, store, transmit, or have access to any of your files or personal data. All file conversions happen locally on your device. Your files never leave your computer.</p>
+            function showSitemapPage() {
+                document.querySelectorAll('.page').forEach(section => {
+                    section.style.display = 'none';
+                });
+                document.querySelector('.footer').style.display = 'none';
+                document.querySelector('.bg-animation').style.display = 'none';
 
-                    <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">3. Website Data Collection</h2>
-                    <p style="color:var(--text-secondary);">Our website may collect anonymous usage data through:</p>
-                    <ul style="color:var(--text-secondary); padding-left:20px;">
-                        <li><strong>Google AdSense</strong> – for displaying relevant advertisements</li>
-                        <li><strong>Cookies</strong> – for website functionality and ad personalization</li>
-                    </ul>
-
-                    <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">4. Cookies</h2>
-                    <p style="color:var(--text-secondary);">Cookies are small text files stored on your device. We use cookies to:</p>
-                    <ul style="color:var(--text-secondary); padding-left:20px;">
-                        <li>Remember your theme preference (dark/light/blue/plum)</li>
-                        <li>Remember your language preference</li>
-                        <li>Enable Google AdSense to display relevant ads</li>
-                    </ul>
-
-                    <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">5. Third-Party Services</h2>
-                    <p style="color:var(--text-secondary);">We use the following third-party services:</p>
-                    <ul style="color:var(--text-secondary); padding-left:20px;">
-                        <li><strong>Google AdSense</strong> – for advertising. <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--primary);">Google's Privacy Policy</a></li>
-                        <li><strong>Google Fonts</strong> – for web typography</li>
-                        <li><strong>Font Awesome</strong> – for icons</li>
-                    </ul>
-
-                    <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">6. Contact Us</h2>
-                    <p style="color:var(--text-secondary);">If you have any questions about this Privacy Policy, please contact us:</p>
-                    <ul style="color:var(--text-secondary); padding-left:20px;">
-                        <li><strong>Email:</strong> <a href="mailto:bahaduralimunnabhai@gmail.com" style="color:var(--primary);">bahaduralimunnabhai@gmail.com</a></li>
-                        <li><strong>WhatsApp:</strong> <a href="https://wa.me/923034572298" style="color:var(--primary);">+92 303 4572298</a></li>
-                    </ul>
-
-                    <p style="margin-top:30px; font-size:14px; color:var(--text-muted);">© 2026 generatewithali Team. All rights reserved.</p>
-                </div>
-            `;
-            document.body.appendChild(privacyDiv);
-        }
-        privacyDiv.style.display = 'flex';
-    }
-    
-    // Add this to your existing page routing logic
-function showPage(pageId) {
-    // ... existing code ...
-    
-    if (pageId === 'sitemap') {
-        showSitemapPage();
-    }
-    // ... existing code ...
-}
-
-// New function to display sitemap
-function showSitemapPage() {
-    // Hide all main sections
-    document.querySelectorAll('.page').forEach(section => {
-        section.style.display = 'none';
-    });
-    document.querySelector('.footer').style.display = 'none';
-    document.querySelector('.bg-animation').style.display = 'none';
-
-    // Create sitemap container
-    let sitemapDiv = document.getElementById('sitemapPage');
-    if (!sitemapDiv) {
-        sitemapDiv = document.createElement('div');
-        sitemapDiv.id = 'sitemapPage';
-        sitemapDiv.style.cssText = 'min-height:100vh; padding:40px 20px; background:var(--bg-dark); color:#fff; font-family:monospace;';
-        sitemapDiv.innerHTML = `
-            <div style="max-width:800px; margin:0 auto; background:var(--bg-card); padding:40px; border-radius:16px; border:1px solid var(--border-glass);">
-                <a href="/" style="color:var(--primary); text-decoration:none; display:inline-block; margin-bottom:20px;">← Back to Home</a>
-                <h1 style="color:var(--primary);">🗺️ Sitemap</h1>
-                <pre style="background:rgba(0,0,0,0.3); padding:20px; border-radius:8px; overflow-x:auto; white-space:pre-wrap; word-wrap:break-word; color:var(--text-secondary);">
+                let sitemapDiv = document.getElementById('sitemapPage');
+                if (!sitemapDiv) {
+                    sitemapDiv = document.createElement('div');
+                    sitemapDiv.id = 'sitemapPage';
+                    sitemapDiv.style.cssText = 'min-height:100vh; padding:40px 20px; background:var(--bg-dark); color:#fff; font-family:monospace;';
+                    sitemapDiv.innerHTML = `
+                        <div style="max-width:800px; margin:0 auto; background:var(--bg-card); padding:40px; border-radius:16px; border:1px solid var(--border-glass);">
+                            <a href="/" style="color:var(--primary); text-decoration:none; display:inline-block; margin-bottom:20px;">← Back to Home</a>
+                            <h1 style="color:var(--primary);">🗺️ Sitemap</h1>
+                            <pre style="background:rgba(0,0,0,0.3); padding:20px; border-radius:8px; overflow-x:auto; white-space:pre-wrap; word-wrap:break-word; color:var(--text-secondary);">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
     &lt;url&gt;
@@ -2820,113 +2857,43 @@ function showSitemapPage() {
         &lt;priority&gt;0.5&lt;/priority&gt;
     &lt;/url&gt;
 &lt;/urlset&gt;
-                </pre>
-                <p style="color:var(--text-muted); font-size:14px; margin-top:10px;">This sitemap is available at: <a href="?page=sitemap" style="color:var(--primary);">https://www.allfileconvertor.site/?page=sitemap</a></p>
-            </div>
-        `;
-        document.body.appendChild(sitemapDiv);
-    }
-    sitemapDiv.style.display = 'block';
-}
-
-    // Show About Page
-    function showAboutPage() {
-        // Hide all main sections
-        document.querySelectorAll('.page').forEach(section => {
-            section.style.display = 'none';
-        });
-        document.querySelector('.footer').style.display = 'none';
-        document.querySelector('.bg-animation').style.display = 'none';
-
-        let aboutDiv = document.getElementById('aboutPage');
-        if (!aboutDiv) {
-            aboutDiv = document.createElement('div');
-            aboutDiv.id = 'aboutPage';
-            aboutDiv.style.cssText = 'min-height:100vh; display:flex; align-items:center; justify-content:center; padding:40px 20px; background:var(--bg-dark);';
-            aboutDiv.innerHTML = `
-                <div style="max-width:800px; width:100%; margin:0 auto; background:var(--bg-card); padding:40px; border-radius:16px; border:1px solid var(--border-glass);">
-                    <a href="/" style="color:var(--primary); text-decoration:none; display:inline-block; margin-bottom:20px;">← Back to Home</a>
-                    <h1 style="color:var(--primary); font-size:32px; margin:0 0 10px 0;">👋 About All Files Converter AI</h1>
-
-                    <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">Our Mission</h2>
-                    <p style="color:var(--text-secondary);">To make file conversion <strong>accessible, secure, and completely free</strong> for everyone.</p>
-
-                    <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">Who We Are</h2>
-                    <p style="color:var(--text-secondary);">We are the <strong>generatewithali</strong> team - a group of passionate developers, designers, and testers from <strong>Riphah International University, Lahore</strong>.</p>
-
-                    <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">Why We Built This</h2>
-                    <ul style="color:var(--text-secondary); padding-left:20px;">
-                        <li>❌ Most file converters are <strong>expensive</strong> with subscription fees</li>
-                        <li>❌ Online converters are <strong>insecure</strong> – your files go to unknown servers</li>
-                        <li>❌ Free tools often have <strong>limited format support</strong></li>
-                    </ul>
-                    <p style="color:var(--text-secondary);">So we built <strong>All Files Converter AI</strong> – a free, offline, secure, and powerful converter that supports <strong>1000+ formats</strong>.</p>
-
-                    <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">Our Team</h2>
-                    <div style="margin:10px 0; padding:15px 20px; background:rgba(255,255,255,0.03); border-radius:10px; border-left:3px solid #6C63FF;">
-                        <strong style="color:var(--text-primary);">Bahadur Ali</strong><br />
-                        <span style="color:var(--text-secondary); font-size:14px;">Application Developer & AI Lead</span><br />
-                        <span style="color:var(--text-muted); font-size:13px;">Riphah International University, Lahore</span>
-                    </div>
-                    <div style="margin:10px 0; padding:15px 20px; background:rgba(255,255,255,0.03); border-radius:10px; border-left:3px solid #6C63FF;">
-                        <strong style="color:var(--text-primary);">Sheza Abid</strong><br />
-                        <span style="color:var(--text-secondary); font-size:14px;">Website Developer & UI/UX Designer</span><br />
-                        <span style="color:var(--text-muted); font-size:13px;">Riphah International University, Lahore</span>
-                    </div>
-                    <div style="margin:10px 0; padding:15px 20px; background:rgba(255,255,255,0.03); border-radius:10px; border-left:3px solid #6C63FF;">
-                        <strong style="color:var(--text-primary);">Fatima Akram</strong><br />
-                        <span style="color:var(--text-secondary); font-size:14px;">QA Developer & Tester</span><br />
-                        <span style="color:var(--text-muted); font-size:13px;">Riphah International University, Lahore</span>
-                    </div>
-                    <div style="margin:10px 0; padding:15px 20px; background:rgba(255,255,255,0.03); border-radius:10px; border-left:3px solid #6C63FF;">
-                        <strong style="color:var(--text-primary);">Aiman Imran</strong><br />
-                        <span style="color:var(--text-secondary); font-size:14px;">Content Manager & QA Support</span><br />
-                        <span style="color:var(--text-muted); font-size:13px;">Riphah International University, Lahore</span>
-                    </div>
-                    <div style="margin:10px 0; padding:15px 20px; background:rgba(255,255,255,0.03); border-radius:10px; border-left:3px solid #6C63FF;">
-                        <strong style="color:var(--text-primary);">Ali Masood</strong><br />
-                        <span style="color:var(--text-secondary); font-size:14px;">Tester & Documentation</span><br />
-                        <span style="color:var(--text-muted); font-size:13px;">Riphah International University, Lahore</span>
-                    </div>
-
-                    <h2 style="color:var(--primary); font-size:22px; margin-top:30px;">Contact Us</h2>
-                    <ul style="color:var(--text-secondary); padding-left:20px;">
-                        <li><strong>Email:</strong> <a href="mailto:bahaduralimunnabhai@gmail.com" style="color:var(--primary);">bahaduralimunnabhai@gmail.com</a></li>
-                        <li><strong>WhatsApp:</strong> <a href="https://wa.me/923034572298" style="color:var(--primary);">+92 303 4572298</a></li>
-                    </ul>
-
-                    <p style="margin-top:30px; font-size:14px; color:var(--text-muted);">© 2026 generatewithali Team. All rights reserved.</p>
-                </div>
-            `;
-            document.body.appendChild(aboutDiv);
-        }
-        aboutDiv.style.display = 'flex';
-    }
-
-    // Check URL on page load
-    const page = getPageParam();
-    if (page === 'privacy') {
-        showPrivacyPage();
-    } else if (page === 'about') {
-        showAboutPage();
-    }
-
-    // Handle navigation clicks for footer links
-    document.querySelectorAll('a[href*="?page="]').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const href = this.getAttribute('href');
-            const pageParam = href.split('?page=')[1];
-            window.history.pushState({}, '', href);
-            if (pageParam === 'privacy') {
-                showPrivacyPage();
-            } else if (pageParam === 'about') {
-                showAboutPage();
+                            </pre>
+                            <p style="color:var(--text-muted); font-size:14px; margin-top:10px;">This sitemap is available at: <a href="?page=sitemap" style="color:var(--primary);">https://www.allfileconvertor.site/?page=sitemap</a></p>
+                        </div>
+                    `;
+                    document.body.appendChild(sitemapDiv);
+                }
+                sitemapDiv.style.display = 'block';
             }
-        });
-    });
 
-})();
-</script>
+            // Main routing
+            const page = getPageParam();
+            if (page === 'privacy') {
+                showPrivacyPage();
+            } else if (page === 'about') {
+                showAboutPage();
+            } else if (page === 'sitemap') {
+                showSitemapPage();
+            }
+
+            // Handle navigation clicks for footer links
+            document.querySelectorAll('a[href*="?page="]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    const pageParam = href.split('?page=')[1];
+                    window.history.pushState({}, '', href);
+                    if (pageParam === 'privacy') {
+                        showPrivacyPage();
+                    } else if (pageParam === 'about') {
+                        showAboutPage();
+                    } else if (pageParam === 'sitemap') {
+                        showSitemapPage();
+                    }
+                });
+            });
+
+        })();
+    </script>
 </body>
 </html>

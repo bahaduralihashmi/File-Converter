@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ✅ AdSense Meta Tag (Site Verification) -->
     <meta name="google-adsense-account" content="ca-pub-5564813686934411">
-    <meta name="description" content=" All Files Converter AI – fully offline desktop app for 1000+ formats. Convert documents, images, audio, video securely with AI, voice commands & batch processing. Download for Windows.">
+    
+    <meta name="description" content="All Files Converter AI – fully offline desktop app for 1000+ formats. Convert documents, images, audio, video securely with AI, voice commands & batch processing. Download for Windows.">
     <link rel="canonical" href="https://www.allfileconvertor.site/">
+    
+    <!-- ✅ AdSense Script - LOADED ONLY ONCE -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5564813686934411"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script>
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <title>All Files Converter AI · Premium</title>
 
-    <!-- ✅ Favicon Tags -->
+    <!-- Favicon Tags -->
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-
-    
     <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/000000/converter.png" />
     <link rel="apple-touch-icon" href="https://img.icons8.com/fluency/48/000000/converter.png" />
 
@@ -26,7 +30,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <style>
-        /* ----- RESET & VARIABLES (Enhanced) ----- */
+        /* ----- RESET & VARIABLES ----- */
         * {
             margin: 0;
             padding: 0;
@@ -34,7 +38,6 @@
         }
 
         :root {
-            /* Core colors */
             --primary: #6C63FF;
             --primary-dark: #5A52D5;
             --secondary: #FF6B6B;
@@ -42,8 +45,6 @@
             --gradient-1: linear-gradient(135deg, #6C63FF 0%, #3A7BD5 100%);
             --gradient-2: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
             --gradient-3: linear-gradient(135deg, #11998E 0%, #38EF7D 100%);
-            
-            /* Theme variables (to be toggled) */
             --bg-dark: #0A0A1A;
             --bg-card: rgba(255, 255, 255, 0.04);
             --text-primary: #FFFFFF;
@@ -51,13 +52,10 @@
             --text-muted: rgba(255, 255, 255, 0.4);
             --border-glass: rgba(255, 255, 255, 0.08);
             --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
-            
-            /* Sizes */
             --radius: 16px;
             --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Light Theme */
         [data-theme="light"] {
             --bg-dark: #F4F7FC;
             --bg-card: rgba(255, 255, 255, 0.7);
@@ -68,7 +66,6 @@
             --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.08);
         }
 
-        /* Professional Blue Theme */
         [data-theme="blue"] {
             --bg-dark: #0B1A33;
             --bg-card: rgba(26, 67, 128, 0.25);
@@ -79,7 +76,6 @@
             --shadow-glass: 0 8px 32px rgba(0, 20, 50, 0.4);
         }
 
-        /* Elegant Plum Theme */
         [data-theme="plum"] {
             --bg-dark: #1A0B1E;
             --bg-card: rgba(128, 26, 102, 0.2);
@@ -104,7 +100,6 @@
             transition: background 0.4s ease, color 0.3s ease;
         }
 
-        /* ----- SCROLLBAR ----- */
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: var(--bg-dark); }
         ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 6px; }
@@ -175,9 +170,7 @@
             z-index: 1;
         }
 
-        /* ============================================================
-           NAVIGATION (Right-aligned with Dropdown)
-           ============================================================ */
+        /* ----- NAVIGATION ----- */
         .nav {
             position: fixed;
             top: 0;
@@ -237,7 +230,6 @@
             flex-shrink: 0;
         }
 
-        /* ---- Right-aligned nav items ---- */
         .nav-right {
             display: flex;
             align-items: center;
@@ -307,7 +299,6 @@
             display: none !important;
         }
 
-        /* ---- Dropdown (Pages) ---- */
         .dropdown {
             position: relative;
         }
@@ -378,7 +369,6 @@
             display: none !important;
         }
 
-        /* ---- Theme & Language Controls ---- */
         .nav-controls {
             display: flex;
             align-items: center;
@@ -439,7 +429,7 @@
             padding: 4px 6px;
         }
 
-        /* ----- PAGE INDICATOR (desktop) ----- */
+        /* ----- PAGE INDICATOR ----- */
         .page-indicator {
             position: fixed;
             right: 22px;
@@ -472,7 +462,7 @@
             background: var(--primary);
         }
 
-        /* ----- PAGES (sections) ----- */
+        /* ----- PAGES ----- */
         .page {
             min-height: 100vh;
             display: flex;
@@ -486,7 +476,7 @@
             padding-bottom: 70px;
         }
 
-        /* ----- HERO (Updated) ----- */
+        /* ----- HERO ----- */
         .hero-page .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -609,7 +599,7 @@
             margin-top: 2px;
         }
 
-        /* ----- MOCKUP (refined) ----- */
+        /* ----- MOCKUP ----- */
         .hero-mockup {
             background: var(--bg-card);
             backdrop-filter: blur(18px);
@@ -762,7 +752,7 @@
             margin: 10px auto 0;
         }
 
-        /* ----- FEATURES (Enhanced with Problem-Solving) ----- */
+        /* ----- FEATURES ----- */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -833,7 +823,6 @@
             color: var(--text-primary);
         }
 
-        /* Internal link styling for feature cards */
         .feature-card .feature-link {
             display: inline-block;
             margin-top: 14px;
@@ -848,7 +837,7 @@
             transform: translateX(4px);
         }
 
-        /* ----- FORMATS (grid with motion) ----- */
+        /* ----- FORMATS ----- */
         .formats-wrapper {
             margin-top: 20px;
             position: relative;
@@ -926,7 +915,7 @@
             transform: scale(1.15) rotate(-4deg);
         }
 
-        /* ----- TEAM (Updated) ----- */
+        /* ----- TEAM ----- */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1009,7 +998,7 @@
             transform: translateY(-2px);
         }
 
-        /* ----- DOWNLOAD PAGE ----- */
+        /* ----- DOWNLOAD ----- */
         .download-page { text-align: center; }
         .download-page .btn-download { font-size: 18px; padding: 16px 44px; margin-top: 8px; }
 
@@ -1041,11 +1030,7 @@
         }
         .version-info p { margin-top: 2px; }
 
-        /* ----- CONTACT / COOKIE SECTION (New) ----- */
-        .contact-section {
-            margin-top: 30px;
-        }
-
+        /* ----- CONTACT ----- */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1181,7 +1166,7 @@
             font-size: 13px;
         }
 
-        /* ----- FOOTER (Updated) ----- */
+        /* ----- FOOTER ----- */
         .footer {
             padding: 40px 0 30px;
             border-top: 1px solid var(--border-glass);
@@ -1207,9 +1192,7 @@
             margin-bottom: 18px;
         }
 
-        /* ============================================================
-           RESPONSIVE
-           ============================================================ */
+        /* ----- RESPONSIVE ----- */
         @media (max-width: 1024px) {
             .hero-page .container { gap: 40px; }
             .hero-page h1 { font-size: clamp(34px, 5vw, 56px); }
@@ -1330,23 +1313,17 @@
         <a class="dot" data-page="contact" title="Contact"></a>
     </nav>
 
-    <!-- ===== NAVIGATION (Right-aligned with Dropdown) ===== -->
+    <!-- ===== NAVIGATION ===== -->
     <nav class="nav" id="nav">
         <div class="container">
-            <!-- Logo -->
             <a class="logo" data-page="home">
                 <span class="logo-icon"><i class="fas fa-arrows-spin"></i></span>
                 <span data-i18n="brand">Converter AI</span>
             </a>
 
-            <!-- Right-aligned items -->
             <div class="nav-right">
-                <!-- Navigation Links -->
                 <ul class="nav-links" id="navLinks">
-                    <!-- Home -->
                     <li><a class="active" data-page="home" data-i18n="nav.home">Home</a></li>
-
-                    <!-- Pages Dropdown -->
                     <li class="dropdown">
                         <a href="#" data-i18n="nav.pages">Pages <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
@@ -1356,12 +1333,9 @@
                             <li><a data-page="contact" data-i18n="nav.contact">Contact</a></li>
                         </ul>
                     </li>
-
-                    <!-- Download (CTA) -->
                     <li><a data-page="download" data-i18n="nav.download" class="nav-cta">Download</a></li>
                 </ul>
 
-                <!-- Theme & Language Controls -->
                 <div class="nav-controls">
                     <select id="languageSelect" aria-label="Select Language">
                         <option value="en">🇬🇧 EN</option>
@@ -1374,7 +1348,6 @@
                     </button>
                 </div>
 
-                <!-- Mobile Toggle -->
                 <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -1444,7 +1417,7 @@
         </div>
     </section>
 
-    <!-- ===== PAGE 2: FEATURES (Enhanced with Internal Links) ===== -->
+    <!-- ===== PAGE 2: FEATURES ===== -->
     <section class="page" id="features">
         <div class="container">
             <div class="section-header">
@@ -1460,10 +1433,7 @@
                     <p data-i18n="features.f1.desc">Convert between documents, images, audio, video, archives, e-books, and spreadsheets.</p>
                     <div class="problem-solution"><strong data-i18n="features.problem">Problem:</strong> <span data-i18n="features.f1.problem">Incompatible file types hinder workflow.</span><br>
                     <strong data-i18n="features.solution">Solution:</strong> <span data-i18n="features.f1.solution">One tool for all formats, eliminating the need for multiple converters.</span></div>
-                    <!-- ✅ INTERNAL LINK: Features → Formats -->
-                    <a href="#formats" class="feature-link">
-                        View all 1000+ formats → <i class="fas fa-arrow-right" style="font-size:12px;"></i>
-                    </a>
+                    <a href="#formats" class="feature-link">View all 1000+ formats → <i class="fas fa-arrow-right" style="font-size:12px;"></i></a>
                 </div>
                 <div class="feature-card">
                     <div class="icon blue"><i class="fas fa-robot"></i></div>
@@ -1502,7 +1472,6 @@
                 </div>
             </div>
 
-            <!-- ✅ INTERNAL LINKS: Features CTA → Download & Formats -->
             <div style="text-align:center;margin-top:40px;padding:24px;background:var(--bg-card);border-radius:var(--radius);border:1px solid var(--border-glass);">
                 <p style="font-size:18px;font-weight:600;margin-bottom:14px;">🚀 Ready to experience all these features?</p>
                 <a href="#download" class="btn btn-download" style="display:inline-flex;">
@@ -1515,7 +1484,7 @@
         </div>
     </section>
 
-    <!-- ===== PAGE 3: FORMATS (with Internal Links) ===== -->
+    <!-- ===== PAGE 3: FORMATS ===== -->
     <section class="page" id="formats">
         <div class="container">
             <div class="section-header">
@@ -1524,7 +1493,6 @@
                 <p data-i18n="formats.subtitle">Over 104 formats across 7 categories. All your conversion needs in one place.</p>
             </div>
 
-            <!-- ✅ INTERNAL LINKS: Formats navigation → Features & Download -->
             <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:20px;">
                 <a href="#features" style="color:var(--text-secondary);text-decoration:none;padding:6px 18px;border-radius:30px;border:1px solid var(--border-glass);font-size:13px;transition:var(--transition);">
                     ← <span data-i18n="nav.features">Features</span>
@@ -1627,7 +1595,6 @@
                 </div>
             </div>
 
-            <!-- ✅ INTERNAL LINKS: Formats CTA → Download & Features -->
             <div style="text-align:center;margin-top:32px;padding:20px;background:var(--bg-card);border-radius:var(--radius);border:1px solid var(--border-glass);">
                 <p style="font-size:16px;font-weight:500;margin-bottom:12px;">Find the format you need? <strong style="color:var(--primary);">Start converting now!</strong></p>
                 <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
@@ -1642,7 +1609,7 @@
         </div>
     </section>
 
-    <!-- ===== PAGE 4: TEAM (with Internal Links) ===== -->
+    <!-- ===== PAGE 4: TEAM ===== -->
     <section class="page" id="team">
         <div class="container">
             <div class="section-header">
@@ -1693,17 +1660,21 @@
                         <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
-                <div style="margin: 30px 0; text-align: center;">
+
+                <!-- ✅ AD UNIT 1 - Team Section -->
+                <div style="margin: 30px 0; text-align: center; clear: both;">
                     <ins class="adsbygoogle"
                          style="display:block"
                          data-ad-client="ca-pub-5564813686934411"
                          data-ad-slot="6803783278"
                          data-ad-format="autorelaxed"
-                         data-full-width-responsive="true"></ins>
+                         data-full-width-responsive="true">
+                    </ins>
                     <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
+                        (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div>
+
                 <div class="team-card">
                     <div class="avatar ali">AM</div>
                     <h4>Ali Masood</h4>
@@ -1716,7 +1687,6 @@
                 </div>
             </div>
 
-            <!-- ✅ INTERNAL LINKS: Team CTA → Contact & Download -->
             <div style="text-align:center;margin-top:40px;padding:24px;background:var(--bg-card);border-radius:var(--radius);border:1px solid var(--border-glass);">
                 <p style="font-size:17px;font-weight:600;margin-bottom:10px;">🤝 Want to collaborate with us?</p>
                 <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
@@ -1731,7 +1701,7 @@
         </div>
     </section>
 
-    <!-- ===== PAGE 5: DOWNLOAD (with Internal Links) ===== -->
+    <!-- ===== PAGE 5: DOWNLOAD ===== -->
     <section class="page download-page" id="download">
         <div class="container">
             <div class="section-header">
@@ -1757,7 +1727,6 @@
                 <p style="margin-top:4px;" data-i18n="download.credit">Developed by generatewithali Team · Riphah International University</p>
             </div>
 
-            <!-- ✅ INTERNAL LINKS: Download → Features, Formats, Team -->
             <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:28px;padding-top:24px;border-top:1px solid var(--border-glass);">
                 <p style="width:100%;font-size:14px;color:var(--text-muted);margin-bottom:4px;">🔗 Not sure yet? Explore more:</p>
                 <a href="#features" class="btn btn-secondary" style="display:inline-flex;padding:8px 24px;font-size:13px;">
@@ -1773,7 +1742,7 @@
         </div>
     </section>
 
-    <!-- ===== PAGE 6: CONTACT (with Internal Links) ===== -->
+    <!-- ===== PAGE 6: CONTACT ===== -->
     <section class="page" id="contact">
         <div class="container">
             <div class="section-header">
@@ -1800,21 +1769,8 @@
                     <div id="formStatus" style="margin-top:10px;font-size:14px;"></div>
                 </div>
 
-                <!-- Ad Unit 1 - Team Section -->
-                <div style="margin: 30px 0; text-align: center;">
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-5564813686934411"
-                         data-ad-slot="8090990382"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true"></ins>
-                    <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
-
-                <!-- Contact Info & Cookie Consent -->
                 <div>
+                    <!-- Contact Info -->
                     <div class="contact-card">
                         <h3><i class="fas fa-phone"></i> <span data-i18n="contact.info.title">Contact Information</span></h3>
                         <div class="contact-info">
@@ -1824,6 +1780,20 @@
                             <a href="https://www.linkedin.com/in/generatewithali/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
                             <a href="https://www.instagram.com/bahadur_ali804/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
                         </div>
+                    </div>
+
+                    <!-- ✅ AD UNIT 2 - Contact Section -->
+                    <div style="margin: 30px 0; text-align: center; clear: both;">
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-5564813686934411"
+                             data-ad-slot="8090990382"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true">
+                        </ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
                     </div>
 
                     <!-- Cookie Subscription -->
@@ -1840,7 +1810,6 @@
                 </div>
             </div>
 
-            <!-- ✅ INTERNAL LINKS: Contact → Download -->
             <div style="text-align:center;margin-top:40px;padding:20px;background:var(--bg-card);border-radius:var(--radius);border:1px solid var(--border-glass);">
                 <p style="font-size:16px;font-weight:500;margin-bottom:10px;">💡 Ready to convert files offline?</p>
                 <a href="#download" class="btn btn-download" style="display:inline-flex;padding:10px 28px;font-size:14px;">
@@ -1850,7 +1819,7 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER (Updated) ===== -->
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-links">
@@ -1872,7 +1841,7 @@
     </footer>
 
     <!-- ============================================================
-    JAVASCRIPT (Enhanced)
+    JAVASCRIPT
     ============================================================ -->
     <script>
         (function() {
@@ -1898,7 +1867,6 @@
                 applyTheme(themes[currentThemeIndex]);
             });
 
-            // Load saved theme
             const savedTheme = localStorage.getItem('converter-theme');
             if (savedTheme && themes.includes(savedTheme)) {
                 applyTheme(savedTheme);
@@ -2343,7 +2311,7 @@
             }
 
             // =====================
-            // 3. NAVIGATION (Core)
+            // 3. NAVIGATION
             // =====================
             const navLinks = document.querySelectorAll('.nav-links a');
             const logo = document.querySelector('.logo');
@@ -2389,13 +2357,11 @@
                 });
             }
 
-            // ---- Nav scroll effect ----
             const nav = document.getElementById('nav');
             window.addEventListener('scroll', function() {
                 nav.classList.toggle('scrolled', window.scrollY > 20);
             });
 
-            // ---- Active section detection ----
             const sections = document.querySelectorAll('.page');
 
             function updateActive() {
@@ -2418,7 +2384,7 @@
             window.addEventListener('load', updateActive);
 
             // =====================
-            // 4. INTERSECTION OBSERVERS (Animations)
+            // 4. INTERSECTION OBSERVERS
             // =====================
             const featureCards = document.querySelectorAll('.feature-card');
             const featureObserver = new IntersectionObserver((entries) => {
@@ -2505,6 +2471,7 @@
                     contactForm.reset();
                 }, 1500);
             });
+
             // =====================
             // 7. COOKIE / SUBSCRIPTION
             // =====================

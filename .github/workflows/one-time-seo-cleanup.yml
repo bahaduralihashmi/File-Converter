@@ -1,0 +1,51 @@
+name: One-time SEO cleanup
+
+on:
+  push:
+    paths:
+      - '.github/workflows/one-time-seo-cleanup.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Clean homepage SEO markup and duplicate links
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path('landing-page/index.html')
+          text = path.read_text(encoding='utf-8')
+
+          start_marker = '    <!-- ✅ Article Schema (for blog/content) -->'
+          start = text.find(start_marker)
+          if start != -1:
+              end = text.find('    <style>', start)
+              if end == -1:
+                  raise SystemExit('Article schema end marker not found')
+              text = text[:start] + text[end:]
+
+          replacements = {
+              '<a href="?page=privacy">Privacy Policy</a>': '<a href="/privacy.html">Privacy Policy</a>',
+              '<a href="?page=about">About Us</a>': '<a href="/about.html">About Us</a>',
+              '<a href="?page=sitemap">Sitemap</a>': '<a href="/sitemap.xml">Sitemap</a>',
+          }
+          for old, new in replacements.items():
+              text = text.replace(old, new)
+
+          path.write_text(text, encoding='utf-8')
+      
+      - name: Commit SEO cleanup and remove one-time workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add landing-page/index.html .github/workflows/one-time-seo-cleanup.yml
+          git rm .github/workflows/one-time-seo-cleanup.yml
+          git commit -m "Clean homepage SEO structured data and canonical links"
+          git push

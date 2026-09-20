@@ -1,0 +1,24 @@
+﻿cmd : pydub\utils.py:170: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+At line:4 char:1
++ cmd /c "I:\source-code\dist\AllFilesConverterAI\AllFilesConverterAI.e ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (pydub\utils.py:...ut may not work:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Traceback (most recent call last):
+  File "main.py", line 24, in <module>
+    from app.application import Application
+  File "pyimod02_importers.py", line 457, in exec_module
+  File "app\__init__.py", line 5, in <module>
+    from .application import Application
+  File "pyimod02_importers.py", line 457, in exec_module
+  File "app\application.py", line 18, in <module>
+    from app.main_window import MainWindow
+  File "pyimod02_importers.py", line 457, in exec_module
+  File "app\main_window.py", line 14, in <module>
+    from app.gui.ppt_generator_widget import PPTGeneratorWidget
+  File "pyimod02_importers.py", line 457, in exec_module
+  File "app\gui\ppt_generator_widget.py", line 17, in <module>
+    from app.core.ppt_generator_ai import get_ai_ppt_generator
+ImportError: cannot import name 'get_ai_ppt_generator' from 'app.core.ppt_generator_ai' 
+(I:\source-code\dist\AllFilesConverterAI\_internal\app\core\ppt_generator_ai.py)

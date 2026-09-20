@@ -1,0 +1,351 @@
+============================================================
+Building All Files Converter AI - Optimized Build
+============================================================
+
+dist\AllFilesConverterAI\AllFilesConverterAI.exe - Access is denied.
+dist\AllFilesConverterAI\_internal\base_library.zip - The process cannot access the file because it is being used by another process.
+dist\AllFilesConverterAI\_internal\cv2\cv2.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\libcrypto-1_1.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\libffi-7.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\libssl-1_1.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\lxml\etree.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\lxml\_elementpath.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\markupsafe\_speedups.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\msvcp140.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\MSVCP140_ATOMIC_WAIT.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\numpy\linalg\_umath_linalg.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\numpy\random\bit_generator.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\numpy\random\mtrand.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\numpy\random\_bounded_integers.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\numpy\random\_common.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\numpy\random\_generator.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\numpy\random\_mt19937.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\numpy\random\_pcg64.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\numpy\random\_philox.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\numpy\random\_sfc64.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\numpy\_core\_multiarray_umath.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\numpy.libs\libscipy_openblas64_-13e2df515630b4a41f92893938845698.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\numpy.libs\msvcp140-263139962577ecda4cd9469ca360a746.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\algos.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\arrays.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\groupby.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\hashing.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\hashtable.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\index.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\indexing.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\internals.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\interval.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\join.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\json.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\lib.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\missing.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\ops.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\ops_dispatch.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\pandas_datetime.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\pandas_parser.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\parsers.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\properties.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\reshape.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\sparse.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\testing.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\tslib.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\tslibs\base.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\tslibs\ccalendar.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\tslibs\conversion.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\tslibs\dtypes.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\tslibs\fields.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\tslibs\nattype.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\tslibs\np_datetime.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\tslibs\offsets.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\tslibs\parsing.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\tslibs\period.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\tslibs\strptime.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\tslibs\timedeltas.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\tslibs\timestamps.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\tslibs\timezones.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\tslibs\tzconversion.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\tslibs\vectorized.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\window\aggregations.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\window\indexers.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas\_libs\writers.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pandas.libs\msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\PIL\_imaging.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\PIL\_imagingft.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pyaudio\_portaudio.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pyexpat.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pymupdf\mupdfcpp64.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\pymupdf\_extra.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\pymupdf\_mupdf.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\PySide6\MSVCP140_1.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\PySide6\MSVCP140_2.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\PySide6\plugins\imageformats\qico.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\PySide6\plugins\platforms\qwindows.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\PySide6\plugins\styles\qmodernwindowsstyle.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\PySide6\pyside6.abi3.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\PySide6\Qt6Core.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\PySide6\Qt6Gui.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\PySide6\Qt6Widgets.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\PySide6\QtCore.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\PySide6\QtGui.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\PySide6\QtWidgets.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\python3.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\python310.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\pywin32_system32\pythoncom310.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\pywin32_system32\pywintypes310.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\regex\_regex.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\select.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\shiboken6\MSVCP140.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\shiboken6\Shiboken.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\shiboken6\shiboken6.abi3.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\shiboken6\VCRUNTIME140_1.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\sqlite3.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\tcl86t.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\tk86t.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\torch\lib\c10.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\torch\lib\libiomp5md.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\torch\lib\libiompstubs5md.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\torch\lib\shm.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\torch\lib\torch.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\torch\lib\torch_cpu.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\torch\lib\torch_global_deps.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\torch\lib\torch_python.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\torch\lib\uv.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\torch\_C.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\unicodedata.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\vcruntime140.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\vcruntime140_1.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\yaml\_yaml.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\_asyncio.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\_bz2.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\_cffi_backend.cp310-win_amd64.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\_ctypes.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\_decimal.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\_elementtree.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\_hashlib.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\_lzma.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\_overlapped.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\_queue.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\_socket.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\_sounddevice_data\portaudio-binaries\libportaudio64bit.dll - Access is denied.
+dist\AllFilesConverterAI\_internal\_sqlite3.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\_ssl.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\_tkinter.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\_uuid.pyd - Access is denied.
+dist\AllFilesConverterAI\_internal\_zoneinfo.pyd - Access is denied.
+dist\AllFilesConverterAI - The process cannot access the file because it is being used by another process.
+
+Building with optimized collection (excludes CUDA, tests, unused models)...
+This will take 5-8 minutes...
+
+402 INFO: PyInstaller: 6.21.0, contrib hooks: 2026.6
+402 INFO: Python: 3.10.11
+433 INFO: Platform: Windows-10-10.0.19045-SP0
+433 INFO: Python environment: I:\source-code\.venv
+433 INFO: wrote I:\source-code\AllFilesConverterAI.spec
+38528 INFO: Module search paths (PYTHONPATH):
+['I:\\source-code\\.venv\\Scripts\\pyinstaller.exe',
+ 'C:\\Users\\BAHADUR_ALI\\AppData\\Local\\Programs\\Python\\Python310\\python310.zip',
+ 'C:\\Users\\BAHADUR_ALI\\AppData\\Local\\Programs\\Python\\Python310\\DLLs',
+ 'C:\\Users\\BAHADUR_ALI\\AppData\\Local\\Programs\\Python\\Python310\\lib',
+ 'C:\\Users\\BAHADUR_ALI\\AppData\\Local\\Programs\\Python\\Python310',
+ 'I:\\source-code\\.venv',
+ 'I:\\source-code\\.venv\\lib\\site-packages',
+ 'I:\\source-code\\.venv\\lib\\site-packages\\win32',
+ 'I:\\source-code\\.venv\\lib\\site-packages\\win32\\lib',
+ 'I:\\source-code\\.venv\\lib\\site-packages\\pythonwin',
+ 'I:\\source-code']
+452 WARNING: qt_material must be imported after PySide or PyQt!
+39480 INFO: Appending 'datas' from .spec
+39677 INFO: checking Analysis
+39677 INFO: Building Analysis because Analysis-00.toc is non existent
+39677 INFO: Looking for Python shared library...
+39677 INFO: Using Python shared library: C:\Users\BAHADUR_ALI\AppData\Local\Programs\Python\Python310\python310.dll
+39677 INFO: Running Analysis Analysis-00.toc
+39677 INFO: Target bytecode optimization level: 0
+39677 INFO: Initializing module dependency graph...
+39677 INFO: Initializing module graph hook caches...
+39853 INFO: Analyzing modules for base_library.zip ...
+41427 INFO: Processing standard module hook 'hook-heapq.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+41608 INFO: Processing standard module hook 'hook-encodings.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+42829 INFO: Processing standard module hook 'hook-math.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+43707 INFO: Processing standard module hook 'hook-unicodedata.py' from 'I:\\source-code\\hooks'
+45518 INFO: Processing standard module hook 'hook-pickle.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+48408 INFO: Caching module dependency graph...
+48550 INFO: Analyzing I:\source-code\main.py
+48581 INFO: Processing standard module hook 'hook-PySide6.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+49172 INFO: Processing standard module hook 'hook-shiboken6.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+49590 INFO: Processing standard module hook 'hook-PySide6.QtNetwork.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+53977 INFO: Processing standard module hook 'hook-PySide6.QtCore.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+58757 INFO: Processing standard module hook 'hook-PySide6.QtWidgets.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+64102 INFO: Processing standard module hook 'hook-PySide6.QtGui.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+93281 INFO: Processing standard module hook 'hook-imageio_ffmpeg.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+93359 INFO: Processing standard module hook 'hook-platform.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+93815 INFO: Processing standard module hook 'hook-docx.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+94170 INFO: Processing pre-safe-import-module hook 'hook-typing_extensions.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+94170 INFO: SetuptoolsInfo: initializing cached setuptools info...
+95961 INFO: Processing standard module hook 'hook-multiprocessing.util.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+96317 INFO: Processing standard module hook 'hook-xml.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+97049 INFO: Processing standard module hook 'hook-_ctypes.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+98102 INFO: Processing standard module hook 'hook-lxml.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+98841 INFO: Processing standard module hook 'hook-lxml.etree.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+100521 INFO: Processing standard module hook 'hook-xml.dom.domreg.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+101341 INFO: Processing standard module hook 'hook-PIL.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+101589 INFO: Processing standard module hook 'hook-PIL.Image.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+102465 INFO: Processing standard module hook 'hook-numpy.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+103990 INFO: Processing standard module hook 'hook-sysconfig.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+104291 INFO: Processing standard module hook 'hook-webbrowser.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+106018 INFO: Processing standard module hook 'hook-difflib.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+106699 INFO: Processing standard module hook 'hook-psutil.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+110624 INFO: Processing standard module hook 'hook-charset_normalizer.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+112032 INFO: Processing standard module hook 'hook-xml.etree.cElementTree.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+112928 INFO: Processing standard module hook 'hook-PIL.ImageFilter.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+114481 INFO: Processing standard module hook 'hook-reportlab.lib.utils.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+114699 INFO: Processing standard module hook 'hook-reportlab.pdfbase._fontdata.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+120705 INFO: Processing standard module hook 'hook-openpyxl.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+123059 INFO: Processing standard module hook 'hook-pptx.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+125525 INFO: Processing pre-safe-import-module hook 'hook-packaging.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+127385 INFO: Processing standard module hook 'hook-pandas.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+131079 INFO: Processing standard module hook 'hook-pytz.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+136238 INFO: Processing standard module hook 'hook-pandas.io.formats.style.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+140826 INFO: Processing standard module hook 'hook-pandas.plotting.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+143038 INFO: Processing standard module hook 'hook-sqlite3.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+143734 INFO: Processing standard module hook 'hook-pandas.io.clipboard.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+144268 INFO: Processing standard module hook 'hook-dateutil.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+144740 INFO: Processing pre-safe-import-module hook 'hook-six.moves.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+145334 INFO: Processing standard module hook 'hook-fsspec.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+146314 INFO: Processing pre-safe-import-module hook 'hook-importlib_resources.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+147018 INFO: Processing pre-safe-import-module hook 'hook-backports.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+147018 INFO: Setuptools: 'backports' appears to be a full setuptools-vendored copy - creating alias to 'setuptools._vendor.backports'!
+147034 INFO: Processing standard module hook 'hook-setuptools.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+147112 INFO: Processing pre-safe-import-module hook 'hook-distutils.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+147112 INFO: Processing pre-find-module-path hook 'hook-distutils.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_find_module_path'
+147849 INFO: Processing standard module hook 'hook-distutils.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+147880 INFO: Processing standard module hook 'hook-distutils.util.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+147962 INFO: Processing standard module hook 'hook-_osx_support.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+148545 INFO: Processing pre-safe-import-module hook 'hook-jaraco.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+148545 INFO: Setuptools: 'jaraco' appears to be a full setuptools-vendored copy - creating alias to 'setuptools._vendor.jaraco'!
+148561 INFO: Processing standard module hook 'hook-setuptools._vendor.jaraco.text.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+148893 INFO: Processing pre-safe-import-module hook 'hook-more_itertools.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+148893 INFO: Setuptools: 'more_itertools' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.more_itertools'!
+149633 INFO: Processing pre-safe-import-module hook 'hook-tomli.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+151283 INFO: Processing pre-safe-import-module hook 'hook-wheel.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+151283 INFO: Setuptools: 'wheel' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.wheel'!
+158413 INFO: Processing pre-safe-import-module hook 'hook-win32com.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\pre_safe_import_module'
+158661 INFO: Processing standard module hook 'hook-win32com.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+158661 INFO: Processing standard module hook 'hook-pythoncom.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+158895 INFO: Processing standard module hook 'hook-pywintypes.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+161024 INFO: Processing standard module hook 'hook-imageio.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+164948 INFO: Processing standard module hook 'hook-certifi.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+165606 INFO: Processing standard module hook 'hook-anyio.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+170070 INFO: Processing standard module hook 'hook-pygments.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+172907 INFO: Processing standard module hook 'hook-rich.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+177977 INFO: Processing standard module hook 'hook-pydantic.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+179741 INFO: Processing standard module hook 'hook-zoneinfo.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+184977 INFO: Processing standard module hook 'hook-jinja2.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+186312 INFO: Processing standard module hook 'hook-torch.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+5389 WARNING: Failed to collect submodules for 'torch.utils.tensorboard' because importing 'torch.utils.tensorboard' raised: ModuleNotFoundError: No module named 'tensorboard'
+I:\source-code\.venv\lib\site-packages\PyInstaller\utils\hooks\__init__.py:665: DeprecationWarning: `torch.distributed._sharding_spec` will be deprecated, use `torch.distributed._shard.sharding_spec` instead
+  __import__(name)
+I:\source-code\.venv\lib\site-packages\PyInstaller\utils\hooks\__init__.py:665: DeprecationWarning: `torch.distributed._sharded_tensor` will be deprecated, use `torch.distributed._shard.sharded_tensor` instead
+  __import__(name)
+I:\source-code\.venv\lib\site-packages\PyInstaller\utils\hooks\__init__.py:665: DeprecationWarning: `torch.distributed._shard.checkpoint` will be deprecated, use `torch.distributed.checkpoint` instead
+  __import__(name)
+221419 INFO: hook-torch: this torch build does not depend on MKL...
+269605 INFO: Processing standard module hook 'hook-torchvision.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+269808 INFO: Processing standard module hook 'hook-torchvision.io.image.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+319790 INFO: Processing pre-safe-import-module hook 'hook-importlib_metadata.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+319868 INFO: Processing standard module hook 'hook-importlib_metadata.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+320071 INFO: Processing pre-safe-import-module hook 'hook-zipp.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+320258 INFO: Processing standard module hook 'hook-transformers.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+325557 INFO: Processing standard module hook 'hook-regex.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+332444 INFO: Processing standard module hook 'hook-cv2.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+391045 INFO: Processing standard module hook 'hook-urllib3.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+442122 INFO: Processing pre-find-module-path hook 'hook-tkinter.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_find_module_path'
+442126 INFO: TclTkInfo: initializing cached Tcl/Tk info...
+443999 INFO: Processing standard module hook 'hook-_tkinter.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+444244 INFO: Processing standard module hook 'hook-speech_recognition.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+444475 INFO: Processing pre-safe-import-module hook 'hook-tensorflow.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\pre_safe_import_module'
+474335 INFO: Processing standard module hook 'hook-sounddevice.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+483057 INFO: Processing standard module hook 'hook-pyttsx3.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+485267 INFO: Processing standard module hook 'hook-easyocr.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+485493 INFO: Processing standard module hook 'hook-skimage.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+486037 INFO: Processing standard module hook 'hook-skimage.io.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+493703 INFO: Processing standard module hook 'hook-skimage.exposure.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+497918 INFO: Processing standard module hook 'hook-skimage.color.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+499835 INFO: Processing standard module hook 'hook-shapely.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+501764 INFO: Processing standard module hook 'hook-PySide6.QtMultimedia.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+521235 INFO: Analyzing hidden import 'PySide6.QtXml'
+521340 INFO: Processing standard module hook 'hook-PySide6.QtXml.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+526789 INFO: Analyzing hidden import 'easyocr.cli'
+526853 INFO: Analyzing hidden import 'easyocr.export'
+526921 INFO: Analyzing hidden import 'pypandoc'
+527109 INFO: Processing module hooks (post-graph stage)...
+527795 INFO: Processing standard module hook 'hook-easyocr.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+533222 INFO: Processing standard module hook 'hook-lxml.isoschematron.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+535438 INFO: Processing standard module hook 'hook-comtypes.client.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+572082 INFO: Processing standard module hook 'hook-PIL.SpiderImagePlugin.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+592207 INFO: Processing standard module hook 'hook-PySide6.QtMultimediaWidgets.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+598534 INFO: Processing standard module hook 'hook-_tkinter.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+598566 INFO: Processing standard module hook 'hook-lxml.objectify.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+598566 INFO: Processing standard module hook 'hook-tzdata.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+600391 INFO: Performing binary vs. data reclassification (3194 entries)
+612166 INFO: Looking for ctypes DLLs
+612509 WARNING: Ignoring /usr/lib64/libgomp.so.1 imported from I:\source-code\.venv\lib\site-packages\torch\_inductor\codecache.py - only basenames are supported with ctypes imports!
+613431 INFO: Analyzing run-time hooks ...
+613431 INFO: Including custom run-time hook 'I:\\source-code\\hooks\\pre_import_unicodedata.py'
+613582 INFO: Including run-time hook 'pyi_rth_multiprocessing.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+613600 INFO: Including run-time hook 'pyi_rth_pkgutil.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+613634 INFO: Including run-time hook 'pyi_rth_pywintypes.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\rthooks'
+613650 INFO: Including run-time hook 'pyi_rth_pythoncom.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\rthooks'
+613650 INFO: Including run-time hook 'pyi_rth_setuptools.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+613684 INFO: Including run-time hook 'pyi_rth_inspect.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+613717 INFO: Including run-time hook 'pyi_rth__tkinter.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+613751 INFO: Including run-time hook 'pyi_rth_pyside6.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+613751 INFO: Processing pre-find-module-path hook 'hook-_pyi_rth_utils.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_find_module_path'
+613771 INFO: Processing standard module hook 'hook-_pyi_rth_utils.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+614639 INFO: Creating base_library.zip...
+614824 INFO: Looking for dynamic libraries
+I:\source-code\.venv\lib\site-packages\pydub\utils.py:170: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+  warn("Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work", RuntimeWarning)
+746406 WARNING: Timed out while waiting for the child process to exit!
+746482 INFO: Extra DLL search directories (AddDllDirectory): ['I:\\source-code\\.venv\\Lib\\site-packages\\shiboken6', 'I:\\source-code\\.venv\\lib\\site-packages\\numpy.libs', 'I:\\source-code\\.venv\\lib\\site-packages\\torch\\lib', 'I:\\source-code\\.venv\\lib\\site-packages\\torchvision', 'I:\\source-code\\.venv\\lib\\site-packages\\torchvision', 'I:\\source-code\\.venv\\lib\\site-packages\\pandas.libs', 'I:\\source-code\\.venv\\lib\\site-packages\\scipy.libs', 'I:\\source-code\\.venv\\lib\\site-packages\\pikepdf.libs', 'I:\\source-code\\.venv\\Lib\\site-packages\\cv2\\../../x64/vc17/bin', 'I:\\source-code\\.venv\\lib\\site-packages\\shapely.libs', 'I:\\source-code\\.venv\\lib\\site-packages']
+746544 INFO: Extra DLL search directories (PATH): ['I:\\source-code\\.venv\\Lib\\site-packages\\cv2\\../../x64/vc17/bin', 'I:\\source-code\\.venv\\Lib\\site-packages\\PySide6']
+784738 INFO: Warnings written to I:\source-code\build\AllFilesConverterAI\warn-AllFilesConverterAI.txt
+792580 INFO: Graph cross-reference written to I:\source-code\build\AllFilesConverterAI\xref-AllFilesConverterAI.html
+795076 INFO: checking PYZ
+795076 INFO: Building PYZ because PYZ-00.toc is non existent
+795077 INFO: Building PYZ (ZlibArchive) I:\source-code\build\AllFilesConverterAI\PYZ-00.pyz
+825837 INFO: Building PYZ (ZlibArchive) I:\source-code\build\AllFilesConverterAI\PYZ-00.pyz completed successfully.
+828676 INFO: checking PKG
+828677 INFO: Building PKG because PKG-00.toc is non existent
+828677 INFO: Building PKG (CArchive) AllFilesConverterAI.pkg
+829860 INFO: Building PKG (CArchive) AllFilesConverterAI.pkg completed successfully.
+829887 INFO: Bootloader I:\source-code\.venv\lib\site-packages\PyInstaller\bootloader\Windows-64bit-intel\runw.exe
+829888 INFO: checking EXE
+829888 INFO: Building EXE because EXE-00.toc is non existent
+829889 INFO: Building EXE from EXE-00.toc
+829907 INFO: Copying bootloader EXE to I:\source-code\build\AllFilesConverterAI\AllFilesConverterAI.exe
+831474 INFO: Copying icon to EXE
+831760 INFO: Copying 0 resources to EXE
+831760 INFO: Embedding manifest in EXE
+831982 INFO: Appending PKG archive to EXE
+832902 INFO: Fixing EXE headers
+837720 INFO: Building EXE from EXE-00.toc completed successfully.
+838278 INFO: checking COLLECT
+838278 INFO: Building COLLECT because COLLECT-00.toc is non existent
+838279 INFO: Removing dir I:\source-code\dist\AllFilesConverterAI
+838413 INFO: Building COLLECT COLLECT-00.toc
+950390 INFO: Building COLLECT COLLECT-00.toc completed successfully.
+951982 INFO: Build complete! The results are available in: I:\source-code\dist
+
+============================================================
+BUILD COMPLETE!
+============================================================
+
+EXE Location: dist\AllFilesConverterAI\AllFilesConverterAI.exe
+
+To run:
+  cd dist\AllFilesConverterAI
+  AllFilesConverterAI.exe
+
+Press any key to continue . . . 

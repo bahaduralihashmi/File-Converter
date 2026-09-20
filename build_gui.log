@@ -1,0 +1,224 @@
+============================================================
+Building All Files Converter AI - Optimized Build
+============================================================
+
+
+Building with optimized collection (excludes CUDA, tests, unused models)...
+This will take 5-8 minutes...
+
+448 INFO: PyInstaller: 6.21.0, contrib hooks: 2026.6
+448 INFO: Python: 3.10.11
+468 INFO: Platform: Windows-10-10.0.19045-SP0
+468 INFO: Python environment: I:\source-code\.venv
+468 INFO: wrote I:\source-code\AllFilesConverterAI.spec
+43747 INFO: Module search paths (PYTHONPATH):
+['I:\\source-code\\.venv\\Scripts\\pyinstaller.exe',
+ 'C:\\Users\\BAHADUR_ALI\\AppData\\Local\\Programs\\Python\\Python310\\python310.zip',
+ 'C:\\Users\\BAHADUR_ALI\\AppData\\Local\\Programs\\Python\\Python310\\DLLs',
+ 'C:\\Users\\BAHADUR_ALI\\AppData\\Local\\Programs\\Python\\Python310\\lib',
+ 'C:\\Users\\BAHADUR_ALI\\AppData\\Local\\Programs\\Python\\Python310',
+ 'I:\\source-code\\.venv',
+ 'I:\\source-code\\.venv\\lib\\site-packages',
+ 'I:\\source-code\\.venv\\lib\\site-packages\\win32',
+ 'I:\\source-code\\.venv\\lib\\site-packages\\win32\\lib',
+ 'I:\\source-code\\.venv\\lib\\site-packages\\pythonwin',
+ 'I:\\source-code']
+476 WARNING: qt_material must be imported after PySide or PyQt!
+44801 INFO: Appending 'datas' from .spec
+45086 INFO: checking Analysis
+45086 INFO: Building Analysis because Analysis-00.toc is non existent
+45086 INFO: Looking for Python shared library...
+45086 INFO: Using Python shared library: C:\Users\BAHADUR_ALI\AppData\Local\Programs\Python\Python310\python310.dll
+45086 INFO: Running Analysis Analysis-00.toc
+45086 INFO: Target bytecode optimization level: 0
+45086 INFO: Initializing module dependency graph...
+45091 INFO: Initializing module graph hook caches...
+45366 INFO: Analyzing modules for base_library.zip ...
+47675 INFO: Processing standard module hook 'hook-heapq.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+48841 INFO: Processing standard module hook 'hook-encodings.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+51382 INFO: Processing standard module hook 'hook-math.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+53091 INFO: Processing standard module hook 'hook-unicodedata.py' from 'I:\\source-code\\hooks'
+63615 INFO: Processing standard module hook 'hook-pickle.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+72148 INFO: Caching module dependency graph...
+72614 INFO: Analyzing I:\source-code\main.py
+72674 INFO: Processing standard module hook 'hook-PySide6.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+75545 INFO: Processing standard module hook 'hook-shiboken6.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+77191 INFO: Processing standard module hook 'hook-PySide6.QtNetwork.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+86836 INFO: Processing standard module hook 'hook-PySide6.QtCore.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+96066 INFO: Processing standard module hook 'hook-PySide6.QtWidgets.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+106060 INFO: Processing standard module hook 'hook-PySide6.QtGui.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+154478 INFO: Processing standard module hook 'hook-imageio_ffmpeg.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+154674 INFO: Processing standard module hook 'hook-platform.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+155476 INFO: Processing standard module hook 'hook-docx.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+156455 INFO: Processing pre-safe-import-module hook 'hook-typing_extensions.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+156466 INFO: SetuptoolsInfo: initializing cached setuptools info...
+160733 INFO: Processing standard module hook 'hook-multiprocessing.util.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+161284 INFO: Processing standard module hook 'hook-xml.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+162589 INFO: Processing standard module hook 'hook-_ctypes.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+164176 INFO: Processing standard module hook 'hook-lxml.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+165675 INFO: Processing standard module hook 'hook-lxml.etree.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+169248 INFO: Processing standard module hook 'hook-xml.dom.domreg.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+170870 INFO: Processing standard module hook 'hook-PIL.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+171239 INFO: Processing standard module hook 'hook-PIL.Image.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+172894 INFO: Processing standard module hook 'hook-numpy.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+174876 INFO: Processing standard module hook 'hook-sysconfig.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+175429 INFO: Processing standard module hook 'hook-webbrowser.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+177548 INFO: Processing standard module hook 'hook-difflib.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+178797 INFO: Processing standard module hook 'hook-psutil.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+183245 INFO: Processing standard module hook 'hook-charset_normalizer.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+184514 INFO: Processing standard module hook 'hook-xml.etree.cElementTree.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+185424 INFO: Processing standard module hook 'hook-PIL.ImageFilter.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+186954 INFO: Processing standard module hook 'hook-reportlab.lib.utils.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+187164 INFO: Processing standard module hook 'hook-reportlab.pdfbase._fontdata.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+193343 INFO: Processing standard module hook 'hook-openpyxl.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+195575 INFO: Processing standard module hook 'hook-pptx.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+198489 INFO: Processing pre-safe-import-module hook 'hook-packaging.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+200374 INFO: Processing standard module hook 'hook-pandas.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+204406 INFO: Processing standard module hook 'hook-pytz.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+211541 INFO: Processing standard module hook 'hook-pandas.io.formats.style.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+217556 INFO: Processing standard module hook 'hook-pandas.plotting.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+219896 INFO: Processing standard module hook 'hook-sqlite3.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+220651 INFO: Processing standard module hook 'hook-pandas.io.clipboard.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+221241 INFO: Processing standard module hook 'hook-dateutil.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+221723 INFO: Processing pre-safe-import-module hook 'hook-six.moves.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+222361 INFO: Processing standard module hook 'hook-fsspec.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+223431 INFO: Processing pre-safe-import-module hook 'hook-importlib_resources.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+224162 INFO: Processing pre-safe-import-module hook 'hook-backports.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+224162 INFO: Setuptools: 'backports' appears to be a full setuptools-vendored copy - creating alias to 'setuptools._vendor.backports'!
+224200 INFO: Processing standard module hook 'hook-setuptools.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+224251 INFO: Processing pre-safe-import-module hook 'hook-distutils.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+224256 INFO: Processing pre-find-module-path hook 'hook-distutils.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_find_module_path'
+225096 INFO: Processing standard module hook 'hook-distutils.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+225138 INFO: Processing standard module hook 'hook-distutils.util.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+225222 INFO: Processing standard module hook 'hook-_osx_support.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+225968 INFO: Processing pre-safe-import-module hook 'hook-jaraco.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+225968 INFO: Setuptools: 'jaraco' appears to be a full setuptools-vendored copy - creating alias to 'setuptools._vendor.jaraco'!
+226008 INFO: Processing standard module hook 'hook-setuptools._vendor.jaraco.text.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+226441 INFO: Processing pre-safe-import-module hook 'hook-more_itertools.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+226441 INFO: Setuptools: 'more_itertools' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.more_itertools'!
+227511 INFO: Processing pre-safe-import-module hook 'hook-tomli.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+229176 INFO: Processing pre-safe-import-module hook 'hook-wheel.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+229176 INFO: Setuptools: 'wheel' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.wheel'!
+236202 INFO: Processing pre-safe-import-module hook 'hook-win32com.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\pre_safe_import_module'
+236430 INFO: Processing standard module hook 'hook-win32com.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+236452 INFO: Processing standard module hook 'hook-pythoncom.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+236655 INFO: Processing standard module hook 'hook-pywintypes.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+238692 INFO: Processing standard module hook 'hook-imageio.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+241812 INFO: Processing standard module hook 'hook-certifi.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+242081 INFO: Processing standard module hook 'hook-anyio.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+245721 INFO: Processing standard module hook 'hook-pygments.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+249259 INFO: Processing standard module hook 'hook-rich.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+254962 INFO: Processing standard module hook 'hook-pydantic.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+257064 INFO: Processing standard module hook 'hook-zoneinfo.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+262661 INFO: Processing standard module hook 'hook-jinja2.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+263615 INFO: Processing standard module hook 'hook-torch.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+15201 WARNING: Failed to collect submodules for 'torch.utils.tensorboard' because importing 'torch.utils.tensorboard' raised: ModuleNotFoundError: No module named 'tensorboard'
+I:\source-code\.venv\lib\site-packages\PyInstaller\utils\hooks\__init__.py:665: DeprecationWarning: `torch.distributed._sharding_spec` will be deprecated, use `torch.distributed._shard.sharding_spec` instead
+  __import__(name)
+I:\source-code\.venv\lib\site-packages\PyInstaller\utils\hooks\__init__.py:665: DeprecationWarning: `torch.distributed._sharded_tensor` will be deprecated, use `torch.distributed._shard.sharded_tensor` instead
+  __import__(name)
+I:\source-code\.venv\lib\site-packages\PyInstaller\utils\hooks\__init__.py:665: DeprecationWarning: `torch.distributed._shard.checkpoint` will be deprecated, use `torch.distributed.checkpoint` instead
+  __import__(name)
+328001 INFO: hook-torch: this torch build does not depend on MKL...
+417662 INFO: Processing standard module hook 'hook-torchvision.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+418199 INFO: Processing standard module hook 'hook-torchvision.io.image.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+533578 INFO: Processing pre-safe-import-module hook 'hook-importlib_metadata.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+533760 INFO: Processing standard module hook 'hook-importlib_metadata.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+534179 INFO: Processing pre-safe-import-module hook 'hook-zipp.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+534544 INFO: Processing standard module hook 'hook-transformers.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+547752 INFO: Processing standard module hook 'hook-regex.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+559639 INFO: Processing standard module hook 'hook-cv2.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+704193 INFO: Processing standard module hook 'hook-urllib3.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+749184 INFO: Processing pre-find-module-path hook 'hook-tkinter.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_find_module_path'
+749194 INFO: TclTkInfo: initializing cached Tcl/Tk info...
+751209 INFO: Processing standard module hook 'hook-_tkinter.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+751394 INFO: Processing standard module hook 'hook-speech_recognition.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+751560 INFO: Processing pre-safe-import-module hook 'hook-tensorflow.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\pre_safe_import_module'
+779163 INFO: Processing standard module hook 'hook-sounddevice.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+787030 INFO: Processing standard module hook 'hook-pyttsx3.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+788925 INFO: Processing standard module hook 'hook-easyocr.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+789221 INFO: Processing standard module hook 'hook-skimage.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+789772 INFO: Processing standard module hook 'hook-skimage.io.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+796973 INFO: Processing standard module hook 'hook-skimage.exposure.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+800931 INFO: Processing standard module hook 'hook-skimage.color.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+803910 INFO: Processing standard module hook 'hook-shapely.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+806519 INFO: Processing standard module hook 'hook-PySide6.QtMultimedia.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+823141 INFO: Analyzing hidden import 'PySide6.QtXml'
+823231 INFO: Processing standard module hook 'hook-PySide6.QtXml.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+826980 INFO: Analyzing hidden import 'pypandoc'
+827154 INFO: Processing module hooks (post-graph stage)...
+827572 INFO: Processing standard module hook 'hook-easyocr.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+832388 INFO: Processing standard module hook 'hook-lxml.isoschematron.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+833412 INFO: Processing standard module hook 'hook-comtypes.client.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+846678 INFO: Processing standard module hook 'hook-PIL.SpiderImagePlugin.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+858174 INFO: Processing standard module hook 'hook-PySide6.QtMultimediaWidgets.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+864824 INFO: Processing standard module hook 'hook-_tkinter.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+864851 INFO: Processing standard module hook 'hook-lxml.objectify.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+864852 INFO: Processing standard module hook 'hook-tzdata.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+866649 INFO: Performing binary vs. data reclassification (3194 entries)
+881739 INFO: Looking for ctypes DLLs
+882069 WARNING: Ignoring /usr/lib64/libgomp.so.1 imported from I:\source-code\.venv\lib\site-packages\torch\_inductor\codecache.py - only basenames are supported with ctypes imports!
+882990 INFO: Analyzing run-time hooks ...
+882990 INFO: Including custom run-time hook 'I:\\source-code\\hooks\\pre_import_unicodedata.py'
+883120 INFO: Including run-time hook 'pyi_rth_multiprocessing.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+883154 INFO: Including run-time hook 'pyi_rth_pkgutil.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+883188 INFO: Including run-time hook 'pyi_rth_pywintypes.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\rthooks'
+883194 INFO: Including run-time hook 'pyi_rth_pythoncom.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\_pyinstaller_hooks_contrib\\rthooks'
+883194 INFO: Including run-time hook 'pyi_rth_setuptools.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+883220 INFO: Including run-time hook 'pyi_rth_inspect.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+883252 INFO: Including run-time hook 'pyi_rth__tkinter.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+883283 INFO: Including run-time hook 'pyi_rth_pyside6.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+883308 INFO: Processing pre-find-module-path hook 'hook-_pyi_rth_utils.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks\\pre_find_module_path'
+883313 INFO: Processing standard module hook 'hook-_pyi_rth_utils.py' from 'I:\\source-code\\.venv\\lib\\site-packages\\PyInstaller\\hooks'
+884158 INFO: Creating base_library.zip...
+884298 INFO: Looking for dynamic libraries
+I:\source-code\.venv\lib\site-packages\pydub\utils.py:170: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+  warn("Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work", RuntimeWarning)
+971365 WARNING: Timed out while waiting for the child process to exit!
+971583 INFO: Extra DLL search directories (AddDllDirectory): ['I:\\source-code\\.venv\\Lib\\site-packages\\shiboken6', 'I:\\source-code\\.venv\\lib\\site-packages\\numpy.libs', 'I:\\source-code\\.venv\\lib\\site-packages\\torch\\lib', 'I:\\source-code\\.venv\\lib\\site-packages\\torchvision', 'I:\\source-code\\.venv\\lib\\site-packages\\torchvision', 'I:\\source-code\\.venv\\lib\\site-packages\\pandas.libs', 'I:\\source-code\\.venv\\lib\\site-packages\\scipy.libs', 'I:\\source-code\\.venv\\lib\\site-packages\\pikepdf.libs', 'I:\\source-code\\.venv\\Lib\\site-packages\\cv2\\../../x64/vc17/bin', 'I:\\source-code\\.venv\\lib\\site-packages\\shapely.libs', 'I:\\source-code\\.venv\\lib\\site-packages']
+971765 INFO: Extra DLL search directories (PATH): ['I:\\source-code\\.venv\\Lib\\site-packages\\cv2\\../../x64/vc17/bin', 'I:\\source-code\\.venv\\Lib\\site-packages\\PySide6']
+1001800 INFO: Warnings written to I:\source-code\build\AllFilesConverterAI\warn-AllFilesConverterAI.txt
+1010336 INFO: Graph cross-reference written to I:\source-code\build\AllFilesConverterAI\xref-AllFilesConverterAI.html
+1013147 INFO: checking PYZ
+1013148 INFO: Building PYZ because PYZ-00.toc is non existent
+1013148 INFO: Building PYZ (ZlibArchive) I:\source-code\build\AllFilesConverterAI\PYZ-00.pyz
+1043542 INFO: Building PYZ (ZlibArchive) I:\source-code\build\AllFilesConverterAI\PYZ-00.pyz completed successfully.
+1045136 INFO: checking PKG
+1045137 INFO: Building PKG because PKG-00.toc is non existent
+1045137 INFO: Building PKG (CArchive) AllFilesConverterAI.pkg
+1045139 WARNING: Ignoring non-existent resource I:\source-code\build\AllFilesConverterAI\PYZ-00.pyz, meant to be collected as PYZ-00.pyz
+1045139 WARNING: Ignoring non-existent resource I:\source-code\build\AllFilesConverterAI\localpycs\struct.pyc, meant to be collected as struct
+1045139 WARNING: Ignoring non-existent resource I:\source-code\build\AllFilesConverterAI\localpycs\pyimod01_archive.pyc, meant to be collected as pyimod01_archive
+1045140 WARNING: Ignoring non-existent resource I:\source-code\build\AllFilesConverterAI\localpycs\pyimod02_importers.pyc, meant to be collected as pyimod02_importers
+1045140 WARNING: Ignoring non-existent resource I:\source-code\build\AllFilesConverterAI\localpycs\pyimod03_ctypes.pyc, meant to be collected as pyimod03_ctypes
+1045140 WARNING: Ignoring non-existent resource I:\source-code\build\AllFilesConverterAI\localpycs\pyimod04_pywin32.pyc, meant to be collected as pyimod04_pywin32
+1045187 INFO: Building PKG (CArchive) AllFilesConverterAI.pkg completed successfully.
+1045191 INFO: Bootloader I:\source-code\.venv\lib\site-packages\PyInstaller\bootloader\Windows-64bit-intel\runw.exe
+1045192 INFO: checking EXE
+1045192 INFO: Building EXE because EXE-00.toc is non existent
+1045192 INFO: Building EXE from EXE-00.toc
+1045196 INFO: Copying bootloader EXE to I:\source-code\build\AllFilesConverterAI\AllFilesConverterAI.exe
+1045707 INFO: Copying icon to EXE
+1045911 INFO: Copying 0 resources to EXE
+1045912 INFO: Embedding manifest in EXE
+1046155 INFO: Appending PKG archive to EXE
+1046473 INFO: Fixing EXE headers
+1048362 INFO: Building EXE from EXE-00.toc completed successfully.
+1049260 INFO: checking COLLECT
+1049260 INFO: Building COLLECT because COLLECT-00.toc is non existent
+1049261 INFO: Building COLLECT COLLECT-00.toc
+1064590 WARNING: Ignoring non-existent resource I:\source-code\build\AllFilesConverterAI\base_library.zip, meant to be collected as base_library.zip
+1238692 INFO: Building COLLECT COLLECT-00.toc completed successfully.
+1241002 INFO: Build complete! The results are available in: I:\source-code\dist
+
+============================================================
+BUILD COMPLETE!
+============================================================
+
+EXE Location: dist\AllFilesConverterAI\AllFilesConverterAI.exe
+
+To run:
+  cd dist\AllFilesConverterAI
+  AllFilesConverterAI.exe
+
+Press any key to continue . . . 

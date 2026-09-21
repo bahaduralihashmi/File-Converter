@@ -2,41 +2,35 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "name": "all-files-converter-ai",
   "version": 2,
-  "redirects": [
-    {
-      "source": "/sitemap.xml/",
-      "destination": "/sitemap.xml",
-      "permanent": true
-    }
-  ],
+  "cleanUrls": false,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/sitemap.xml",
       "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/xml; charset=utf-8"
-        }
+        {"key":"Content-Type","value":"application/xml; charset=utf-8"},
+        {"key":"Cache-Control","value":"public, max-age=3600, s-maxage=86400"}
       ]
     },
     {
       "source": "/robots.txt",
       "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/plain; charset=utf-8"
-        }
+        {"key":"Content-Type","value":"text/plain; charset=utf-8"},
+        {"key":"Cache-Control","value":"public, max-age=3600, s-maxage=86400"}
       ]
     },
     {
       "source": "/ads.txt",
       "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/plain; charset=utf-8"
-        }
+        {"key":"Content-Type","value":"text/plain; charset=utf-8"},
+        {"key":"Cache-Control","value":"public, max-age=3600, s-maxage=86400"}
+      ]
+    },
+    {
+      "source": "/favicon.svg",
+      "headers": [
+        {"key":"Cache-Control","value":"public, max-age=31536000, immutable"}
       ]
     }
-  ],
-  "regions": ["sfo1"]
+  ]
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.allfileconvertor.site/</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://www.allfileconvertor.site/en/</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://www.allfileconvertor.site/zh/</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://www.allfileconvertor.site/ar/</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://www.allfileconvertor.site/de/</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://www.allfileconvertor.site/tools/</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://www.allfileconvertor.site/</loc></url>
+  <url><loc>https://www.allfileconvertor.site/en/</loc></url>
+  <url><loc>https://www.allfileconvertor.site/zh/</loc></url>
+  <url><loc>https://www.allfileconvertor.site/ar/</loc></url>
+  <url><loc>https://www.allfileconvertor.site/de/</loc></url>
+  <url><loc>https://www.allfileconvertor.site/tools/</loc></url>
   <url><loc>https://www.allfileconvertor.site/about.html</loc></url>
   <url><loc>https://www.allfileconvertor.site/blog.html</loc></url>
   <url><loc>https://www.allfileconvertor.site/contact.html</loc></url>
@@ -17,16 +17,16 @@
   <url><loc>https://www.allfileconvertor.site/guides/png-to-jpg.html</loc></url>
   <url><loc>https://www.allfileconvertor.site/guides/mp4-vs-mkv.html</loc></url>
   <url><loc>https://www.allfileconvertor.site/guides/reduce-pdf-size.html</loc></url>
-  <url><loc>https://www.allfileconvertor.site/tools/pdf-to-word.html</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://www.allfileconvertor.site/tools/word-to-pdf.html</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://www.allfileconvertor.site/tools/jpg-to-png.html</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://www.allfileconvertor.site/tools/png-to-jpg.html</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://www.allfileconvertor.site/tools/mp4-to-mkv.html</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://www.allfileconvertor.site/tools/audio-converter.html</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://www.allfileconvertor.site/tools/image-converter.html</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://www.allfileconvertor.site/tools/document-converter.html</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://www.allfileconvertor.site/tools/video-converter.html</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://www.allfileconvertor.site/tools/archive-converter.html</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://www.allfileconvertor.site/tools/ebook-converter.html</loc><lastmod>2026-09-25</lastmod></url>
-  <url><loc>https://www.allfileconvertor.site/tools/spreadsheet-converter.html</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://www.allfileconvertor.site/tools/pdf-to-word.html</loc></url>
+  <url><loc>https://www.allfileconvertor.site/tools/word-to-pdf.html</loc></url>
+  <url><loc>https://www.allfileconvertor.site/tools/jpg-to-png.html</loc></url>
+  <url><loc>https://www.allfileconvertor.site/tools/png-to-jpg.html</loc></url>
+  <url><loc>https://www.allfileconvertor.site/tools/mp4-to-mkv.html</loc></url>
+  <url><loc>https://www.allfileconvertor.site/tools/audio-converter.html</loc></url>
+  <url><loc>https://www.allfileconvertor.site/tools/image-converter.html</loc></url>
+  <url><loc>https://www.allfileconvertor.site/tools/document-converter.html</loc></url>
+  <url><loc>https://www.allfileconvertor.site/tools/video-converter.html</loc></url>
+  <url><loc>https://www.allfileconvertor.site/tools/archive-converter.html</loc></url>
+  <url><loc>https://www.allfileconvertor.site/tools/ebook-converter.html</loc></url>
+  <url><loc>https://www.allfileconvertor.site/tools/spreadsheet-converter.html</loc></url>
 </urlset>
